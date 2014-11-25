@@ -1,8 +1,13 @@
-#include <QCoreApplication>
+#include "servicemonitor.h"
+#include "QtServiceController"
+#include "logmanager.h"
 
-int main(int argc, char *argv[])
+#include <QDir>
+
+using namespace rpi;
+
+int main(int argc, char **argv)
 {
-    QCoreApplication a(argc, argv);
-
-    return a.exec();
+    ServiceMonitor service(argc, argv);
+    return service.exec();
 }

@@ -3,16 +3,18 @@
 
 #include <QObject>
 
-class AbstractAppender : public QObject
+namespace rpi
 {
-  Q_OBJECT
+
+class IAppender
+{
 public:
-  explicit AbstractAppender(QObject *parent = 0);
-
-signals:
-
-public slots:
-
+    virtual void write(QString const & message) = 0;
+    virtual ~IAppender() { }
 };
+
+}
+
+Q_DECLARE_INTERFACE(rpi::IAppender, "rpiIAppender")
 
 #endif // ABSTRACTAPPENDER_H

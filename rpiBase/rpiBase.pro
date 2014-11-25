@@ -4,17 +4,29 @@
 #
 #-------------------------------------------------
 
+VERSION = 1.0.0
+
 QT       -= gui
+CONFIG += plugin
 
 TARGET = rpiBase
 TEMPLATE = lib
 
 DEFINES += RPIBASE_LIBRARY
+DEFINES += QTJSONSETTINGS_EXPORTS
+DEFINES += QT_QTSERVICE_EXPORT
 
-SOURCES +=
+include(../../qtjsonsettings/qtjsonsettings.pri)
+include(../../Qt-Solutions/QtService/src/QtService.pri)
 
-HEADERS += singleton.h\
-        rpibase_global.h
+SOURCES += \
+    exception.cpp
+
+HEADERS +=\
+        rpibase_global.h \
+    name_defs.h \
+    command_defs.h \
+    exception.h
 
 unix {
     target.path = /usr/lib

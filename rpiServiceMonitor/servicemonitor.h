@@ -1,16 +1,40 @@
 #ifndef SERVICEMONITOR_H
 #define SERVICEMONITOR_H
 
-class ServiceMonitor : public QtServiceBase
+#include <QtService.h>
+#include <QCoreApplication>
+#include <QMap>
+#include <QSharedPointer>
+
+#include "service.h"
+
+namespace rpi
 {
-    Q_OBJECT
+
+class ServiceMonitor : public QtService<QCoreApplication>
+{
 public:
-    explicit ServiceMonitor(QObject *parent = 0);
+    explicit ServiceMonitor(int argc, char **argv);
 
-signals:
+    typedef QMap<unsigned int, QSharedPointer<Service> > ServiceMap;
 
-public slots:
+    // QtServiceBase interface
+protected:
+    virtual void start();
+    virtual void stop();
+    virtual void processCommand(int code);
 
+private:
+    void load(int argc, char ** argv);
+    void reboot();
+    void restart();
+    void keepAlive(int id);
+    void stopServices();
+    void startServices();
+
+    ServiceMap m_ServiceMap;
 };
+
+}
 
 #endif // SERVICEMONITOR_H

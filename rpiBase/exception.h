@@ -2,17 +2,33 @@
 #define EXCEPTION_H
 
 #include <QObject>
+#include "rpibase_global.h"
 
-class Exception : public QObject
+namespace rpi
 {
-    Q_OBJECT
+
+class RPIBASESHARED_EXPORT Exception
+{
 public:
-    explicit Exception(QObject *parent = 0);
+    explicit Exception(QString what);
+    explicit Exception(QString what, QString file, int line);
+    explicit Exception(QString what, QString file, int line, QString func);
 
-signals:
+    QString what() const;
+    QString where() const;
+    QString details() const;
 
-public slots:
-
+private:
+    QString m_What;
+    QString m_Where;
 };
+
+#define THROW_EXCEPTION(what) \
+    throw Exception(what);
+
+#define THROW_EXCEPTION_DETAILED(what) \
+    throw Exception(what, __FILE__, __LINE__, Q_FUNC_INFO);
+
+}
 
 #endif // EXCEPTION_H
