@@ -5,6 +5,7 @@
 
 #include <QObject>
 #include <QMap>
+#include <QMutex>
 #include <QSharedPointer>
 
 #include "iappender.h"
@@ -35,6 +36,7 @@ private:
     void write(LoggerConfiguration::LogLevel level, QString const & file, unsigned int line, QString const & function, QString const & message);
 
     QSharedPointer<IAppender> m_pAppender;
+    QMutex m_LockObject;
     QString m_Name;
 };
 

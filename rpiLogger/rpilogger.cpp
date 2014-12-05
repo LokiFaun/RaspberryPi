@@ -3,6 +3,7 @@
 #include <QDateTime>
 #include <QString>
 #include <QDebug>
+#include <QMutexLocker>
 
 #include "loggerconfiguration.h"
 
@@ -54,6 +55,7 @@ bool RpiLogger::isLevelEnabled(LoggerConfiguration::LogLevel level) const
 
 void RpiLogger::write(LoggerConfiguration::LogLevel level, const QString &file, unsigned int line, const QString &function, const QString &message)
 {
+    QMutexLocker lock(&m_LockObject);
     if (!isLevelEnabled(level))
     {
         return;

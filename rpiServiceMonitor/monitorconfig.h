@@ -4,8 +4,10 @@
 #include <QObject>
 #include <QVector>
 #include <QString>
+#include <QSharedPointer>
 
 #include "loggerconfiguration.h"
+#include "../../qtjsonsettings/qtjsonsettings.h"
 
 namespace rpi
 {
@@ -23,21 +25,17 @@ public:
     QString getServiceName(int index) const;
     unsigned int getServiceTimeout(int index) const;
 
+    static const QString ServiceConfigurationPath;
+    static const QString ServiceNameConfigurationPath;
+    static const QString ServiceTimeoutConfigurationPath;
+
 private:
     MonitorConfig() { }
     virtual ~MonitorConfig() { }
     MonitorConfig(MonitorConfig const &);
     MonitorConfig & operator = (MonitorConfig const &);
 
-    struct ServiceConfig
-    {
-        int Id;
-        QString Name;
-        unsigned int Timeout;
-    };
-
-    QVector<ServiceConfig> m_ServiceConfigurations;
-
+    QSharedPointer<QtJsonSettings> m_pSettings;
 };
 
 }

@@ -3,4 +3,5 @@ TEMPLATE = subdirs
 SUBDIRS += \
     rpiBase \
     rpiLogger \
-    rpiServiceMonitor
+    rpiServiceMonitor \
+    rpiConfigurator

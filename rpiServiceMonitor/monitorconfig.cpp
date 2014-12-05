@@ -1,11 +1,14 @@
 #include "monitorconfig.h"
-#include "../../qtjsonsettings/qtjsonsettings.h"
 #include "logmanager.h"
 #include "exception.h"
 
 #include <QDebug>
 
 using namespace rpi;
+
+const QString rpi::MonitorConfig::ServiceConfigurationPath = "ServiceMonitor/Services";
+const QString rpi::MonitorConfig::ServiceNameConfigurationPath = "Name";
+const QString rpi::MonitorConfig::ServiceTimeoutConfigurationPath = "Timeout";
 
 rpi::MonitorConfig &rpi::MonitorConfig::getInstance()
 {
@@ -15,54 +18,47 @@ rpi::MonitorConfig &rpi::MonitorConfig::getInstance()
 
 bool rpi::MonitorConfig::load(const QString &fileName)
 {
-    QtJsonSettings settings(fileName);
+    m_pSettings = QSharedPointer<QtJsonSettings>(new QtJsonSettings(fileName));
     RPI_INFO("org.rpi.monitorconfig", "opening configuration from: " + fileName);
-
-    const int count = settings.beginReadArray("ServiceMonitor/Services");
-    for (int i = 0; i < count; ++i)
-    {
-        settings.setArrayIndex(i);
-        ServiceConfig config;
-        config.Id = i + 1;
-        config.Name = settings.value("Name").toString();
-        config.Timeout = settings.value("Timeout").toInt();
-        m_ServiceConfigurations.push_back(config);
-    }
-
-    return false;
+    return m_pSettings->beginReadArray(ServiceConfigurationPath) > 0;
 }
 
 int rpi::MonitorConfig::getNumberOfServices() const
 {
-    return m_ServiceConfigurations.size();
+    return m_pSettings->beginReadArray(ServiceConfigurationPath);
 }
 
 int rpi::MonitorConfig::getServiceId(int index) const
 {
-    Q_ASSERT_X(index < getNumberOfServices(), Q_FUNC_INFO, "Index out of range");
-    if (index < getNumberOfServices())
+    const int count = m_pSettings->beginReadArray(ServiceConfigurationPath);
+    Q_ASSERT_X(index > 0 && index < count, Q_FUNC_INFO, "Index out of range");
+    if (index > 0 && index < count)
     {
-        return m_ServiceConfigurations.at(index).Id;
+        return index + 1;
     }
     THROW_EXCEPTION_DETAILED("index out of range");
 }
 
 QString rpi::MonitorConfig::getServiceName(int index) const
 {
-    Q_ASSERT_X(index < getNumberOfServices(), Q_FUNC_INFO, "Index out of range");
-    if (index < getNumberOfServices())
+    const int count = m_pSettings->beginReadArray(ServiceConfigurationPath);
+    Q_ASSERT_X(index > 0 && index < count, Q_FUNC_INFO, "Index out of range");
+    if (index > 0 && index < count)
     {
-        return m_ServiceConfigurations.at(index).Name;
+        m_pSettings->setArrayIndex(index);
+        return m_pSettings->value(ServiceNameConfigurationPath).toString();
     }
     THROW_EXCEPTION_DETAILED("index out of range");
 }
 
 unsigned int rpi::MonitorConfig::getServiceTimeout(int index) const
 {
-    Q_ASSERT_X(index < getNumberOfServices(), Q_FUNC_INFO, "Index out of range");
-    if (index < getNumberOfServices())
+    const int count = m_pSettings->beginReadArray(ServiceConfigurationPath);
+    Q_ASSERT_X(index > 0 && index < count, Q_FUNC_INFO, "Index out of range");
+    if (index > 0 && index < count)
     {
-        return m_ServiceConfigurations.at(index).Timeout;
+        m_pSettings->setArrayIndex(index);
+        return m_pSettings->value(ServiceTimeoutConfigurationPath).toUInt();
     }
     THROW_EXCEPTION_DETAILED("index out of range");
 }
