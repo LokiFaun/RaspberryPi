@@ -79,11 +79,11 @@ void ServiceMonitor::load(int argc, char **argv)
     {
         try
         {
-        const int id = config.getServiceId(i);
-        const QString name = config.getServiceName(i);
-        const int timeout = config.getServiceTimeout(i);
+            const int id = config.getServiceId(i);
+            const QString name = config.getServiceName(i);
+            const int timeout = config.getServiceTimeout(i);
 
-        m_ServiceMap[id] = QSharedPointer<Service>(new Service(name, id, timeout));
+            m_ServiceMap[id] = QSharedPointer<Service>(new Service(name, id, timeout));
         }
         catch (Exception const & ex)
         {
@@ -94,7 +94,8 @@ void ServiceMonitor::load(int argc, char **argv)
 
 void ServiceMonitor::reboot()
 {
-    system("shutdown now -r");
+    int result = system("shutdown now -r");
+    RPI_INFO("org.rpi.servicemonitor", QString("system shutdown exited with code: %1").arg(result));
 }
 
 void ServiceMonitor::restart()

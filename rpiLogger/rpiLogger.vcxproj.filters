@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source files">
+      <UniqueIdentifier>{2d414b90-817a-4ce5-860a-551a378b51a3}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header files">
+      <UniqueIdentifier>{395b9be4-c776-47a9-8deb-5ecf723a4951}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource files">
+      <UniqueIdentifier>{d8da3017-76f1-42c0-8931-8461e83a23b4}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
+    </Filter>
+    <Filter Include="Project files">
+      <UniqueIdentifier>{7fe14c64-06f4-45b0-891f-9d9df3814006}</UniqueIdentifier>
+      <Extensions>pro</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="rpiLogger.pro">
+      <Filter>Project files</Filter>
+    </None>
+    <None Include="release.pro">
+      <Filter>Project files</Filter>
+    </None>
+    <None Include="debug.pro">
+      <Filter>Project files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="debugappender.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="iappender.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="loggerconfiguration.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="logmanager.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="rpilogger.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="rpilogger_global.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="debugappender.cpp">
+      <Filter>Source files</Filter>
+    </ClCompile>
+    <ClCompile Include="loggerconfiguration.cpp">
+      <Filter>Source files</Filter>
+    </ClCompile>
+    <ClCompile Include="logmanager.cpp">
+      <Filter>Source files</Filter>
+    </ClCompile>
+    <ClCompile Include="rpilogger.cpp">
+      <Filter>Source files</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

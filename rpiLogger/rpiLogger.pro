@@ -6,34 +6,33 @@
 
 VERSION = 1.0.0
 
-QT       -= gui
-CONFIG += plugin
+
+QT += core
+QT -= gui
+
+greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TARGET = rpiLogger
 TEMPLATE = lib
 
+SOURCES += debugappender.cpp loggerconfiguration.cpp logmanager.cpp rpilogger.cpp
+
+HEADERS += debugappender.h iappender.h loggerconfiguration.h logmanager.h rpilogger.h rpilogger_global.h
+
+include($$lower($$join(CONFIGNAME,,,.pro)))
+
 DEFINES += RPILOGGER_LIBRARY
 
-SOURCES += rpilogger.cpp \
-    debugappender.cpp \
-    logmanager.cpp \
-    loggerconfiguration.cpp
-
-HEADERS += rpilogger.h\
-        rpilogger_global.h \
-    debugappender.h \
-    iappender.h \
-    logmanager.h \
-    loggerconfiguration.h
-
-win32:CONFIG(release, debug|release): LIBS += -L$$OUT_PWD/../rpiBase/release/ -lrpiBase1
-else:win32:CONFIG(debug, debug|release): LIBS += -L$$OUT_PWD/../rpiBase/debug/ -lrpiBase1
-else:unix: LIBS += -L$$OUT_PWD/../rpiBase/ -lrpiBase
+LIBS += -L$$OUT_PWD/../rpiBase/$$DESTDIR -lrpiBase
 
 INCLUDEPATH += $$PWD/../rpiBase
 DEPENDPATH += $$PWD/../rpiBase
 
-unix {
-    target.path = /usr/lib
-    INSTALLS += target
-}
+QMAKE_CFLAGS 	+= $$COMMONFLAGS
+QMAKE_CXXFLAGS 	+= $$COMMONFLAGS
+QMAKE_LFLAGS 	+= $$COMMONFLAGS
+
+OBJECTS_DIR = $$DESTDIR
+MOC_DIR     = $$DESTDIR
+RCC_DIR     = $$DESTDIR
+UI_DIR      = $$DESTDIR

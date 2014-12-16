@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source files">
+      <UniqueIdentifier>{f270d3e5-bcb4-4263-837e-547e2ac80d61}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header files">
+      <UniqueIdentifier>{82e8bf84-27f6-4589-af79-2c6a4b24c57f}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource files">
+      <UniqueIdentifier>{a2a0bb8b-7e04-4260-8492-b6e557747989}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
+    </Filter>
+    <Filter Include="Project files">
+      <UniqueIdentifier>{e0b3efe0-30b7-4b45-b86f-8a8f674ab513}</UniqueIdentifier>
+      <Extensions>pro</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="command_defs.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="exception.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="name_defs.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="rpibase_global.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="rpiBase.pro">
+      <Filter>Project files</Filter>
+    </None>
+    <None Include="debug.pro">
+      <Filter>Project files</Filter>
+    </None>
+    <None Include="release.pro">
+      <Filter>Project files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="exception.cpp">
+      <Filter>Source files</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

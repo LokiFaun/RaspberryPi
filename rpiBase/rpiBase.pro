@@ -6,29 +6,32 @@
 
 VERSION = 1.0.0
 
-QT       -= gui
-CONFIG += plugin
+
+QT += core
+QT -= gui
+
+greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TARGET = rpiBase
 TEMPLATE = lib
 
+SOURCES += exception.cpp
+
+HEADERS += command_defs.h exception.h name_defs.h rpibase_global.h
+
+include($$lower($$join(CONFIGNAME,,,.pro)))
+
 DEFINES += RPIBASE_LIBRARY
 DEFINES += QTJSONSETTINGS_EXPORTS
-DEFINES += QT_QTSERVICE_EXPORT
 
 include(../../qtjsonsettings/qtjsonsettings.pri)
 include(../../Qt-Solutions/QtService/src/QtService.pri)
 
-SOURCES += \
-    exception.cpp
+QMAKE_CFLAGS 	+= $$COMMONFLAGS
+QMAKE_CXXFLAGS 	+= $$COMMONFLAGS
+QMAKE_LFLAGS 	+= $$COMMONFLAGS
 
-HEADERS +=\
-        rpibase_global.h \
-    name_defs.h \
-    command_defs.h \
-    exception.h
-
-unix {
-    target.path = /usr/lib
-    INSTALLS += target
-}
+OBJECTS_DIR = $$DESTDIR
+MOC_DIR     = $$DESTDIR
+RCC_DIR     = $$DESTDIR
+UI_DIR      = $$DESTDIR

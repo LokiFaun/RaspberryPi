@@ -6,6 +6,8 @@
 
 VERSION = 1.0.0
 
+greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+
 QT       += core
 QT       -= gui
 
@@ -15,28 +17,29 @@ CONFIG   -= app_bundle
 
 TEMPLATE = app
 
+include($$lower($$join(CONFIGNAME,,,.pro)))
+
 INCLUDEPATH += $$PWD/../../Qt-Solutions/QtService/src
 
-SOURCES += main.cpp \
-    servicemonitor.cpp \
-    service.cpp \
-    monitorconfig.cpp
+SOURCES += main.cpp monitorconfig.cpp service.cpp servicemonitor.cpp
 
-HEADERS += \
-    servicemonitor.h \
-    service.h \
-    monitorconfig.h
+HEADERS += monitorconfig.h service.h servicemonitor.h
 
-win32:CONFIG(release, debug|release): LIBS += -L$$OUT_PWD/../rpiBase/release/ -lrpiBase1
-else:win32:CONFIG(debug, debug|release): LIBS += -L$$OUT_PWD/../rpiBase/debug/ -lrpiBase1
-else:unix: LIBS += -L$$OUT_PWD/../rpiBase/ -lrpiBase
+LIBS += -L$$OUT_PWD/../rpiBase/$$DESTDIR -lrpiBase
 
 INCLUDEPATH += $$PWD/../rpiBase
 DEPENDPATH += $$PWD/../rpiBase
 
-win32:CONFIG(release, debug|release): LIBS += -L$$OUT_PWD/../rpiLogger/release/ -lrpiLogger1
-else:win32:CONFIG(debug, debug|release): LIBS += -L$$OUT_PWD/../rpiLogger/debug/ -lrpiLogger1
-else:unix: LIBS += -L$$OUT_PWD/../rpiLogger/ -lrpiLogger
+LIBS += -L$$OUT_PWD/../rpiLogger/$$DESTDIR -lrpiLogger
 
 INCLUDEPATH += $$PWD/../rpiLogger
 DEPENDPATH += $$PWD/../rpiLogger
+
+QMAKE_CFLAGS 	+= $$COMMONFLAGS
+QMAKE_CXXFLAGS 	+= $$COMMONFLAGS
+QMAKE_LFLAGS 	+= $$COMMONFLAGS
+
+OBJECTS_DIR = $$DESTDIR
+MOC_DIR     = $$DESTDIR
+RCC_DIR     = $$DESTDIR
+UI_DIR      = $$DESTDIR

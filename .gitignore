@@ -24,9 +24,20 @@ Makefile*
 *-build-*
 
 # QtCreator
-
+*.old
 *.autosave
 
 #QtCtreator Qml
 *.qmlproject.user
 *.qmlproject.user.*
+
+#Output folders
+Debug
+obj
+VisualGDBCache
+
+#Visual Studio
+*.opensdf
+*.sdf
+*.suo
+*vcxproj.user
