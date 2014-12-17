@@ -16,17 +16,17 @@ LoggerConfiguration &LoggerConfiguration::getInstance()
 bool LoggerConfiguration::load(const QString &fileName)
 {
     QtJsonSettings settings(fileName);
-    QVariant type = settings.value("LogSettings/Type");
+    QVariant type = settings.value("Logger/Type");
     if (type.isValid())
     {
         m_Type = loggerTypeFromString(type.toString());
     }
-    QVariant level = settings.value("LogSettings/Level");
+    QVariant level = settings.value("Logger/Level");
     if (level.isValid())
     {
         m_Level = logLevelFromString(level.toString());
     }
-    QVariant logFileName = settings.value("LogSettings/Filename");
+    QVariant logFileName = settings.value("Logger/Filename");
     if (logFileName.isValid())
     {
         m_FileName = logFileName.toString();

@@ -26,6 +26,7 @@ public:
     unsigned int getServiceTimeout(int index) const;
 
     static const QString ServiceConfigurationPath;
+    static const QString ServiceIdConfigurationPath;
     static const QString ServiceNameConfigurationPath;
     static const QString ServiceTimeoutConfigurationPath;
 

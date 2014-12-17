@@ -9,6 +9,20 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "rpiLogger", "rpiLogger\rpiL
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "rpiServiceMonitor", "rpiServiceMonitor\rpiServiceMonitor.vcxproj", "{D77169EB-2400-41C3-AC84-D9C7C47DDD1A}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Project Files", "Project Files", "{3DB57A2C-AFB0-4C73-AB26-2DB8C35AD0CC}"
+	ProjectSection(SolutionItems) = preProject
+		poco.pri = poco.pri
+		RaspberryPi.pro = RaspberryPi.pro
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Resource Files", "Resource Files", "{475F5BDA-73D1-41CB-BF14-20C49E305744}"
+	ProjectSection(SolutionItems) = preProject
+		LICENSE = LICENSE
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "rpiConfigurator", "rpiConfigurator\rpiConfigurator.vcxproj", "{B3ED7DFA-CBF5-461A-961D-ACBCD7DA20D3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -27,6 +41,10 @@ Global
 		{D77169EB-2400-41C3-AC84-D9C7C47DDD1A}.Debug|Win32.Build.0 = Debug|Win32
 		{D77169EB-2400-41C3-AC84-D9C7C47DDD1A}.Release|Win32.ActiveCfg = Release|Win32
 		{D77169EB-2400-41C3-AC84-D9C7C47DDD1A}.Release|Win32.Build.0 = Release|Win32
+		{B3ED7DFA-CBF5-461A-961D-ACBCD7DA20D3}.Debug|Win32.ActiveCfg = Debug|Win32
+		{B3ED7DFA-CBF5-461A-961D-ACBCD7DA20D3}.Debug|Win32.Build.0 = Debug|Win32
+		{B3ED7DFA-CBF5-461A-961D-ACBCD7DA20D3}.Release|Win32.ActiveCfg = Release|Win32
+		{B3ED7DFA-CBF5-461A-961D-ACBCD7DA20D3}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

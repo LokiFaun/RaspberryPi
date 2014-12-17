@@ -7,6 +7,7 @@
 using namespace rpi;
 
 const QString rpi::MonitorConfig::ServiceConfigurationPath = "ServiceMonitor/Services";
+const QString rpi::MonitorConfig::ServiceIdConfigurationPath = "Id";
 const QString rpi::MonitorConfig::ServiceNameConfigurationPath = "Name";
 const QString rpi::MonitorConfig::ServiceTimeoutConfigurationPath = "Timeout";
 
@@ -34,7 +35,8 @@ int rpi::MonitorConfig::getServiceId(int index) const
     Q_ASSERT_X(index > 0 && index < count, Q_FUNC_INFO, "Index out of range");
     if (index > 0 && index < count)
     {
-        return index + 1;
+        m_pSettings->setArrayIndex(index);
+        return m_pSettings->value(ServiceIdConfigurationPath).toInt();
     }
     THROW_EXCEPTION_DETAILED("index out of range");
 }
