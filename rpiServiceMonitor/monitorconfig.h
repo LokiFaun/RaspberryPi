@@ -16,14 +16,14 @@ class MonitorConfig : public QObject
 {
     Q_OBJECT
 public:
-    static MonitorConfig & getInstance();
+    static MonitorConfig & instance();
 
     bool load(QString const & fileName);
 
-    int getNumberOfServices() const;
-    int getServiceId(int index) const;
-    QString getServiceName(int index) const;
-    unsigned int getServiceTimeout(int index) const;
+    int count() const;
+    int id(int index) const;
+    QString name(int index) const;
+    unsigned int timeout(int index) const;
 
     static const QString ServiceConfigurationPath;
     static const QString ServiceIdConfigurationPath;

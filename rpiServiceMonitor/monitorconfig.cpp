@@ -2,8 +2,6 @@
 #include "logmanager.h"
 #include "exception.h"
 
-#include <QDebug>
-
 using namespace rpi;
 
 const QString rpi::MonitorConfig::ServiceConfigurationPath = "ServiceMonitor/Services";
@@ -11,7 +9,7 @@ const QString rpi::MonitorConfig::ServiceIdConfigurationPath = "Id";
 const QString rpi::MonitorConfig::ServiceNameConfigurationPath = "Name";
 const QString rpi::MonitorConfig::ServiceTimeoutConfigurationPath = "Timeout";
 
-rpi::MonitorConfig &rpi::MonitorConfig::getInstance()
+rpi::MonitorConfig &rpi::MonitorConfig::instance()
 {
     static MonitorConfig m_Instance;
     return m_Instance;
@@ -24,12 +22,12 @@ bool rpi::MonitorConfig::load(const QString &fileName)
     return m_pSettings->beginReadArray(ServiceConfigurationPath) > 0;
 }
 
-int rpi::MonitorConfig::getNumberOfServices() const
+int rpi::MonitorConfig::count() const
 {
     return m_pSettings->beginReadArray(ServiceConfigurationPath);
 }
 
-int rpi::MonitorConfig::getServiceId(int index) const
+int rpi::MonitorConfig::id(int index) const
 {
     const int count = m_pSettings->beginReadArray(ServiceConfigurationPath);
     Q_ASSERT_X(index > 0 && index < count, Q_FUNC_INFO, "Index out of range");
@@ -41,7 +39,7 @@ int rpi::MonitorConfig::getServiceId(int index) const
     THROW_EXCEPTION_DETAILED("index out of range");
 }
 
-QString rpi::MonitorConfig::getServiceName(int index) const
+QString rpi::MonitorConfig::name(int index) const
 {
     const int count = m_pSettings->beginReadArray(ServiceConfigurationPath);
     Q_ASSERT_X(index > 0 && index < count, Q_FUNC_INFO, "Index out of range");
@@ -53,7 +51,7 @@ QString rpi::MonitorConfig::getServiceName(int index) const
     THROW_EXCEPTION_DETAILED("index out of range");
 }
 
-unsigned int rpi::MonitorConfig::getServiceTimeout(int index) const
+unsigned int rpi::MonitorConfig::timeout(int index) const
 {
     const int count = m_pSettings->beginReadArray(ServiceConfigurationPath);
     Q_ASSERT_X(index > 0 && index < count, Q_FUNC_INFO, "Index out of range");

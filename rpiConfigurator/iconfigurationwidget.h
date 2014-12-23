@@ -10,6 +10,7 @@ class IConfigurationWidget : public QMainWindow
     Q_OBJECT
 public:
     virtual void saveConfiguration() = 0;
+    virtual void loadConfiguration() = 0;
 };
 
 #endif // CONFIGURATIONWIDGET_H__

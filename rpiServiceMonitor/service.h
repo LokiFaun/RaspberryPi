@@ -17,10 +17,10 @@ class Service : public QThread
 public:
     Service(QString const & name, unsigned int id, unsigned int timeout, QObject * pParent = NULL);
 
-    QString getName() const;
+    QString name() const;
     QString getArguments() const;
-    unsigned int getId() const;
-    unsigned int getTimeout() const;
+    unsigned int id() const;
+    unsigned int timeout() const;
     bool IsRunning();
 
     void setArguments(const QStringList &args);

@@ -11,8 +11,8 @@ TEMPLATE = app
 
 #By default the following file lists are updated automatically by VisualGDB.
 
-SOURCES   += configuration.cpp configurationtabfactory.cpp servicemonitorconfigurationwidget.cpp MainWindow.cpp rpiConfigurator.cpp servicemonitorconfiguration.cpp
-HEADERS   += configuration.h configurationtabfactory.h iconfigurationwidget.h servicemonitorconfigurationwidget.h MainWindow.h servicemonitorconfiguration.h
+SOURCES   += configuration.cpp configurationtabfactory.cpp serviceconfigurationwidget.cpp servicemonitorconfigurationwidget.cpp MainWindow.cpp rpiConfigurator.cpp servicemonitorconfiguration.cpp
+HEADERS   += configuration.h configurationtabfactory.h iconfigurationwidget.h serviceconfigurationwidget.h servicemonitorconfigurationwidget.h MainWindow.h servicemonitorconfiguration.h
 FORMS     += MainWindow.ui
 RESOURCES += 
 

@@ -2,7 +2,6 @@
 
 #include <QDateTime>
 #include <QString>
-#include <QDebug>
 #include <QMutexLocker>
 
 #include "loggerconfiguration.h"
@@ -47,7 +46,7 @@ void RpiLogger::fatal(const QString &file, unsigned int line, const QString &fun
 
 bool RpiLogger::isLevelEnabled(LoggerConfiguration::LogLevel level) const
 {
-    const int configuredLevel = LoggerConfiguration::getInstance().getLevel();
+    const int configuredLevel = LoggerConfiguration::instance().level();
     const int writeLevel = level;
 
     return writeLevel >= configuredLevel;

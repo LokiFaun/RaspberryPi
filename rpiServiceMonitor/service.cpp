@@ -12,17 +12,17 @@ Service::Service(const QString &name, unsigned int id, unsigned int timeout, QOb
     m_IsRunning = false;
 }
 
-QString Service::getName() const
+QString Service::name() const
 {
     return m_Name;
 }
 
-unsigned int Service::getId() const
+unsigned int Service::id() const
 {
     return m_Id;
 }
 
-unsigned int Service::getTimeout() const
+unsigned int Service::timeout() const
 {
     return m_Timeout;
 }

@@ -31,13 +31,13 @@ public:
         Console
     };
 
-    static LoggerConfiguration & getInstance();
+    static LoggerConfiguration & instance();
 
     bool load(QString const & fileName);
 
-    LoggerType getType() const;
-    LogLevel getLevel() const;
-    QString getFileName() const;
+    LoggerType type() const;
+    LogLevel level() const;
+    QString fileName() const;
 
     static QString logLevelToString(LogLevel level);
     static LogLevel logLevelFromString(QString const & level);

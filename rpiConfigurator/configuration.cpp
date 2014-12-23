@@ -6,7 +6,7 @@ Configuration::Configuration(QString const & fileName) : m_ConfigurationFile(fil
 
 Configuration::~Configuration() { }
 
-QString Configuration::getConfigurationFile() const
+QString Configuration::configurationFile() const
 {
     return m_ConfigurationFile;
 }

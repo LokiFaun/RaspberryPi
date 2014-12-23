@@ -26,9 +26,9 @@ public:
     virtual ~Configuration();
 
     virtual void save() = 0;
-    virtual ConfigurationType getConfigurationType() = 0;
+    virtual ConfigurationType configurationType() = 0;
 
-    QString getConfigurationFile() const;
+    QString configurationFile() const;
     void setConfigurationFile(QString const & value);
 
 protected:

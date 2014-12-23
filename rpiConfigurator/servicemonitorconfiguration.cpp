@@ -59,7 +59,7 @@ void ServiceMonitorConfiguration::setTimeout(int index, unsigned int value)
     THROW_EXCEPTION_DETAILED("Index out of range");
 }
 
-int ServiceMonitorConfiguration::getId(int index) const
+int ServiceMonitorConfiguration::id(int index) const
 {
     const int size = m_Services.size();
     Q_ASSERT_X(index >= 0 && index < size, Q_FUNC_INFO, "index out of range");
@@ -70,7 +70,7 @@ int ServiceMonitorConfiguration::getId(int index) const
     THROW_EXCEPTION_DETAILED("Index out of range");
 }
 
-const QString & ServiceMonitorConfiguration::getName(int index) const
+const QString & ServiceMonitorConfiguration::name(int index) const
 {
     const int size = m_Services.size();
     Q_ASSERT_X(index >= 0 && index < size, Q_FUNC_INFO, "index out of range");
@@ -81,7 +81,7 @@ const QString & ServiceMonitorConfiguration::getName(int index) const
     THROW_EXCEPTION_DETAILED("Index out of range");
 }
 
-unsigned int ServiceMonitorConfiguration::getTimeout(int index) const
+unsigned int ServiceMonitorConfiguration::timeout(int index) const
 {
     const int size = m_Services.size();
     Q_ASSERT_X(index >= 0 && index < size, Q_FUNC_INFO, "index out of range");
@@ -92,12 +92,12 @@ unsigned int ServiceMonitorConfiguration::getTimeout(int index) const
     THROW_EXCEPTION_DETAILED("Index out of range");
 }
 
-int ServiceMonitorConfiguration::getCount() const
+int ServiceMonitorConfiguration::count() const
 {
     return m_Services.size();
 }
 
-const ServiceMonitorConfiguration::Services & ServiceMonitorConfiguration::getServiceConfigurations() const
+const ServiceMonitorConfiguration::Services & ServiceMonitorConfiguration::serviceConfigurations() const
 {
     return m_Services;
 }
@@ -117,7 +117,7 @@ void ServiceMonitorConfiguration::save()
     }
 }
 
-ServiceMonitorConfiguration::ConfigurationType ServiceMonitorConfiguration::getConfigurationType()
+ServiceMonitorConfiguration::ConfigurationType ServiceMonitorConfiguration::configurationType()
 {
     return Configuration::ServiceMonitor;
 }

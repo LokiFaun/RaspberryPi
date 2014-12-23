@@ -32,19 +32,16 @@ QWidget * ConfigurationTabFactory::createServiceMonitorConfigurationTab(Configur
     
     ServiceMonitorConfigurationWidget * pWidget = new ServiceMonitorConfigurationWidget(pMonitorConfig);
 
-    qDebug("setting up dock-widget");
     QDockWidget * pDockWidget = new QDockWidget;
     pDockWidget->setAllowedAreas(Qt::BottomDockWidgetArea);
     pDockWidget->setFeatures(QDockWidget::NoDockWidgetFeatures);
     pDockWidget->layout()->setMargin(5);
     pDockWidget->layout()->setContentsMargins(5, 5, 5, 5);
 
-    qDebug("setting up 'AddService' button");
     QPushButton * pAddButton = new QPushButton;
     pAddButton->setText("Add Service");
     QObject::connect(pAddButton, SIGNAL(clicked()), pWidget, SLOT(addNewService()));
 
-    qDebug("setting up the widget shown in dock-widget");
     QWidget * pBottomWidget = new QWidget;
     QHBoxLayout * pLayout = new QHBoxLayout;
     pLayout->addWidget(pAddButton);
@@ -57,12 +54,12 @@ QWidget * ConfigurationTabFactory::createServiceMonitorConfigurationTab(Configur
     return pWidget;
 }
 
-QWidget * ConfigurationTabFactory::createControllerConfiguration(Configuration * pConfiguration)
+QWidget * ConfigurationTabFactory::createControllerConfiguration(Configuration * /*pConfiguration*/)
 {
     return NULL;
 }
 
-QWidget * ConfigurationTabFactory::createLoggerConfiguration(Configuration * pConfiguration)
+QWidget * ConfigurationTabFactory::createLoggerConfiguration(Configuration * /*pConfiguration*/)
 {
     return NULL;
 }

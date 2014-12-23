@@ -19,10 +19,9 @@ class RPILOGGERSHARED_EXPORT LogManager : public QObject
 
 public:
 
-    static LogManager & getInstance();
-    RpiLogger * getLoggerByName(QString const & name);
+    static LogManager & instance();
+    RpiLogger * logger(QString const & name);
     void configure(LoggerConfiguration::LogLevel level);
-    static RpiLogger * getLogger(const QString &name);
 
 private:
     LogManager();
@@ -36,20 +35,20 @@ private:
 
 };
 
-#define RPI_DEBUG(logger, message) \
-    LogManager::getLogger(logger)->debug(__FILE__, __LINE__, Q_FUNC_INFO, message)
+#define RPI_DEBUG(name, message) \
+    LogManager::instance().logger(name)->debug(__FILE__, __LINE__, Q_FUNC_INFO, message)
 
-#define RPI_INFO(logger, message) \
-    LogManager::getLogger(logger)->info(__FILE__, __LINE__, Q_FUNC_INFO, message)
+#define RPI_INFO(name, message) \
+    LogManager::instance().logger(name)->info(__FILE__, __LINE__, Q_FUNC_INFO, message)
 
-#define RPI_WARN(logger, message) \
-    LogManager::getLogger(logger)->warning(__FILE__, __LINE__, Q_FUNC_INFO, message)
+#define RPI_WARN(name, message) \
+    LogManager::instance().logger(name)->warning(__FILE__, __LINE__, Q_FUNC_INFO, message)
 
-#define RPI_ERROR(logger, message) \
-    LogManager::getLogger(logger)->error(__FILE__, __LINE__, Q_FUNC_INFO, message)
+#define RPI_ERROR(name, message) \
+    LogManager::instance().logger(name)->error(__FILE__, __LINE__, Q_FUNC_INFO, message)
 
-#define RPI_FATAL(logger, message) \
-    LogManager::getLogger(logger)->fatal(__FILE__, __LINE__, Q_FUNC_INFO, message)
+#define RPI_FATAL(name, message) \
+    LogManager::instance().logger(name)->fatal(__FILE__, __LINE__, Q_FUNC_INFO, message)
 
 }
 

@@ -7,7 +7,7 @@
 using namespace rpi;
 
 
-LoggerConfiguration &LoggerConfiguration::getInstance()
+LoggerConfiguration &LoggerConfiguration::instance()
 {
     static LoggerConfiguration m_Instance;
     return m_Instance;
@@ -34,17 +34,17 @@ bool LoggerConfiguration::load(const QString &fileName)
     return false;
 }
 
-LoggerConfiguration::LoggerType LoggerConfiguration::getType() const
+LoggerConfiguration::LoggerType LoggerConfiguration::type() const
 {
     return m_Type;
 }
 
-LoggerConfiguration::LogLevel LoggerConfiguration::getLevel() const
+LoggerConfiguration::LogLevel LoggerConfiguration::level() const
 {
     return m_Level;
 }
 
-QString LoggerConfiguration::getFileName() const
+QString LoggerConfiguration::fileName() const
 {
     return m_FileName;
 }

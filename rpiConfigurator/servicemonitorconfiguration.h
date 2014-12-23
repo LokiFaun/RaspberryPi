@@ -32,15 +32,15 @@ public:
     void setName(int index, QString const & value);
     void setTimeout(int index, unsigned int value);
 
-    int getId(int index) const;
-    const QString & getName(int index) const;
-    unsigned int getTimeout(int index) const;
+    int id(int index) const;
+    const QString & name(int index) const;
+    unsigned int timeout(int index) const;
 
-    int getCount() const;
-    const Services & getServiceConfigurations() const;
+    int count() const;
+    const Services & serviceConfigurations() const;
 
     virtual void save();
-    virtual ConfigurationType getConfigurationType();
+    virtual ConfigurationType configurationType();
 
     static const QString ServiceConfigurationPath;
     static const QString ServiceIdConfigurationPath;

@@ -8,13 +8,13 @@ LogManager::LogManager()
     m_pAppender = QSharedPointer<DebugAppender>::create();
 }
 
-LogManager &LogManager::getInstance()
+LogManager &LogManager::instance()
 {
     static LogManager m_Instance;
     return m_Instance;
 }
 
-RpiLogger * LogManager::getLoggerByName(const QString &name)
+RpiLogger * LogManager::logger(const QString &name)
 {
     if (m_Loggers.contains(name))
     {
@@ -23,9 +23,4 @@ RpiLogger * LogManager::getLoggerByName(const QString &name)
     m_Loggers[name] = new RpiLogger(name, this);
     m_Loggers[name]->setAppender(m_pAppender);
     return m_Loggers[name];
-}
-
-RpiLogger * LogManager::getLogger(const QString &name)
-{
-    return LogManager::getInstance().getLoggerByName(name);
 }

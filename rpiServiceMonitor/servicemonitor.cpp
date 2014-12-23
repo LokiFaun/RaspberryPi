@@ -72,16 +72,16 @@ void ServiceMonitor::load(int argc, char **argv)
         }
     }
 
-    MonitorConfig & config = MonitorConfig::getInstance();
+    MonitorConfig & config = MonitorConfig::instance();
     config.load(fileName);
-    const int count = config.getNumberOfServices();
+    const int count = config.count();
     for (int i = 0; i < count; ++i)
     {
         try
         {
-            const int id = config.getServiceId(i);
-            const QString name = config.getServiceName(i);
-            const int timeout = config.getServiceTimeout(i);
+            const int id = config.id(i);
+            const QString name = config.name(i);
+            const int timeout = config.timeout(i);
 
             m_ServiceMap[id] = QSharedPointer<Service>(new Service(name, id, timeout));
         }
@@ -126,7 +126,7 @@ void ServiceMonitor::startServices()
 {
     for (ServiceMap::iterator iter = m_ServiceMap.begin(); iter != m_ServiceMap.end(); ++iter)
     {
-        RPI_INFO("org.rpi.servicemonitor", QString("starting service: %1").arg((*iter)->getName()));
+        RPI_INFO("org.rpi.servicemonitor", QString("starting service: %1").arg((*iter)->name()));
         (*iter)->start();
     }
 }
