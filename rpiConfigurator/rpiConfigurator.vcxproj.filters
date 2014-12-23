@@ -31,6 +31,12 @@
     <ClCompile Include="servicemonitorconfiguration.cpp">
       <Filter>Source files</Filter>
     </ClCompile>
+    <ClCompile Include="configurationtabfactory.cpp">
+      <Filter>Source files</Filter>
+    </ClCompile>
+    <ClCompile Include="servicemonitorconfigurationwidget.cpp">
+      <Filter>Source files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="MainWindow.ui">
@@ -54,6 +60,15 @@
       <Filter>Header files</Filter>
     </ClInclude>
     <ClInclude Include="servicemonitorconfiguration.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="configurationtabfactory.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="servicemonitorconfigurationwidget.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="iconfigurationwidget.h">
       <Filter>Header files</Filter>
     </ClInclude>
   </ItemGroup>

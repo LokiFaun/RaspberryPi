@@ -1,4 +1,8 @@
+#ifndef SERVICEMONITORCONFIGURATION_H_
+#define SERVICEMONITORCONFIGURATION_H_
+
 #pragma once
+
 #include "configuration.h"
 #include <QVector>
 
@@ -47,3 +51,4 @@ private:
     Services m_Services;
 };
 
+#endif // SERVICEMONITORCONFIGURATION_H_

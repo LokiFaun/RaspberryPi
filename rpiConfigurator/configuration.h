@@ -35,4 +35,4 @@ protected:
     QString m_ConfigurationFile;
 };
 
-#endif
+#endif // CONFIGURATION_H_

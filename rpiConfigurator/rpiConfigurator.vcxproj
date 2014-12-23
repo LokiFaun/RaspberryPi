@@ -62,6 +62,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="configuration.cpp" />
+    <ClCompile Include="configurationtabfactory.cpp" />
+    <ClCompile Include="servicemonitorconfigurationwidget.cpp" />
     <ClCompile Include="MainWindow.cpp" />
     <ClCompile Include="rpiConfigurator.cpp" />
     <ClCompile Include="servicemonitorconfiguration.cpp" />
@@ -74,6 +76,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="configuration.h" />
+    <ClInclude Include="configurationtabfactory.h" />
+    <ClInclude Include="iconfigurationwidget.h" />
+    <ClInclude Include="servicemonitorconfigurationwidget.h" />
     <ClInclude Include="MainWindow.h" />
     <ClInclude Include="servicemonitorconfiguration.h" />
   </ItemGroup>
