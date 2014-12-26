@@ -14,6 +14,8 @@ public:
     ServiceConfigurationWidget(int nr);
     virtual ~ServiceConfigurationWidget();
 
+    void setConfiguration(int id, QString const & name, unsigned int timeout);
+
 protected slots:
     void removeService();
     void onIdInputChanged(QString const & newValue);
@@ -21,12 +23,13 @@ protected slots:
     void onTimeoutInputChanged(QString const & newValue);
 
 signals:
-    void idChanged(QWidget * pSender, int id);
-    void nameChanged(QWidget * pSender, QString const & name);
-    void timeoutChanged(QWidget * pSender, unsigned int timeout);
-    void removed(QWidget * pSender);
+    void idChanged(int nr, int id);
+    void nameChanged(int nr, QString const & name);
+    void timeoutChanged(int nr, unsigned int timeout);
+    void removed(QWidget * pSender, int nr);
 
 private:
+    int m_Number;
     QLineEdit * m_pIdBlock;
     QLineEdit * m_pNameBlock;
     QLineEdit * m_pTimeoutBlock;

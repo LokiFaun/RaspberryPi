@@ -1,7 +1,7 @@
 #include "configuration.h"
 
 
-Configuration::Configuration(QString const & fileName) : m_ConfigurationFile(fileName) { }
+Configuration::Configuration(QString const & fileName, QObject * pParent /*= NULL*/) : QObject(pParent), m_ConfigurationFile(fileName) { }
 
 
 Configuration::~Configuration() { }

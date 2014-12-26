@@ -25,9 +25,12 @@ protected slots:
     void aboutQt();
     void newConfiguration();
     void saveConfiguration();
+    void saveAllConfigurations();
     void openConfiguration();
     void closeWindow();
     void closeTab(int id);
+    void handleConfigurationChanged();
+    void handleConfigurationSaved();
 
 private:
     void connectMenubarSlots();

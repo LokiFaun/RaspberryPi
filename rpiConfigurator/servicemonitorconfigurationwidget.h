@@ -18,14 +18,17 @@ public:
     virtual void loadConfiguration();
 
 public slots:
+    void saveServices();
     void addNewService();
-    void removeService(QWidget * pWidget);
+    void changeServiceId(int nr, int id);
+    void changeServiceName(int nr, QString const & name);
+    void changeServiceTimeout(int nr, unsigned int timeout);
+    void removeService(QWidget * pWidget, int nr);
 
 private:
     void clearConfigurations();
 
     ServiceMonitorConfiguration * m_pConfiguration;
-    QVector<ServiceConfigurationWidget *> m_ServiceConfigurations;
     QVBoxLayout * m_pLayout;
     
 };

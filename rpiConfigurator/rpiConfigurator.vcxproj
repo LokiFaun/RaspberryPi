@@ -42,7 +42,7 @@
     <NMakeCleanCommandLine>"$(VISUALGDB_DIR)\VisualGDB.exe" /clean "$(ProjectPath)" "/solution:$(SolutionPath)" "/config:$(Configuration)" "/platform:$(Platform)"</NMakeCleanCommandLine>
     <NMakeReBuildCommandLine>"$(VISUALGDB_DIR)\VisualGDB.exe" /rebuild "$(ProjectPath)" "/solution:$(SolutionPath)" "/config:$(Configuration)" "/platform:$(Platform)"</NMakeReBuildCommandLine>
     <NMakeOutput>$(ProjectDir)rpiConfigurator-Debug.vgdbsettings</NMakeOutput>
-    <IncludePath />
+    <IncludePath>..\rpiLogger;..\rpiBase;$(IncludePath)</IncludePath>
     <ReferencePath />
     <LibraryPath />
   </PropertyGroup>
@@ -66,7 +66,7 @@
     <ClCompile Include="serviceconfigurationwidget.cpp" />
     <ClCompile Include="servicemonitorconfigurationwidget.cpp" />
     <ClCompile Include="MainWindow.cpp" />
-    <ClCompile Include="rpiConfigurator.cpp" />
+    <ClCompile Include="main.cpp" />
     <ClCompile Include="servicemonitorconfiguration.cpp" />
   </ItemGroup>
   <ItemGroup>

@@ -7,7 +7,7 @@
 #include <QScrollArea>
 #include <QDockWidget>
 
-QWidget * ConfigurationTabFactory::createConfigurationTab(Configuration::ConfigurationType type, Configuration * pConfiguration)
+IConfigurationWidget * ConfigurationTabFactory::createConfigurationTab(Configuration::ConfigurationType type, Configuration * pConfiguration)
 {
     switch (type)
     {
@@ -22,7 +22,7 @@ QWidget * ConfigurationTabFactory::createConfigurationTab(Configuration::Configu
     }
 }
 
-QWidget * ConfigurationTabFactory::createServiceMonitorConfigurationTab(Configuration * pConfiguration)
+IConfigurationWidget * ConfigurationTabFactory::createServiceMonitorConfigurationTab(Configuration * pConfiguration)
 {
     ServiceMonitorConfiguration * pMonitorConfig = dynamic_cast<ServiceMonitorConfiguration *>(pConfiguration);
     if (pMonitorConfig == NULL)
@@ -35,31 +35,36 @@ QWidget * ConfigurationTabFactory::createServiceMonitorConfigurationTab(Configur
     QDockWidget * pDockWidget = new QDockWidget;
     pDockWidget->setAllowedAreas(Qt::BottomDockWidgetArea);
     pDockWidget->setFeatures(QDockWidget::NoDockWidgetFeatures);
-    pDockWidget->layout()->setMargin(5);
-    pDockWidget->layout()->setContentsMargins(5, 5, 5, 5);
 
     QPushButton * pAddButton = new QPushButton;
     pAddButton->setText("Add Service");
     QObject::connect(pAddButton, SIGNAL(clicked()), pWidget, SLOT(addNewService()));
 
+    QPushButton * pSaveButton = new QPushButton;
+    pSaveButton->setText("Save");
+    QObject::connect(pSaveButton, SIGNAL(clicked()), pWidget, SLOT(saveServices()));
+
     QWidget * pBottomWidget = new QWidget;
     QHBoxLayout * pLayout = new QHBoxLayout;
+    pLayout->setContentsMargins(5, 5, 5, 5);
     pLayout->addWidget(pAddButton);
+    pLayout->addWidget(pSaveButton);
     pBottomWidget->setLayout(pLayout);
 
     pDockWidget->setWidget(pBottomWidget);
 
     pWidget->addDockWidget(Qt::BottomDockWidgetArea, pDockWidget);
+    pWidget->loadConfiguration();
 
     return pWidget;
 }
 
-QWidget * ConfigurationTabFactory::createControllerConfiguration(Configuration * /*pConfiguration*/)
+IConfigurationWidget * ConfigurationTabFactory::createControllerConfiguration(Configuration * /*pConfiguration*/)
 {
     return NULL;
 }
 
-QWidget * ConfigurationTabFactory::createLoggerConfiguration(Configuration * /*pConfiguration*/)
+IConfigurationWidget * ConfigurationTabFactory::createLoggerConfiguration(Configuration * /*pConfiguration*/)
 {
     return NULL;
 }

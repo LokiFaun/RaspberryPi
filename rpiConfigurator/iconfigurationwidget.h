@@ -11,6 +11,10 @@ class IConfigurationWidget : public QMainWindow
 public:
     virtual void saveConfiguration() = 0;
     virtual void loadConfiguration() = 0;
+
+signals:
+    void configurationChanged();
+    void configurationSaved();
 };
 
 #endif // CONFIGURATIONWIDGET_H__

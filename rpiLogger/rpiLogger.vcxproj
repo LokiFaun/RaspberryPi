@@ -61,7 +61,7 @@
     <NMakeCleanCommandLine>"$(VISUALGDB_DIR)\VisualGDB.exe" /clean "$(ProjectPath)" "/solution:$(SolutionPath)" "/config:$(Configuration)" "/platform:$(Platform)"</NMakeCleanCommandLine>
     <NMakeReBuildCommandLine>"$(VISUALGDB_DIR)\VisualGDB.exe" /rebuild "$(ProjectPath)" "/solution:$(SolutionPath)" "/config:$(Configuration)" "/platform:$(Platform)"</NMakeReBuildCommandLine>
     <NMakeOutput>$(ProjectDir)rpiLogger-Debug.vgdbsettings</NMakeOutput>
-    <IncludePath />
+    <IncludePath>..\rpiBase;$(IncludePath)</IncludePath>
     <ReferencePath />
     <LibraryPath />
   </PropertyGroup>

@@ -19,7 +19,7 @@ ServiceMonitor::ServiceMonitor(int argc, char **argv) : QtService<QCoreApplicati
 
 void ServiceMonitor::start()
 {
-    RPI_ERROR("org.rpi.servicemonitor", "starting service rpiServiceMonitor");
+    RPI_ERROR("rpiServiceMonitor", "starting service rpiServiceMonitor");
     startServices();
 }
 
@@ -58,7 +58,7 @@ void ServiceMonitor::load(int argc, char **argv)
         args.push_back(argv[i]);
     }
 
-    RPI_DEBUG("org.rpi.servicemonitor", QString("loading service with arguments: ") + args.join(" "));
+    RPI_DEBUG("rpiServiceMonitor", QString("loading service with arguments: ") + args.join(" "));
     QString fileName = DefaultMonitorConfigFile;
 
     for (int i = 0; i < argc - 1; ++i)
@@ -87,7 +87,7 @@ void ServiceMonitor::load(int argc, char **argv)
         }
         catch (Exception const & ex)
         {
-            RPI_ERROR("org.rpi.servicemonitor", ex.details());
+            RPI_ERROR("rpiServiceMonitor", ex.details());
         }
     }
 }
@@ -95,12 +95,12 @@ void ServiceMonitor::load(int argc, char **argv)
 void ServiceMonitor::reboot()
 {
     int result = system("shutdown now -r");
-    RPI_INFO("org.rpi.servicemonitor", QString("system shutdown exited with code: %1").arg(result));
+    RPI_INFO("rpiServiceMonitor", QString("system shutdown exited with code: %1").arg(result));
 }
 
 void ServiceMonitor::restart()
 {
-    RPI_INFO("org.rpi.servicemonitor", "restarting all services");
+    RPI_INFO("rpiServiceMonitor", "restarting all services");
     stopServices();
     startServices();
 }
@@ -109,7 +109,7 @@ void ServiceMonitor::keepAlive(int id)
 {
     if (m_ServiceMap.contains(id))
     {
-        RPI_INFO("org.rpi.servicemonitor", QString("keeping service #%1 alive").arg(QString::number(id)));
+        RPI_INFO("rpiServiceMonitor", QString("keeping service #%1 alive").arg(QString::number(id)));
         m_ServiceMap[id]->keepAlive();
     }
 }
@@ -126,7 +126,7 @@ void ServiceMonitor::startServices()
 {
     for (ServiceMap::iterator iter = m_ServiceMap.begin(); iter != m_ServiceMap.end(); ++iter)
     {
-        RPI_INFO("org.rpi.servicemonitor", QString("starting service: %1").arg((*iter)->name()));
+        RPI_INFO("rpiServiceMonitor", QString("starting service: %1").arg((*iter)->name()));
         (*iter)->start();
     }
 }

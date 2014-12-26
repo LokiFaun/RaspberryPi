@@ -9,6 +9,7 @@
 
 class Configuration : public QObject
 {
+    Q_OBJECT
     Q_ENUMS(ConfigurationType);
 
 public:
@@ -22,7 +23,7 @@ public:
         Logger
     };
 
-    Configuration(QString const & fileName);
+    Configuration(QString const & fileName, QObject * pParent = NULL);
     virtual ~Configuration();
 
     virtual void save() = 0;

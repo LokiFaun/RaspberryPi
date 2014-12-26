@@ -60,14 +60,14 @@ void Service::run()
     QtServiceController controller(m_Name);
     if (!controller.isInstalled())
     {
-        RPI_ERROR("org.rpi.service", QString("service %1 not installed").arg(m_Name));
+        RPI_ERROR("rpiServiceMonitor", QString("service %1 not installed").arg(m_Name));
         return;
     }
     controller.start(m_Arguments);
 
     if (!controller.isRunning())
     {
-        RPI_ERROR("org.rpi.service", QString("service %1 could not be started").arg(m_Name));
+        RPI_ERROR("rpiServiceMonitor", QString("service %1 could not be started").arg(m_Name));
         return;
     }
 

@@ -18,7 +18,7 @@ rpi::MonitorConfig &rpi::MonitorConfig::instance()
 bool rpi::MonitorConfig::load(const QString &fileName)
 {
     m_pSettings = QSharedPointer<QtJsonSettings>(new QtJsonSettings(fileName));
-    RPI_INFO("org.rpi.monitorconfig", "opening configuration from: " + fileName);
+    RPI_INFO("rpiServiceMonitor", "opening configuration from: " + fileName);
     return m_pSettings->beginReadArray(ServiceConfigurationPath) > 0;
 }
 

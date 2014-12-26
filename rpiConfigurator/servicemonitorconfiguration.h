@@ -22,7 +22,7 @@ public:
 
     typedef QVector<ServiceConfiguration> Services;
 
-    ServiceMonitorConfiguration(QString const & fileName);
+    ServiceMonitorConfiguration(QString const & fileName, QObject * pParent = NULL);
     virtual ~ServiceMonitorConfiguration();
 
     void addService(int id, QString const & name, unsigned int timeout);

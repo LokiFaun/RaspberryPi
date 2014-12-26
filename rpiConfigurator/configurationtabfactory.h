@@ -3,19 +3,19 @@
 
 #pragma once
 
-#include <QWidget>
+#include "iconfigurationwidget.h"
 #include "configuration.h"
 
 class ConfigurationTabFactory
 {
 public:
 
-    QWidget * createConfigurationTab(Configuration::ConfigurationType type, Configuration * pConfiguration);
+    IConfigurationWidget * createConfigurationTab(Configuration::ConfigurationType type, Configuration * pConfiguration);
 
 private:
-    QWidget * createServiceMonitorConfigurationTab(Configuration * pConfiguration);
-    QWidget * createControllerConfiguration(Configuration * pConfiguration);
-    QWidget * createLoggerConfiguration(Configuration * pConfiguration);
+    IConfigurationWidget * createServiceMonitorConfigurationTab(Configuration * pConfiguration);
+    IConfigurationWidget * createControllerConfiguration(Configuration * pConfiguration);
+    IConfigurationWidget * createLoggerConfiguration(Configuration * pConfiguration);
 };
 
 #endif // CONFIGURATIONTABFACTORY_H__

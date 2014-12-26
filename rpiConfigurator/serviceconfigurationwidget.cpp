@@ -1,11 +1,15 @@
 #include "serviceconfigurationwidget.h"
+#include "logmanager.h"
 
 #include <QGroupBox>
 #include <QGridLayout>
 #include <QLabel>
 
+using namespace rpi;
+
 ServiceConfigurationWidget::ServiceConfigurationWidget(int nr)
 {
+    m_Number = nr;
     m_pIdBlock = new QLineEdit;
     m_pNameBlock = new QLineEdit;
     m_pTimeoutBlock = new QLineEdit;
@@ -40,7 +44,8 @@ ServiceConfigurationWidget::~ServiceConfigurationWidget() { }
 
 void ServiceConfigurationWidget::removeService()
 {
-    emit removed(this);
+    RPI_DEBUG("rpiConfigurator", "emit removed");
+    emit removed(this, m_Number);
 }
 
 void ServiceConfigurationWidget::onIdInputChanged(QString const & newValue)
@@ -49,13 +54,15 @@ void ServiceConfigurationWidget::onIdInputChanged(QString const & newValue)
     const int id = newValue.toInt(&inputOk);
     if (inputOk)
     {
-        emit idChanged(this, id);
+        RPI_DEBUG("rpiConfigurator", "emit idChanged");
+        emit idChanged(m_Number, id);
     }
 }
 
 void ServiceConfigurationWidget::onNameInputChanged(QString const & newValue)
 {
-    emit nameChanged(this, newValue);
+    RPI_DEBUG("rpiConfigurator", "emit nameChanged");
+    emit nameChanged(m_Number, newValue);
 }
 
 void ServiceConfigurationWidget::onTimeoutInputChanged(QString const & newValue)
@@ -64,6 +71,14 @@ void ServiceConfigurationWidget::onTimeoutInputChanged(QString const & newValue)
     const unsigned int timeout = newValue.toUInt(&inputOk);
     if (inputOk)
     {
-        emit timeoutChanged(this, timeout);
+        RPI_DEBUG("rpiConfigurator", "emit timeoutChanged");
+        emit timeoutChanged(m_Number, timeout);
     }
+}
+
+void ServiceConfigurationWidget::setConfiguration(int id, QString const & name, unsigned int timeout)
+{
+    m_pIdBlock->setText(QString::number(id));
+    m_pNameBlock->setText(name);
+    m_pTimeoutBlock->setText(QString::number(timeout));
 }

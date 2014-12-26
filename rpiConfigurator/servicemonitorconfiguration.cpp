@@ -1,6 +1,9 @@
 #include "servicemonitorconfiguration.h"
-#include "..\rpiBase\exception.h"
 #include "../../qtjsonsettings/qtjsonsettings.h"
+#include "exception.h"
+#include "logmanager.h"
+
+#include <QFile>
 
 using namespace rpi;
 
@@ -11,8 +14,27 @@ const QString ServiceMonitorConfiguration::ServiceNameConfigurationPath = "Name"
 const QString ServiceMonitorConfiguration::ServiceTimeoutConfigurationPath = "Timeout";
 
 
-ServiceMonitorConfiguration::ServiceMonitorConfiguration(QString const & fileName) : Configuration(fileName) { }
+ServiceMonitorConfiguration::ServiceMonitorConfiguration(QString const & fileName, QObject * pParent /*= NULL*/) : Configuration(fileName, pParent)
+{
+    if (QFile::exists(fileName))
+    {
+        RPI_DEBUG("rpiConfigurator", "loading file: " + fileName);
+        QSharedPointer<QtJsonSettings> settings(new QtJsonSettings(m_ConfigurationFile));
+        const int count = settings->beginReadArray(ServiceConfigurationPath);
+        RPI_DEBUG("rpiConfigurator", "number of services: " + QString::number(count));
+        for (int i = 0; i < count; ++i)
+        {
+            settings->setArrayIndex(i);
+            const int id = settings->value(ServiceIdConfigurationPath).toInt();
+            const QString name = settings->value(ServiceNameConfigurationPath).toString();
+            const unsigned int timeout = settings->value(ServiceTimeoutConfigurationPath).toUInt();
+            RPI_DEBUG("rpiConfigurator", QString("loading service (%1, %2, %3)").arg(QString::number(id), name, QString::number(timeout)));
+            m_Services.push_back(ServiceConfiguration(id, name, timeout));
+        }
+    }
+}
 
+ServiceMonitorConfiguration::ServiceConfiguration::ServiceConfiguration(int id, QString const & name, unsigned int timeout) : Id(id), Name(name), Timeout(timeout) { }
 
 ServiceMonitorConfiguration::~ServiceMonitorConfiguration() { }
 
@@ -33,6 +55,7 @@ void ServiceMonitorConfiguration::setId(int index, int value)
     if (index >= 0 && index < size)
     {
         m_Services[index].Id = value;
+        return;
     }
     THROW_EXCEPTION_DETAILED("Index out of range");
 }
@@ -44,6 +67,7 @@ void ServiceMonitorConfiguration::setName(int index, QString const & value)
     if (index >= 0 && index < size)
     {
         m_Services[index].Name = value;
+        return;
     }
     THROW_EXCEPTION_DETAILED("Index out of range");
 }
@@ -55,6 +79,7 @@ void ServiceMonitorConfiguration::setTimeout(int index, unsigned int value)
     if (index >= 0 && index < size)
     {
         m_Services[index].Timeout = value;
+        return;
     }
     THROW_EXCEPTION_DETAILED("Index out of range");
 }
@@ -122,4 +147,3 @@ ServiceMonitorConfiguration::ConfigurationType ServiceMonitorConfiguration::conf
     return Configuration::ServiceMonitor;
 }
 
-ServiceMonitorConfiguration::ServiceConfiguration::ServiceConfiguration(int id, QString const & name, unsigned int timeout) :Id(id), Name(name), Timeout(timeout) { }
