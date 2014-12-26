@@ -6,8 +6,15 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "rpiBase", "rpiBase\rpiBase.vcxproj", "{2F93670A-9E76-4B47-A32E-3EA7BD7FDAC5}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "rpiLogger", "rpiLogger\rpiLogger.vcxproj", "{79156C4B-3F4C-4640-909C-9F063F33352B}"
+	ProjectSection(ProjectDependencies) = postProject
+		{2F93670A-9E76-4B47-A32E-3EA7BD7FDAC5} = {2F93670A-9E76-4B47-A32E-3EA7BD7FDAC5}
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "rpiServiceMonitor", "rpiServiceMonitor\rpiServiceMonitor.vcxproj", "{D77169EB-2400-41C3-AC84-D9C7C47DDD1A}"
+	ProjectSection(ProjectDependencies) = postProject
+		{2F93670A-9E76-4B47-A32E-3EA7BD7FDAC5} = {2F93670A-9E76-4B47-A32E-3EA7BD7FDAC5}
+		{79156C4B-3F4C-4640-909C-9F063F33352B} = {79156C4B-3F4C-4640-909C-9F063F33352B}
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Project Files", "Project Files", "{3DB57A2C-AFB0-4C73-AB26-2DB8C35AD0CC}"
 	ProjectSection(SolutionItems) = preProject
@@ -22,6 +29,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Resource Files", "Resource 
 	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "rpiConfigurator", "rpiConfigurator\rpiConfigurator.vcxproj", "{B3ED7DFA-CBF5-461A-961D-ACBCD7DA20D3}"
+	ProjectSection(ProjectDependencies) = postProject
+		{2F93670A-9E76-4B47-A32E-3EA7BD7FDAC5} = {2F93670A-9E76-4B47-A32E-3EA7BD7FDAC5}
+		{79156C4B-3F4C-4640-909C-9F063F33352B} = {79156C4B-3F4C-4640-909C-9F063F33352B}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

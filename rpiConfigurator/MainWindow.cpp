@@ -4,6 +4,7 @@
 #include <QLayout>
 
 #include "servicemonitorconfiguration.h"
+#include "configurationtabfactory.h"
 #include "logmanager.h"
 
 using namespace rpi;
@@ -13,7 +14,6 @@ MainWindow::MainWindow(QWidget *parent) :
     m_Ui(new Ui::MainWindow)
 {
     m_Ui->setupUi(this);
-    m_TabFactory.create();
 
     connectMenubarSlots();
     createTabWidget();
@@ -28,6 +28,8 @@ void MainWindow::aboutQt()
 
 void MainWindow::connectMenubarSlots()
 {
+    connect(m_Ui->actionNew, SIGNAL(triggered()), this, SLOT(newConfiguration()));
+    connect(m_Ui->actionLoad, SIGNAL(triggered()), this, SLOT(openConfiguration()));
     connect(m_Ui->actionSave, SIGNAL(triggered()), this, SLOT(saveConfiguration()));
     connect(m_Ui->actionSaveAll, SIGNAL(triggered()), this, SLOT(saveAllConfigurations()));
     connect(m_Ui->actionAboutQt, SIGNAL(triggered()), this, SLOT(aboutQt()));
@@ -36,7 +38,7 @@ void MainWindow::connectMenubarSlots()
 
 void MainWindow::newConfiguration()
 {
-
+    RPI_DEBUG("rpiConfigurator", "new configuration");
 }
 
 void MainWindow::saveConfiguration()
@@ -84,7 +86,7 @@ void MainWindow::saveAllConfigurations()
 
 void MainWindow::openConfiguration()
 {
-
+    RPI_DEBUG("rpiConfigurator", "open configuration");
 }
 
 void MainWindow::closeWindow()
@@ -100,7 +102,7 @@ void MainWindow::createTabWidget()
 
     // TODO: remove
     const QString fileName = "/tmp/test.json";
-    IConfigurationWidget * pWidget = m_TabFactory->createConfigurationTab(Configuration::ServiceMonitor, new ServiceMonitorConfiguration(fileName));
+    IConfigurationWidget * pWidget = ConfigurationTabFactory::createConfigurationTab(Configuration::ServiceMonitor, new ServiceMonitorConfiguration(fileName));
     connect(pWidget, SIGNAL(configurationChanged()), this, SLOT(handleConfigurationChanged()));
     connect(pWidget, SIGNAL(configurationSaved()), this, SLOT(handleConfigurationSaved()));
 

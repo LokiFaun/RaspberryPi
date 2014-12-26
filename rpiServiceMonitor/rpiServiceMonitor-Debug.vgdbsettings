@@ -98,7 +98,7 @@
         <SupportTargetCommand>false</SupportTargetCommand>
       </Features>
       <DisableDisassembly>false</DisableDisassembly>
-      <ExamineMemoryWithXCommand>false</ExamineMemoryWithXCommand>
+      <ExamineMemoryWithXCommand>true</ExamineMemoryWithXCommand>
       <StepIntoNewInstanceEntry>main</StepIntoNewInstanceEntry>
       <ExamineRegistersInRawFormat>true</ExamineRegistersInRawFormat>
       <EnableSmartStepping>false</EnableSmartStepping>

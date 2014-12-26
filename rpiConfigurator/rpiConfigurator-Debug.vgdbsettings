@@ -101,7 +101,7 @@
       <ExamineMemoryWithXCommand>true</ExamineMemoryWithXCommand>
       <StepIntoNewInstanceEntry>main</StepIntoNewInstanceEntry>
       <ExamineRegistersInRawFormat>true</ExamineRegistersInRawFormat>
-      <EnableSmartStepping>true</EnableSmartStepping>
+      <EnableSmartStepping>false</EnableSmartStepping>
       <DisableSignals>false</DisableSignals>
     </AdditionalGDBSettings>
     <LaunchGDBSettings xsi:type="GDBLaunchParametersNewInstance">

@@ -128,7 +128,7 @@
         <SupportTargetCommand>false</SupportTargetCommand>
       </Features>
       <DisableDisassembly>false</DisableDisassembly>
-      <ExamineMemoryWithXCommand>false</ExamineMemoryWithXCommand>
+      <ExamineMemoryWithXCommand>true</ExamineMemoryWithXCommand>
       <StepIntoNewInstanceEntry>main</StepIntoNewInstanceEntry>
       <ExamineRegistersInRawFormat>true</ExamineRegistersInRawFormat>
       <EnableSmartStepping>false</EnableSmartStepping>
@@ -144,30 +144,13 @@
     <X11WindowMode>Local</X11WindowMode>
     <KeepConsoleAfterExit>false</KeepConsoleAfterExit>
     <RunGDBUnderSudo>false</RunGDBUnderSudo>
-    <DeploymentMode>Always</DeploymentMode>
-    <LdLibraryPath />
+    <DeploymentMode>Never</DeploymentMode>
+    <LdLibraryPath>/tmp</LdLibraryPath>
     <DeployWhenLaunchedWithoutDebugging>true</DeployWhenLaunchedWithoutDebugging>
   </Debug>
   <CustomBuild>
     <PreBuildActions />
-    <PostBuildActions>
-      <CustomActionBase xsi:type="SourceTransferAction">
-        <SkipWhenRunningCommandList>false</SkipWhenRunningCommandList>
-        <RemoteHost>
-          <HostName>192.168.1.7</HostName>
-          <Transport>SSH</Transport>
-          <UserName>pi</UserName>
-        </RemoteHost>
-        <LocalDirectory>$(ProjectDir)\Debug</LocalDirectory>
-        <RemoteDirectory>/tmp</RemoteDirectory>
-        <FileMasks>
-          <string>*.so*</string>
-        </FileMasks>
-        <TransferNewFilesOnly>true</TransferNewFilesOnly>
-        <IncludeSubdirectories>true</IncludeSubdirectories>
-        <SelectedDirectories />
-      </CustomActionBase>
-    </PostBuildActions>
+    <PostBuildActions />
     <PreCleanActions />
     <PostCleanActions />
   </CustomBuild>

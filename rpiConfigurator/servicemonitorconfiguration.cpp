@@ -19,7 +19,7 @@ ServiceMonitorConfiguration::ServiceMonitorConfiguration(QString const & fileNam
     if (QFile::exists(fileName))
     {
         RPI_DEBUG("rpiConfigurator", "loading file: " + fileName);
-        QSharedPointer<QtJsonSettings> settings(new QtJsonSettings(m_ConfigurationFile));
+        QSharedPointer<QtJsonSettings> settings(new QtJsonSettings(fileName));
         const int count = settings->beginReadArray(ServiceConfigurationPath);
         RPI_DEBUG("rpiConfigurator", "number of services: " + QString::number(count));
         for (int i = 0; i < count; ++i)
