@@ -6,6 +6,8 @@
 #include <QLayout>
 #include <QScrollArea>
 #include <QDockWidget>
+#include <QLabel>
+#include <QLineEdit>
 
 IConfigurationWidget * ConfigurationTabFactory::createConfigurationTab(Configuration::ConfigurationType type, Configuration * pConfiguration)
 {
@@ -36,19 +38,30 @@ IConfigurationWidget * ConfigurationTabFactory::createServiceMonitorConfiguratio
     pDockWidget->setAllowedAreas(Qt::BottomDockWidgetArea);
     pDockWidget->setFeatures(QDockWidget::NoDockWidgetFeatures);
 
-    QPushButton * pAddButton = new QPushButton;
-    pAddButton->setText("Add Service");
+    QPushButton * pAddButton = new QPushButton("Add Service");
     QObject::connect(pAddButton, SIGNAL(clicked()), pWidget, SLOT(addNewService()));
 
-    QPushButton * pSaveButton = new QPushButton;
-    pSaveButton->setText("Save");
+    QPushButton * pSaveButton = new QPushButton("Save");
     QObject::connect(pSaveButton, SIGNAL(clicked()), pWidget, SLOT(saveServices()));
 
+    QPushButton * pInstallButton = new QPushButton("Install");
+    QObject::connect(pInstallButton, SIGNAL(clicked()), pWidget, SLOT(install()));
+
+    QPushButton * pStartButton = new QPushButton("Start");
+    QObject::connect(pStartButton, SIGNAL(clicked()), pWidget, SLOT(start()));
+
+    QLineEdit * pServicePathBlock = new QLineEdit;
+    QObject::connect(pServicePathBlock, SIGNAL(textEdited()), pWidget, SLOT(setServicePath()));
+
     QWidget * pBottomWidget = new QWidget;
-    QHBoxLayout * pLayout = new QHBoxLayout;
+    QGridLayout * pLayout = new QGridLayout;
     pLayout->setContentsMargins(5, 5, 5, 5);
-    pLayout->addWidget(pAddButton);
-    pLayout->addWidget(pSaveButton);
+    pLayout->addWidget(pAddButton, 0, 0);
+    pLayout->addWidget(pSaveButton, 0, 1);
+    pLayout->addWidget(new QLabel("Service:"), 2, 0);
+    pLayout->addWidget(pServicePathBlock, 2, 1);
+    pLayout->addWidget(pInstallButton, 3, 0);
+    pLayout->addWidget(pStartButton, 3, 1);
     pBottomWidget->setLayout(pLayout);
 
     pDockWidget->setWidget(pBottomWidget);

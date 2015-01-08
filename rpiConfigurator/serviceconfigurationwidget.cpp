@@ -13,10 +13,11 @@ ServiceConfigurationWidget::ServiceConfigurationWidget(int nr)
     m_pIdBlock = new QLineEdit;
     m_pNameBlock = new QLineEdit;
     m_pTimeoutBlock = new QLineEdit;
+    m_pConfigBlock = new QLineEdit;
     m_pRemoveButton = new QPushButton("Remove");
 
     QGroupBox *groupBox = new QGroupBox(QString("Service: %1").arg(nr));
-    groupBox->setMinimumHeight(125);
+    groupBox->setMinimumHeight(150);
     groupBox->setMinimumWidth(200);
 
     QGridLayout * pLayout = new QGridLayout;
@@ -26,7 +27,9 @@ ServiceConfigurationWidget::ServiceConfigurationWidget(int nr)
     pLayout->addWidget(m_pNameBlock, 1, 1);
     pLayout->addWidget(new QLabel("Timeout:"), 2, 0);
     pLayout->addWidget(m_pTimeoutBlock, 2, 1);
-    pLayout->addWidget(m_pRemoveButton, 3, 1);
+    pLayout->addWidget(new QLabel("Config"), 3, 0);
+    pLayout->addWidget(m_pConfigBlock, 3, 1);
+    pLayout->addWidget(m_pRemoveButton, 4, 1);
     groupBox->setLayout(pLayout);
 
     QVBoxLayout * pGroupLayout = new QVBoxLayout;
@@ -37,6 +40,7 @@ ServiceConfigurationWidget::ServiceConfigurationWidget(int nr)
     connect(m_pIdBlock, SIGNAL(textEdited(QString const &)), this, SLOT(onIdInputChanged(QString const &)));
     connect(m_pNameBlock, SIGNAL(textEdited(QString const &)), this, SLOT(onNameInputChanged(QString const &)));
     connect(m_pTimeoutBlock, SIGNAL(textEdited(QString const &)), this, SLOT(onTimeoutInputChanged(QString const &)));
+    connect(m_pConfigBlock, SIGNAL(textEdited(QString const &)), this, SLOT(onConfigInputChanged(QString const &)));
 }
 
 
@@ -65,6 +69,12 @@ void ServiceConfigurationWidget::onNameInputChanged(QString const & newValue)
     emit nameChanged(m_Number, newValue);
 }
 
+void ServiceConfigurationWidget::onConfigInputChanged(QString const & newValue)
+{
+    RPI_DEBUG("rpiConfigurator", "emit configChanged");
+    emit configChanged(m_Number, newValue);
+}
+
 void ServiceConfigurationWidget::onTimeoutInputChanged(QString const & newValue)
 {
     bool inputOk = false;
@@ -76,9 +86,10 @@ void ServiceConfigurationWidget::onTimeoutInputChanged(QString const & newValue)
     }
 }
 
-void ServiceConfigurationWidget::setConfiguration(int id, QString const & name, unsigned int timeout)
+void ServiceConfigurationWidget::setConfiguration(int id, QString const & name, unsigned int timeout, QString const & config)
 {
     m_pIdBlock->setText(QString::number(id));
     m_pNameBlock->setText(name);
     m_pTimeoutBlock->setText(QString::number(timeout));
+    m_pConfigBlock->setText(config);
 }

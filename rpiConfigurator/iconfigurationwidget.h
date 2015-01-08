@@ -11,6 +11,12 @@ class IConfigurationWidget : public QMainWindow
 public:
     virtual void saveConfiguration() = 0;
     virtual void loadConfiguration() = 0;
+    void setServiceConfigPath(QString const &) { /* TODO */ }
+
+public slots:
+    void install() { /* TODO */ }
+    void start() { /* TODO */ }
+    void setServicePath(QString const &) { /* TODO */ }
 
 signals:
     void configurationChanged();

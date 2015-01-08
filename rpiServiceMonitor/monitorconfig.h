@@ -24,11 +24,13 @@ public:
     int id(int index) const;
     QString name(int index) const;
     unsigned int timeout(int index) const;
+    QString config(int index) const;
 
     static const QString ServiceConfigurationPath;
     static const QString ServiceIdConfigurationPath;
     static const QString ServiceNameConfigurationPath;
     static const QString ServiceTimeoutConfigurationPath;
+    static const QString ServiceConfigConfigurationPath;
 
 private:
     MonitorConfig() { }

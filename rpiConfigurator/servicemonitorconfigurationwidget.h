@@ -23,6 +23,7 @@ public slots:
     void changeServiceId(int nr, int id);
     void changeServiceName(int nr, QString const & name);
     void changeServiceTimeout(int nr, unsigned int timeout);
+    void changeServiceConfig(int nr, QString const & config);
     void removeService(QWidget * pWidget, int nr);
 
 private:

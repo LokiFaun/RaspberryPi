@@ -12,6 +12,7 @@ const QString ServiceMonitorConfiguration::ServiceConfigurationPath = "ServiceMo
 const QString ServiceMonitorConfiguration::ServiceIdConfigurationPath = "Id";
 const QString ServiceMonitorConfiguration::ServiceNameConfigurationPath = "Name";
 const QString ServiceMonitorConfiguration::ServiceTimeoutConfigurationPath = "Timeout";
+const QString ServiceMonitorConfiguration::ServiceConfigConfigurationPath = "Config";
 
 
 ServiceMonitorConfiguration::ServiceMonitorConfiguration(QString const & fileName, QObject * pParent /*= NULL*/) : Configuration(fileName, pParent)
@@ -28,19 +29,20 @@ ServiceMonitorConfiguration::ServiceMonitorConfiguration(QString const & fileNam
             const int id = settings->value(ServiceIdConfigurationPath).toInt();
             const QString name = settings->value(ServiceNameConfigurationPath).toString();
             const unsigned int timeout = settings->value(ServiceTimeoutConfigurationPath).toUInt();
-            RPI_DEBUG("rpiConfigurator", QString("loading service (%1, %2, %3)").arg(QString::number(id), name, QString::number(timeout)));
-            m_Services.push_back(ServiceConfiguration(id, name, timeout));
+            const QString config = settings->value(ServiceConfigConfigurationPath).toString();
+            RPI_DEBUG("rpiConfigurator", QString("loading service (%1, %2, %3, %4)").arg(QString::number(id), name, QString::number(timeout), config));
+            m_Services.push_back(ServiceConfiguration(id, name, timeout, config));
         }
     }
 }
 
-ServiceMonitorConfiguration::ServiceConfiguration::ServiceConfiguration(int id, QString const & name, unsigned int timeout) : Id(id), Name(name), Timeout(timeout) { }
+ServiceMonitorConfiguration::ServiceConfiguration::ServiceConfiguration(int id, QString const & name, unsigned int timeout, QString const & config) : Id(id), Name(name), Timeout(timeout), Config(config) { }
 
 ServiceMonitorConfiguration::~ServiceMonitorConfiguration() { }
 
-void ServiceMonitorConfiguration::addService(int id, QString const & name, unsigned int timeout)
+void ServiceMonitorConfiguration::addService(int id, QString const & name, unsigned int timeout, QString const & config)
 {
-    m_Services.push_back(ServiceConfiguration(id, name, timeout));
+    m_Services.push_back(ServiceConfiguration(id, name, timeout, config));
 }
 
 void ServiceMonitorConfiguration::removeService(int index)
@@ -84,6 +86,18 @@ void ServiceMonitorConfiguration::setTimeout(int index, unsigned int value)
     THROW_EXCEPTION_DETAILED("Index out of range");
 }
 
+void ServiceMonitorConfiguration::setConfig(int index, QString const & value)
+{
+    const int size = m_Services.size();
+    Q_ASSERT_X(index >= 0 && index < size, Q_FUNC_INFO, "index out of range");
+    if (index >= 0 && index < size)
+    {
+        m_Services[index].Config = value;
+        return;
+    }
+    THROW_EXCEPTION_DETAILED("Index out of range");
+}
+
 int ServiceMonitorConfiguration::id(int index) const
 {
     const int size = m_Services.size();
@@ -117,6 +131,17 @@ unsigned int ServiceMonitorConfiguration::timeout(int index) const
     THROW_EXCEPTION_DETAILED("Index out of range");
 }
 
+const QString & ServiceMonitorConfiguration::config(int index) const
+{
+    const int size = m_Services.size();
+    Q_ASSERT_X(index >= 0 && index < size, Q_FUNC_INFO, "index out of range");
+    if (index >= 0 && index < size)
+    {
+        return m_Services[index].Config;
+    }
+    THROW_EXCEPTION_DETAILED("Index out of range");
+}
+
 int ServiceMonitorConfiguration::count() const
 {
     return m_Services.size();
@@ -146,4 +171,3 @@ ServiceMonitorConfiguration::ConfigurationType ServiceMonitorConfiguration::conf
 {
     return Configuration::ServiceMonitor;
 }
-

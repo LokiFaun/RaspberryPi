@@ -47,10 +47,11 @@ void ServiceMonitorConfigurationWidget::addNewService()
     connect(pConfigWidget, SIGNAL(idChanged(int, int)), this, SLOT(changeServiceId(int, int)));
     connect(pConfigWidget, SIGNAL(nameChanged(int, QString const &)), this, SLOT(changeServiceName(int, QString const &)));
     connect(pConfigWidget, SIGNAL(timeoutChanged(int, unsigned int)), this, SLOT(changeServiceTimeout(int, unsigned int)));
+    connect(pConfigWidget, SIGNAL(configChanged(int, unsigned int)), this, SLOT(changeServiceConfig(int, QString const &)));
 
-    m_pConfiguration->addService(INT_MAX, "newService", UINT_MAX);
+    m_pConfiguration->addService(INT_MAX, "newService", UINT_MAX, "config.json");
     RPI_DEBUG("rpiConfigurator", QString("new number of services: %1").arg(m_pConfiguration->count()));
-    pConfigWidget->setConfiguration(INT_MAX, "newService", UINT_MAX);
+    pConfigWidget->setConfiguration(INT_MAX, "newService", UINT_MAX, "config.json");
     m_pLayout->addWidget(pConfigWidget);
 
     emit configurationChanged();
@@ -81,7 +82,7 @@ void ServiceMonitorConfigurationWidget::loadConfiguration()
         RPI_DEBUG("rpiConfigurator", QString("loading service id: %1").arg(m_pConfiguration->id(i)));
         RPI_DEBUG("rpiConfigurator", QString("loading service name: %1").arg(m_pConfiguration->name(i)));
         RPI_DEBUG("rpiConfigurator", QString("loading service timeout: %1").arg(m_pConfiguration->timeout(i)));
-        pConfigWidget->setConfiguration(m_pConfiguration->id(i), m_pConfiguration->name(i), m_pConfiguration->timeout(i));
+        pConfigWidget->setConfiguration(m_pConfiguration->id(i), m_pConfiguration->name(i), m_pConfiguration->timeout(i), m_pConfiguration->config(i));
         m_pLayout->addWidget(pConfigWidget);
     }
 }
@@ -142,6 +143,18 @@ void ServiceMonitorConfigurationWidget::changeServiceTimeout(int nr, unsigned in
     if (m_pConfiguration != NULL)
     {
         m_pConfiguration->setTimeout(nr, timeout);
+
+        emit configurationChanged();
+    }
+}
+
+void ServiceMonitorConfigurationWidget::changeServiceConfig(int nr, QString const & config)
+{
+    Q_ASSERT_X(m_pConfiguration != NULL, Q_FUNC_INFO, "invalid configuration");
+    RPI_DEBUG("rpiConfigurator", QString("changing service#%1 config").arg(nr));
+    if (m_pConfiguration != NULL)
+    {
+        m_pConfiguration->setConfig(nr, config);
 
         emit configurationChanged();
     }
