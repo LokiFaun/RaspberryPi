@@ -33,6 +33,7 @@ IConfigurationWidget * ConfigurationTabFactory::createServiceMonitorConfiguratio
     }
     
     ServiceMonitorConfigurationWidget * pWidget = new ServiceMonitorConfigurationWidget(pMonitorConfig);
+    pWidget->setServiceConfigPath(pMonitorConfig->configurationFile());
 
     QDockWidget * pDockWidget = new QDockWidget;
     pDockWidget->setAllowedAreas(Qt::BottomDockWidgetArea);
@@ -50,18 +51,22 @@ IConfigurationWidget * ConfigurationTabFactory::createServiceMonitorConfiguratio
     QPushButton * pStartButton = new QPushButton("Start");
     QObject::connect(pStartButton, SIGNAL(clicked()), pWidget, SLOT(start()));
 
+    QPushButton * pStopButton = new QPushButton("Stop");
+    QObject::connect(pStopButton, SIGNAL(clicked()), pWidget, SLOT(stop()));
+
     QLineEdit * pServicePathBlock = new QLineEdit;
-    QObject::connect(pServicePathBlock, SIGNAL(textEdited()), pWidget, SLOT(setServicePath()));
+    QObject::connect(pServicePathBlock, SIGNAL(textEdited(QString const &)), pWidget, SLOT(setServicePath(QString const &)));
 
     QWidget * pBottomWidget = new QWidget;
     QGridLayout * pLayout = new QGridLayout;
     pLayout->setContentsMargins(5, 5, 5, 5);
     pLayout->addWidget(pAddButton, 0, 0);
     pLayout->addWidget(pSaveButton, 0, 1);
-    pLayout->addWidget(new QLabel("Service:"), 2, 0);
-    pLayout->addWidget(pServicePathBlock, 2, 1);
+    pLayout->addWidget(new QLabel("Executable:"), 2, 0);
+    pLayout->addWidget(pServicePathBlock, 2, 1, 1, 2);
     pLayout->addWidget(pInstallButton, 3, 0);
     pLayout->addWidget(pStartButton, 3, 1);
+    pLayout->addWidget(pStopButton, 3, 2);
     pBottomWidget->setLayout(pLayout);
 
     pDockWidget->setWidget(pBottomWidget);

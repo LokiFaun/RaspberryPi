@@ -15,7 +15,7 @@ class Service : public QThread
 {
     Q_OBJECT
 public:
-    Service(QString const & name, unsigned int id, unsigned int timeout, QObject * pParent = NULL);
+    Service(QString const & name, unsigned int id, unsigned int timeout, QString const & config, QObject * pParent = NULL);
 
     QString name() const;
     QString getArguments() const;
@@ -39,6 +39,7 @@ private:
     QStringList m_Arguments;
     unsigned int m_Id;
     unsigned int m_Timeout;
+    QString m_ConfigFile;
     bool m_IsRunning;
     QMutex m_CSShutdown;
     QMutex m_CSKeepAlive;

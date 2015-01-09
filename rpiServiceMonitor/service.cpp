@@ -6,8 +6,8 @@
 
 using namespace rpi;
 
-Service::Service(const QString &name, unsigned int id, unsigned int timeout, QObject *pParent)
-    : QThread(pParent), m_Name(name), m_Id(id), m_Timeout(timeout)
+Service::Service(const QString &name, unsigned int id, unsigned int timeout, QString const & config, QObject *pParent)
+    : QThread(pParent), m_Name(name), m_Id(id), m_Timeout(timeout), m_ConfigFile(config)
 {
     m_IsRunning = false;
 }
@@ -62,6 +62,11 @@ void Service::run()
     {
         RPI_ERROR("rpiServiceMonitor", QString("service %1 not installed").arg(m_Name));
         return;
+    }
+    const QString configFileArgument = "-config " + m_ConfigFile;
+    if (!m_Arguments.contains(configFileArgument))
+    {
+        m_Arguments.push_back(configFileArgument);
     }
     controller.start(m_Arguments);
 

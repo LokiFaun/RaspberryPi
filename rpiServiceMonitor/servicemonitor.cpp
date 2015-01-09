@@ -84,8 +84,7 @@ void ServiceMonitor::load(int argc, char **argv)
             const int timeout = config.timeout(i);
             const QString configFile = config.config(i);
 
-            m_ServiceMap[id] = QSharedPointer<Service>(new Service(name, id, timeout));
-            m_ServiceMap[id]->setArguments(QStringList(configFile));
+            m_ServiceMap[id] = QSharedPointer<Service>(new Service(name, id, timeout, configFile));
         }
         catch (Exception const & ex)
         {

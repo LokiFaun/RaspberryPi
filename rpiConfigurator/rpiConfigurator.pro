@@ -11,12 +11,14 @@ TEMPLATE = app
 
 #By default the following file lists are updated automatically by VisualGDB.
 
-SOURCES   += configuration.cpp configurationtabfactory.cpp configurationwizardfactory.cpp serviceconfigurationwidget.cpp servicemonitorconfigurationwidget.cpp MainWindow.cpp main.cpp servicemonitorconfiguration.cpp
+SOURCES   += configuration.cpp configurationtabfactory.cpp configurationwizardfactory.cpp iconfigurationwidget.cpp serviceconfigurationwidget.cpp servicemonitorconfigurationwidget.cpp MainWindow.cpp main.cpp servicemonitorconfiguration.cpp
 HEADERS   += configuration.h configurationtabfactory.h configurationwizardfactory.h iconfigurationwidget.h serviceconfigurationwidget.h servicemonitorconfigurationwidget.h MainWindow.h servicemonitorconfiguration.h
 FORMS     += MainWindow.ui
 RESOURCES += 
 
 include($$lower($$join(CONFIGNAME,,,.pro)))
+
+INCLUDEPATH += $$PWD/../../Qt-Solutions/QtService/src
 
 LIBS += -L$$OUT_PWD/../rpiBase/$$DESTDIR -lrpiBase
 
