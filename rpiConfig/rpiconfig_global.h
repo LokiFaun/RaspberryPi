@@ -1,0 +1,12 @@
+#ifndef RPICONFIG_GLOBAL_H
+#define RPICONFIG_GLOBAL_H
+
+#pragma once
+
+#if defined(RPICONFIG_LIBRARY)
+#  define RPICONFIGSHARED_EXPORT Q_DECL_EXPORT
+#else
+#  define RPICONFIGSHARED_EXPORT Q_DECL_IMPORT
+#endif
+
+#endif // RPICONFIG_GLOBAL_H
