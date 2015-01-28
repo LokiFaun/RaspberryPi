@@ -1,8 +1,6 @@
 #include "rpilogger.h"
 
 #include <QDateTime>
-#include <QString>
-#include <QMutexLocker>
 
 #include "loggerconfiguration.h"
 

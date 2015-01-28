@@ -2,7 +2,6 @@
 #define SERVICEMONITOR_H
 
 #include <QtService.h>
-#include <QCoreApplication>
 #include <QMap>
 #include <QSharedPointer>
 

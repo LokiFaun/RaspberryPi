@@ -4,7 +4,6 @@
 #include <QObject>
 #include <QMap>
 #include <QSharedPointer>
-#include <QWeakPointer>
 
 #include "rpilogger.h"
 #include "iappender.h"

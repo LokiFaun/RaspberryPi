@@ -11,7 +11,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{B3ED7DFA-CBF5-461A-961D-ACBCD7DA20D3}</ProjectGuid>
+    <ProjectGuid>{DD73F4CE-9DC0-4880-ABEF-5F41E4CB1DF6}</ProjectGuid>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -35,13 +35,13 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <NMakeIncludeSearchPath>c:\sysgcc\raspberry\arm-linux-gnueabihf\sysroot\usr\share\qt4\mkspecs\arm-linux-gnueabihf;c:\sysgcc\raspberry\arm-linux-gnueabihf\sysroot\usr\include\qt4\QtCore;c:\sysgcc\raspberry\arm-linux-gnueabihf\sysroot\usr\include\qt4\QtGui;c:\sysgcc\raspberry\arm-linux-gnueabihf\sysroot\usr\include\qt4;c:\sysgcc\raspberry\arm-linux-gnueabihf\include\c++\4.6;c:\sysgcc\raspberry\arm-linux-gnueabihf\include\c++\4.6\arm-linux-gnueabihf;c:\sysgcc\raspberry\arm-linux-gnueabihf\include\c++\4.6\backward;c:\sysgcc\raspberry\lib\gcc\arm-linux-gnueabihf\4.6\include;c:\sysgcc\raspberry\lib\gcc\arm-linux-gnueabihf\4.6\include-fixed;c:\sysgcc\raspberry\arm-linux-gnueabihf\include;c:\sysgcc\raspberry\arm-linux-gnueabihf\sysroot\usr\include\arm-linux-gnueabihf;c:\sysgcc\raspberry\arm-linux-gnueabihf\sysroot\usr\include;$(ProjectDir)\Debug;..\rpiBase;..\rpiLogger;..\rpiConfig;..\..\qt-solutions\qtservice\src;$(NMakeIncludeSearchPath)</NMakeIncludeSearchPath>
+    <NMakeIncludeSearchPath>c:\sysgcc\raspberry\arm-linux-gnueabihf\sysroot\usr\share\qt4\mkspecs\arm-linux-gnueabihf;c:\sysgcc\raspberry\arm-linux-gnueabihf\sysroot\usr\include\qt4\QtCore;c:\sysgcc\raspberry\arm-linux-gnueabihf\sysroot\usr\include\qt4\QtGui;c:\sysgcc\raspberry\arm-linux-gnueabihf\sysroot\usr\include\qt4;c:\sysgcc\raspberry\arm-linux-gnueabihf\include\c++\4.6;c:\sysgcc\raspberry\arm-linux-gnueabihf\include\c++\4.6\arm-linux-gnueabihf;c:\sysgcc\raspberry\arm-linux-gnueabihf\include\c++\4.6\backward;c:\sysgcc\raspberry\lib\gcc\arm-linux-gnueabihf\4.6\include;c:\sysgcc\raspberry\lib\gcc\arm-linux-gnueabihf\4.6\include-fixed;c:\sysgcc\raspberry\arm-linux-gnueabihf\include;c:\sysgcc\raspberry\arm-linux-gnueabihf\sysroot\usr\include\arm-linux-gnueabihf;c:\sysgcc\raspberry\arm-linux-gnueabihf\sysroot\usr\include;$(ProjectDir)\Debug;..\rpiBase;..\rpiLogger;$(NMakeIncludeSearchPath)</NMakeIncludeSearchPath>
     <NMakeForcedIncludes>$(ProjectDir)\gcc_Debug.h;$(VISUALGDB_DIR)\gcc_compat.h;$(NMakeForcedIncludes)</NMakeForcedIncludes>
     <NMakeBuildCommandLine>"$(VISUALGDB_DIR)\VisualGDB.exe" /build "$(ProjectPath)" "/solution:$(SolutionPath)" "/config:$(Configuration)" "/platform:$(Platform)"</NMakeBuildCommandLine>
     <NMakeCleanCommandLine>"$(VISUALGDB_DIR)\VisualGDB.exe" /clean "$(ProjectPath)" "/solution:$(SolutionPath)" "/config:$(Configuration)" "/platform:$(Platform)"</NMakeCleanCommandLine>
     <NMakeReBuildCommandLine>"$(VISUALGDB_DIR)\VisualGDB.exe" /rebuild "$(ProjectPath)" "/solution:$(SolutionPath)" "/config:$(Configuration)" "/platform:$(Platform)"</NMakeReBuildCommandLine>
-    <NMakeOutput>$(ProjectDir)rpiConfigurator-Debug.vgdbsettings</NMakeOutput>
-    <IncludePath>..\rpiLogger;..\rpiBase;..\..\qt-solutions\qtservice\src;$(IncludePath)</IncludePath>
+    <NMakeOutput>$(ProjectDir)rpiConfig-Debug.vgdbsettings</NMakeOutput>
+    <IncludePath />
     <ReferencePath />
     <LibraryPath />
     <NMakePreprocessorDefinitions>__VisualGDB_CFG_Debug;$(NMakePreprocessorDefinitions)</NMakePreprocessorDefinitions>
@@ -53,7 +53,7 @@
     <NMakeBuildCommandLine>"$(VISUALGDB_DIR)\VisualGDB.exe" /build "$(ProjectPath)" "/solution:$(SolutionPath)" "/config:$(Configuration)" "/platform:$(Platform)"</NMakeBuildCommandLine>
     <NMakeCleanCommandLine>"$(VISUALGDB_DIR)\VisualGDB.exe" /clean "$(ProjectPath)" "/solution:$(SolutionPath)" "/config:$(Configuration)" "/platform:$(Platform)"</NMakeCleanCommandLine>
     <NMakeReBuildCommandLine>"$(VISUALGDB_DIR)\VisualGDB.exe" /rebuild "$(ProjectPath)" "/solution:$(SolutionPath)" "/config:$(Configuration)" "/platform:$(Platform)"</NMakeReBuildCommandLine>
-    <NMakeOutput>$(ProjectDir)rpiConfigurator-Release.vgdbsettings</NMakeOutput>
+    <NMakeOutput>$(ProjectDir)rpiConfig-Release.vgdbsettings</NMakeOutput>
     <IncludePath />
     <ReferencePath />
     <LibraryPath />
@@ -61,27 +61,18 @@
   <ItemDefinitionGroup>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="configurationtabfactory.cpp" />
-    <ClCompile Include="configurationwizardfactory.cpp" />
-    <ClCompile Include="iconfigurationwidget.cpp" />
-    <ClCompile Include="serviceconfigurationwidget.cpp" />
-    <ClCompile Include="servicemonitorconfigurationwidget.cpp" />
-    <ClCompile Include="MainWindow.cpp" />
-    <ClCompile Include="main.cpp" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="debug.pro" />
-    <None Include="MainWindow.ui" />
     <None Include="release.pro" />
-    <None Include="rpiConfigurator.pro" />
+    <None Include="rpiConfig.pro" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="configurationtabfactory.h" />
-    <ClInclude Include="configurationwizardfactory.h" />
-    <ClInclude Include="iconfigurationwidget.h" />
-    <ClInclude Include="serviceconfigurationwidget.h" />
-    <ClInclude Include="servicemonitorconfigurationwidget.h" />
-    <ClInclude Include="MainWindow.h" />
+    <ClInclude Include="configuration.h" />
+    <ClInclude Include="rpiconfig_global.h" />
+    <ClInclude Include="servicemonitorconfiguration.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="configuration.cpp" />
+    <ClCompile Include="servicemonitorconfiguration.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

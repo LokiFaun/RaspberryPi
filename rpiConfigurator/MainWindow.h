@@ -4,9 +4,6 @@
 #pragma once
 
 #include <QMainWindow>
-#include <QSharedPointer>
-#include <QVector>
-#include <QTabWidget>
 
 namespace Ui {
 class MainWindow;

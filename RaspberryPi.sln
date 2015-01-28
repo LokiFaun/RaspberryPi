@@ -34,6 +34,10 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "rpiConfigurator", "rpiConfi
 		{79156C4B-3F4C-4640-909C-9F063F33352B} = {79156C4B-3F4C-4640-909C-9F063F33352B}
 	EndProjectSection
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "rpiController", "rpiController\rpiController.vcxproj", "{48893ACA-8C84-4E16-97AC-AE1D0A61A9F9}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "rpiConfig", "rpiConfig\rpiConfig.vcxproj", "{DD73F4CE-9DC0-4880-ABEF-5F41E4CB1DF6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -56,6 +60,14 @@ Global
 		{B3ED7DFA-CBF5-461A-961D-ACBCD7DA20D3}.Debug|Win32.Build.0 = Debug|Win32
 		{B3ED7DFA-CBF5-461A-961D-ACBCD7DA20D3}.Release|Win32.ActiveCfg = Release|Win32
 		{B3ED7DFA-CBF5-461A-961D-ACBCD7DA20D3}.Release|Win32.Build.0 = Release|Win32
+		{48893ACA-8C84-4E16-97AC-AE1D0A61A9F9}.Debug|Win32.ActiveCfg = Debug|Win32
+		{48893ACA-8C84-4E16-97AC-AE1D0A61A9F9}.Debug|Win32.Build.0 = Debug|Win32
+		{48893ACA-8C84-4E16-97AC-AE1D0A61A9F9}.Release|Win32.ActiveCfg = Release|Win32
+		{48893ACA-8C84-4E16-97AC-AE1D0A61A9F9}.Release|Win32.Build.0 = Release|Win32
+		{DD73F4CE-9DC0-4880-ABEF-5F41E4CB1DF6}.Debug|Win32.ActiveCfg = Debug|Win32
+		{DD73F4CE-9DC0-4880-ABEF-5F41E4CB1DF6}.Debug|Win32.Build.0 = Debug|Win32
+		{DD73F4CE-9DC0-4880-ABEF-5F41E4CB1DF6}.Release|Win32.ActiveCfg = Release|Win32
+		{DD73F4CE-9DC0-4880-ABEF-5F41E4CB1DF6}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

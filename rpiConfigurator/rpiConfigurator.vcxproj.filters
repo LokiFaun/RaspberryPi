@@ -22,12 +22,6 @@
     <ClCompile Include="MainWindow.cpp">
       <Filter>Source files</Filter>
     </ClCompile>
-    <ClCompile Include="configuration.cpp">
-      <Filter>Source files</Filter>
-    </ClCompile>
-    <ClCompile Include="servicemonitorconfiguration.cpp">
-      <Filter>Source files</Filter>
-    </ClCompile>
     <ClCompile Include="configurationtabfactory.cpp">
       <Filter>Source files</Filter>
     </ClCompile>
@@ -63,12 +57,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MainWindow.h">
-      <Filter>Header files</Filter>
-    </ClInclude>
-    <ClInclude Include="configuration.h">
-      <Filter>Header files</Filter>
-    </ClInclude>
-    <ClInclude Include="servicemonitorconfiguration.h">
       <Filter>Header files</Filter>
     </ClInclude>
     <ClInclude Include="configurationtabfactory.h">

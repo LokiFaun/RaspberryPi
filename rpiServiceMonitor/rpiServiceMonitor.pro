@@ -17,13 +17,25 @@ CONFIG   -= app_bundle
 
 TEMPLATE = app
 
+#By default the following file lists are updated automatically by VisualGDB.
+
 include($$lower($$join(CONFIGNAME,,,.pro)))
 
+SOURCES += main.cpp service.cpp servicemonitor.cpp
+HEADERS += service.h servicemonitor.h
+
+QMAKE_CFLAGS 	+= $$COMMONFLAGS
+QMAKE_CXXFLAGS 	+= $$COMMONFLAGS
+QMAKE_LFLAGS 	+= $$COMMONFLAGS
+
+OBJECTS_DIR = $$DESTDIR
+MOC_DIR     = $$DESTDIR
+RCC_DIR     = $$DESTDIR
+UI_DIR      = $$DESTDIR
+
+#include project libraries
+
 INCLUDEPATH += $$PWD/../../Qt-Solutions/QtService/src
-
-SOURCES += main.cpp monitorconfig.cpp service.cpp servicemonitor.cpp
-
-HEADERS += monitorconfig.h service.h servicemonitor.h
 
 LIBS += -L$$OUT_PWD/../rpiBase/$$DESTDIR -lrpiBase
 
@@ -35,11 +47,7 @@ LIBS += -L$$OUT_PWD/../rpiLogger/$$DESTDIR -lrpiLogger
 INCLUDEPATH += $$PWD/../rpiLogger
 DEPENDPATH += $$PWD/../rpiLogger
 
-QMAKE_CFLAGS 	+= $$COMMONFLAGS
-QMAKE_CXXFLAGS 	+= $$COMMONFLAGS
-QMAKE_LFLAGS 	+= $$COMMONFLAGS
+LIBS += -L$$OUT_PWD/../rpiConfig/$$DESTDIR -lrpiConfig
 
-OBJECTS_DIR = $$DESTDIR
-MOC_DIR     = $$DESTDIR
-RCC_DIR     = $$DESTDIR
-UI_DIR      = $$DESTDIR
+INCLUDEPATH += $$PWD/../rpiConfig
+DEPENDPATH += $$PWD/../rpiConfig

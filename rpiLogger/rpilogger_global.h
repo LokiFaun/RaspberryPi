@@ -1,6 +1,8 @@
 #ifndef RPILOGGER_GLOBAL_H
 #define RPILOGGER_GLOBAL_H
 
+#pragma once
+
 #include <QtCore/qglobal.h>
 
 #if defined(RPILOGGER_LIBRARY)

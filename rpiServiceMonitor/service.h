@@ -2,7 +2,6 @@
 #define SERVICE_H
 
 #include <QObject>
-#include <QString>
 #include <QThread>
 #include <QMutex>
 #include <QStringList>

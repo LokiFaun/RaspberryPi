@@ -10,12 +10,12 @@ class ConfigurationTabFactory
 {
 public:
 
-    static IConfigurationWidget * createConfigurationTab(Configuration::ConfigurationType type, Configuration * pConfiguration);
+    static IConfigurationWidget * createConfigurationTab(rpi::Configuration::ConfigurationType type, rpi::Configuration * pConfiguration);
 
 private:
-    static IConfigurationWidget * createServiceMonitorConfigurationTab(Configuration * pConfiguration);
-    static IConfigurationWidget * createControllerConfiguration(Configuration * pConfiguration);
-    static IConfigurationWidget * createLoggerConfiguration(Configuration * pConfiguration);
+    static IConfigurationWidget * createServiceMonitorConfigurationTab(rpi::Configuration * pConfiguration);
+    static IConfigurationWidget * createControllerConfiguration(rpi::Configuration * pConfiguration);
+    static IConfigurationWidget * createLoggerConfiguration(rpi::Configuration * pConfiguration);
 };
 
 #endif // CONFIGURATIONTABFACTORY_H__

@@ -1,7 +1,6 @@
 #include "MainWindow.h"
 #include "ui_MainWindow.h"
 #include <QMessageBox>
-#include <QLayout>
 
 #include "servicemonitorconfiguration.h"
 #include "configurationtabfactory.h"

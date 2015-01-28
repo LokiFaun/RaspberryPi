@@ -4,7 +4,6 @@
 #include "rpilogger_global.h"
 
 #include <QObject>
-#include <QMap>
 #include <QMutex>
 #include <QSharedPointer>
 

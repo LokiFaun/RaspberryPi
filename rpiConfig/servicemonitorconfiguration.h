@@ -5,8 +5,10 @@
 
 #include "configuration.h"
 #include <QVector>
+#include <QObject>
 
-class ServiceMonitorConfiguration : public Configuration
+
+class RPICONFIGSHARED_EXPORT ServiceMonitorConfiguration : public rpi::Configuration
 {
 public:
 

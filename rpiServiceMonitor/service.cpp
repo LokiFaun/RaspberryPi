@@ -1,7 +1,6 @@
 #include "service.h"
 #include "logmanager.h"
 
-#include <QMutexLocker>
 #include <QtServiceController>
 
 using namespace rpi;

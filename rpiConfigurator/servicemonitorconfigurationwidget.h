@@ -1,11 +1,12 @@
+#ifndef SERVICEMONITORCONFIGURATIONWIDGET_H_
+#define SERVICEMONITORCONFIGURATIONWIDGET_H_
+
 #pragma once
 
 #include "iconfigurationwidget.h"
 #include "servicemonitorconfiguration.h"
-#include "serviceconfigurationwidget.h"
 
 #include <QVBoxLayout>
-#include <QVector>
 
 class ServiceMonitorConfigurationWidget : public IConfigurationWidget
 {
@@ -33,4 +34,5 @@ private:
     QVBoxLayout * m_pLayout;
     
 };
+#endif // SERVICEMONITORCONFIGURATIONWIDGET_H_
 

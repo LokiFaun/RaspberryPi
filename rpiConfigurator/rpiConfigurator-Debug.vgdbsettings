@@ -113,7 +113,7 @@
     <DeploymentTargetPath>/tmp/$(TargetFileName)</DeploymentTargetPath>
     <X11WindowMode>Local</X11WindowMode>
     <KeepConsoleAfterExit>false</KeepConsoleAfterExit>
-    <RunGDBUnderSudo>false</RunGDBUnderSudo>
+    <RunGDBUnderSudo>true</RunGDBUnderSudo>
     <DeploymentMode>Always</DeploymentMode>
     <LdLibraryPath>/tmp</LdLibraryPath>
     <DeployWhenLaunchedWithoutDebugging>true</DeployWhenLaunchedWithoutDebugging>

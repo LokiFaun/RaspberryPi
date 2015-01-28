@@ -9,13 +9,13 @@
       <UniqueIdentifier>{82e8bf84-27f6-4589-af79-2c6a4b24c57f}</UniqueIdentifier>
       <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
     </Filter>
-    <Filter Include="Resource files">
-      <UniqueIdentifier>{a2a0bb8b-7e04-4260-8492-b6e557747989}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
-    </Filter>
     <Filter Include="Project files">
       <UniqueIdentifier>{e0b3efe0-30b7-4b45-b86f-8a8f674ab513}</UniqueIdentifier>
       <Extensions>pro</Extensions>
+    </Filter>
+    <Filter Include="Project files\Resource files">
+      <UniqueIdentifier>{a2a0bb8b-7e04-4260-8492-b6e557747989}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
     </Filter>
   </ItemGroup>
   <ItemGroup>

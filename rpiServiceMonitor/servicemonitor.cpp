@@ -1,14 +1,10 @@
 #include "servicemonitor.h"
 #include "name_defs.h"
 #include "command_defs.h"
-#include "monitorconfig.h"
+#include "servicemonitorconfiguration.h"
 #include "logmanager.h"
 #include "service.h"
 #include "exception.h"
-
-#include <typeinfo>
-
-#include "../../qtjsonsettings/qtjsonsettings.h"
 
 using namespace rpi;
 
@@ -72,8 +68,7 @@ void ServiceMonitor::load(int argc, char **argv)
         }
     }
 
-    MonitorConfig & config = MonitorConfig::instance();
-    config.load(fileName);
+    ServiceMonitorConfiguration config(fileName);
     const int count = config.count();
     for (int i = 0; i < count; ++i)
     {

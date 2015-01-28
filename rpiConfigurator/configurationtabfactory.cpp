@@ -2,12 +2,12 @@
 #include "servicemonitorconfiguration.h"
 #include "servicemonitorconfigurationwidget.h"
 
-#include <QPushButton>
-#include <QLayout>
-#include <QScrollArea>
 #include <QDockWidget>
 #include <QLabel>
 #include <QLineEdit>
+#include <QPushButton>
+
+using namespace rpi;
 
 IConfigurationWidget * ConfigurationTabFactory::createConfigurationTab(Configuration::ConfigurationType type, Configuration * pConfiguration)
 {

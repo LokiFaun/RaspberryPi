@@ -11,8 +11,8 @@ TEMPLATE = app
 
 #By default the following file lists are updated automatically by VisualGDB.
 
-SOURCES   += configuration.cpp configurationtabfactory.cpp configurationwizardfactory.cpp iconfigurationwidget.cpp serviceconfigurationwidget.cpp servicemonitorconfigurationwidget.cpp MainWindow.cpp main.cpp servicemonitorconfiguration.cpp
-HEADERS   += configuration.h configurationtabfactory.h configurationwizardfactory.h iconfigurationwidget.h serviceconfigurationwidget.h servicemonitorconfigurationwidget.h MainWindow.h servicemonitorconfiguration.h
+SOURCES   += configurationtabfactory.cpp configurationwizardfactory.cpp iconfigurationwidget.cpp serviceconfigurationwidget.cpp servicemonitorconfigurationwidget.cpp MainWindow.cpp main.cpp
+HEADERS   += configurationtabfactory.h configurationwizardfactory.h iconfigurationwidget.h serviceconfigurationwidget.h servicemonitorconfigurationwidget.h MainWindow.h
 FORMS     += MainWindow.ui
 RESOURCES += 
 
@@ -29,6 +29,11 @@ LIBS += -L$$OUT_PWD/../rpiLogger/$$DESTDIR -lrpiLogger
 
 INCLUDEPATH += $$PWD/../rpiLogger
 DEPENDPATH += $$PWD/../rpiLogger
+
+LIBS += -L$$OUT_PWD/../rpiConfig/$$DESTDIR -lrpiConfig
+
+INCLUDEPATH += $$PWD/../rpiConfig
+DEPENDPATH += $$PWD/../rpiConfig
 
 QMAKE_CFLAGS 	+= $$COMMONFLAGS
 QMAKE_CXXFLAGS 	+= $$COMMONFLAGS

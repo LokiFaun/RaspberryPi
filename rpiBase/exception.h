@@ -1,7 +1,7 @@
 #ifndef EXCEPTION_H
 #define EXCEPTION_H
 
-#include <QObject>
+#include <QString>
 #include "rpibase_global.h"
 
 namespace rpi

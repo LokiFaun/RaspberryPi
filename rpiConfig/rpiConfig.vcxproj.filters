@@ -2,49 +2,49 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <Filter Include="Source files">
-      <UniqueIdentifier>{0ecec53e-aa46-48f2-ad24-9b2ec9147174}</UniqueIdentifier>
+      <UniqueIdentifier>{4425a9c9-451e-4c34-908e-b1babac21e0e}</UniqueIdentifier>
       <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
     <Filter Include="Header files">
-      <UniqueIdentifier>{80442685-7443-48e2-b5b7-9bf30a116663}</UniqueIdentifier>
+      <UniqueIdentifier>{0778e413-05aa-4088-b8ae-4baf81fad1e4}</UniqueIdentifier>
       <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
     </Filter>
     <Filter Include="Resource files">
-      <UniqueIdentifier>{b086a3c5-ede0-4970-b11d-2fd944d69522}</UniqueIdentifier>
+      <UniqueIdentifier>{7746b6bf-b52a-4ded-97b1-6067412a8bee}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
     </Filter>
     <Filter Include="Project files">
-      <UniqueIdentifier>{983e018f-49a0-4ad0-a852-2c6ce5a96f7d}</UniqueIdentifier>
+      <UniqueIdentifier>{95fcc412-8728-4a29-a90f-195c10d6067f}</UniqueIdentifier>
       <Extensions>pro</Extensions>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <None Include="rpiServiceMonitor.pro">
+    <None Include="debug.pro">
       <Filter>Project files</Filter>
     </None>
     <None Include="release.pro">
       <Filter>Project files</Filter>
     </None>
-    <None Include="debug.pro">
+    <None Include="rpiConfig.pro">
       <Filter>Project files</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="service.h">
+    <ClInclude Include="configuration.h">
       <Filter>Header files</Filter>
     </ClInclude>
-    <ClInclude Include="servicemonitor.h">
+    <ClInclude Include="servicemonitorconfiguration.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="rpiconfig_global.h">
       <Filter>Header files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp">
+    <ClCompile Include="configuration.cpp">
       <Filter>Source files</Filter>
     </ClCompile>
-    <ClCompile Include="service.cpp">
-      <Filter>Source files</Filter>
-    </ClCompile>
-    <ClCompile Include="servicemonitor.cpp">
+    <ClCompile Include="servicemonitorconfiguration.cpp">
       <Filter>Source files</Filter>
     </ClCompile>
   </ItemGroup>

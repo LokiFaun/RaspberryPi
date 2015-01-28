@@ -1,11 +1,9 @@
 #include "servicemonitorconfigurationwidget.h"
 #include "exception.h"
 #include "logmanager.h"
+#include "serviceconfigurationwidget.h"
 
 #include <QScrollArea>
-#include <QGroupBox>
-#include <QRadioButton>
-#include <QVBoxLayout>
 
 using namespace rpi;
 
@@ -97,7 +95,6 @@ void ServiceMonitorConfigurationWidget::removeService(QWidget * pWidget, int nr)
     }
     m_pLayout->removeWidget(pWidget);
     delete pWidget;
-    pWidget = NULL;
 
     emit configurationChanged();
 }

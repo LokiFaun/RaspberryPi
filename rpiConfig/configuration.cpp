@@ -1,5 +1,6 @@
 #include "configuration.h"
 
+using namespace rpi;
 
 Configuration::Configuration(QString const & fileName, QObject * pParent /*= NULL*/) : QObject(pParent), m_ConfigurationFile(fileName) { }
 

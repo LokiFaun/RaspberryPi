@@ -1,8 +1,4 @@
 #include "servicemonitor.h"
-#include "QtServiceController"
-#include "logmanager.h"
-
-#include <QDir>
 
 using namespace rpi;
 

@@ -16,13 +16,11 @@
     <None Include="rpiServiceMonitor.pro" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="monitorconfig.h" />
     <ClInclude Include="service.h" />
     <ClInclude Include="servicemonitor.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="monitorconfig.cpp" />
     <ClCompile Include="service.cpp" />
     <ClCompile Include="servicemonitor.cpp" />
   </ItemGroup>
@@ -51,7 +49,7 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <NMakeIncludeSearchPath>c:\sysgcc\raspberry\arm-linux-gnueabihf\sysroot\usr\share\qt4\mkspecs\arm-linux-gnueabihf;c:\sysgcc\raspberry\arm-linux-gnueabihf\sysroot\usr\include\qt4\QtCore;c:\sysgcc\raspberry\arm-linux-gnueabihf\sysroot\usr\include\qt4\QtGui;c:\sysgcc\raspberry\arm-linux-gnueabihf\sysroot\usr\include\qt4;c:\sysgcc\raspberry\arm-linux-gnueabihf\include\c++\4.6;c:\sysgcc\raspberry\arm-linux-gnueabihf\include\c++\4.6\arm-linux-gnueabihf;c:\sysgcc\raspberry\arm-linux-gnueabihf\include\c++\4.6\backward;c:\sysgcc\raspberry\lib\gcc\arm-linux-gnueabihf\4.6\include;c:\sysgcc\raspberry\lib\gcc\arm-linux-gnueabihf\4.6\include-fixed;c:\sysgcc\raspberry\arm-linux-gnueabihf\include;c:\sysgcc\raspberry\arm-linux-gnueabihf\sysroot\usr\include\arm-linux-gnueabihf;c:\sysgcc\raspberry\arm-linux-gnueabihf\sysroot\usr\include;$(ProjectDir)\Debug;D:\Dokumente\GitHub\qt-solutions\qtservice;$(NMakeIncludeSearchPath)</NMakeIncludeSearchPath>
+    <NMakeIncludeSearchPath>c:\sysgcc\raspberry\arm-linux-gnueabihf\sysroot\usr\share\qt4\mkspecs\arm-linux-gnueabihf;c:\sysgcc\raspberry\arm-linux-gnueabihf\sysroot\usr\include\qt4\QtCore;c:\sysgcc\raspberry\arm-linux-gnueabihf\sysroot\usr\include\qt4\QtGui;c:\sysgcc\raspberry\arm-linux-gnueabihf\sysroot\usr\include\qt4;c:\sysgcc\raspberry\arm-linux-gnueabihf\include\c++\4.6;c:\sysgcc\raspberry\arm-linux-gnueabihf\include\c++\4.6\arm-linux-gnueabihf;c:\sysgcc\raspberry\arm-linux-gnueabihf\include\c++\4.6\backward;c:\sysgcc\raspberry\lib\gcc\arm-linux-gnueabihf\4.6\include;c:\sysgcc\raspberry\lib\gcc\arm-linux-gnueabihf\4.6\include-fixed;c:\sysgcc\raspberry\arm-linux-gnueabihf\include;c:\sysgcc\raspberry\arm-linux-gnueabihf\sysroot\usr\include\arm-linux-gnueabihf;c:\sysgcc\raspberry\arm-linux-gnueabihf\sysroot\usr\include;$(ProjectDir)\Debug;..\..\qt-solutions\qtservice\src;..\rpiBase;..\rpiLogger;..\rpiConfig;$(NMakeIncludeSearchPath)</NMakeIncludeSearchPath>
     <NMakeForcedIncludes>$(ProjectDir)\gcc_Debug.h;$(VISUALGDB_DIR)\gcc_compat.h;$(NMakeForcedIncludes)</NMakeForcedIncludes>
     <NMakeBuildCommandLine>"$(VISUALGDB_DIR)\VisualGDB.exe" /build "$(ProjectPath)" "/solution:$(SolutionPath)" "/config:$(Configuration)" "/platform:$(Platform)"</NMakeBuildCommandLine>
     <NMakeCleanCommandLine>"$(VISUALGDB_DIR)\VisualGDB.exe" /clean "$(ProjectPath)" "/solution:$(SolutionPath)" "/config:$(Configuration)" "/platform:$(Platform)"</NMakeCleanCommandLine>
