@@ -1,6 +1,8 @@
 #ifndef SERVICEMONITOR_H
 #define SERVICEMONITOR_H
 
+#pragma once
+
 #include <QtService.h>
 #include <QMap>
 #include <QSharedPointer>

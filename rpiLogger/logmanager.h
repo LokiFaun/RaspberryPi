@@ -1,6 +1,8 @@
 #ifndef LOGMANAGER_H
 #define LOGMANAGER_H
 
+#pragma once
+
 #include <QObject>
 #include <QMap>
 #include <QSharedPointer>

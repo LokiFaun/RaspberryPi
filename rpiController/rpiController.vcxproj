@@ -61,7 +61,7 @@
   <ItemDefinitionGroup>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="rpiController.cpp" />
+    <ClCompile Include="main.cpp" />
     <ClCompile Include="controller.cpp" />
   </ItemGroup>
   <ItemGroup>

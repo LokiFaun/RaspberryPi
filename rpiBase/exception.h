@@ -1,6 +1,8 @@
 #ifndef EXCEPTION_H
 #define EXCEPTION_H
 
+#pragma once
+
 #include <QString>
 #include "rpibase_global.h"
 

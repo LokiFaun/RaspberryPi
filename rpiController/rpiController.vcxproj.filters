@@ -19,10 +19,10 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="rpiController.cpp">
+    <ClCompile Include="controller.cpp">
       <Filter>Source files</Filter>
     </ClCompile>
-    <ClCompile Include="controller.cpp">
+    <ClCompile Include="main.cpp">
       <Filter>Source files</Filter>
     </ClCompile>
   </ItemGroup>

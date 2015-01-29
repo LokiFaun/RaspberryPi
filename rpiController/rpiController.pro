@@ -16,7 +16,7 @@ TEMPLATE = app
 
 #By default the following file lists are updated automatically by VisualGDB.
 
-SOURCES   += rpiController.cpp controller.cpp
+SOURCES   += main.cpp controller.cpp
 HEADERS   += controller.h
 RESOURCES += 
 

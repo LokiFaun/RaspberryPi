@@ -1,6 +1,8 @@
 #ifndef RPILOGGER_H
 #define RPILOGGER_H
 
+#pragma once
+
 #include "rpilogger_global.h"
 
 #include <QObject>

@@ -1,6 +1,8 @@
 #ifndef LOGGERCONFIGURATION_H
 #define LOGGERCONFIGURATION_H
 
+#pragma once
+
 #include <QObject>
 
 namespace rpi

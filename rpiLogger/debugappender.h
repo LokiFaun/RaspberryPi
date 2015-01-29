@@ -1,6 +1,8 @@
 #ifndef DEBUGAPPENDER_H
 #define DEBUGAPPENDER_H
 
+#pragma once
+
 #include "iappender.h"
 
 namespace rpi

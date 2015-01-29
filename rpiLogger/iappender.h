@@ -1,6 +1,8 @@
 #ifndef ABSTRACTAPPENDER_H
 #define ABSTRACTAPPENDER_H
 
+#pragma once
+
 #include <QObject>
 
 namespace rpi
