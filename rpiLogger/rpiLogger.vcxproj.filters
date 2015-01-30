@@ -30,15 +30,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="debugappender.h">
-      <Filter>Header files</Filter>
-    </ClInclude>
-    <ClInclude Include="iappender.h">
-      <Filter>Header files</Filter>
-    </ClInclude>
-    <ClInclude Include="loggerconfiguration.h">
-      <Filter>Header files</Filter>
-    </ClInclude>
     <ClInclude Include="logmanager.h">
       <Filter>Header files</Filter>
     </ClInclude>
@@ -50,12 +41,6 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="debugappender.cpp">
-      <Filter>Source files</Filter>
-    </ClCompile>
-    <ClCompile Include="loggerconfiguration.cpp">
-      <Filter>Source files</Filter>
-    </ClCompile>
     <ClCompile Include="logmanager.cpp">
       <Filter>Source files</Filter>
     </ClCompile>

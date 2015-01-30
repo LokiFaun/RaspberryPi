@@ -11,21 +11,32 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <None Include="debug.pro" />
-    <None Include="release.pro" />
-    <None Include="rpiLogger.pro" />
+    <None Include="..\..\qslog\QsLog.pri" />
+    <None Include="..\..\qslog\QsLogSharedLibrary.pro" />
+    <None Include="..\..\qslog\README.md" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="logmanager.h" />
-    <ClInclude Include="rpilogger.h" />
-    <ClInclude Include="rpilogger_global.h" />
+    <ClInclude Include="..\..\qslog\QsLog.h" />
+    <ClInclude Include="..\..\qslog\QsLogDest.h" />
+    <ClInclude Include="..\..\qslog\QsLogDestConsole.h" />
+    <ClInclude Include="..\..\qslog\QsLogDestFile.h" />
+    <ClInclude Include="..\..\qslog\QsLogDisableForThisFile.h" />
+    <ClInclude Include="..\..\qslog\QsLogLevel.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="logmanager.cpp" />
-    <ClCompile Include="rpilogger.cpp" />
+    <ClCompile Include="..\..\qslog\QsLog.cpp" />
+    <ClCompile Include="..\..\qslog\QsLogDest.cpp" />
+    <ClCompile Include="..\..\qslog\QsLogDestConsole.cpp" />
+    <ClCompile Include="..\..\qslog\QsLogDestFile.cpp" />
+    <ClCompile Include="..\..\qslog\QsLogDestFunctor.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\..\qslog\LICENSE.txt" />
+    <Text Include="..\..\qslog\QsLogChanges.txt" />
+    <Text Include="..\..\qslog\QsLogReadme.txt" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{79156C4B-3F4C-4640-909C-9F063F33352B}</ProjectGuid>
+    <ProjectGuid>{863E8C7A-B681-4BEA-B83B-37216BAED158}</ProjectGuid>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -49,16 +60,16 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <NMakeIncludeSearchPath>c:\sysgcc\raspberry\arm-linux-gnueabihf\sysroot\usr\share\qt4\mkspecs\arm-linux-gnueabihf;c:\sysgcc\raspberry\arm-linux-gnueabihf\sysroot\usr\include\qt4\QtCore;c:\sysgcc\raspberry\arm-linux-gnueabihf\sysroot\usr\include\qt4\QtGui;c:\sysgcc\raspberry\arm-linux-gnueabihf\sysroot\usr\include\qt4;c:\sysgcc\raspberry\arm-linux-gnueabihf\include\c++\4.6;c:\sysgcc\raspberry\arm-linux-gnueabihf\include\c++\4.6\arm-linux-gnueabihf;c:\sysgcc\raspberry\arm-linux-gnueabihf\include\c++\4.6\backward;c:\sysgcc\raspberry\lib\gcc\arm-linux-gnueabihf\4.6\include;c:\sysgcc\raspberry\lib\gcc\arm-linux-gnueabihf\4.6\include-fixed;c:\sysgcc\raspberry\arm-linux-gnueabihf\include;c:\sysgcc\raspberry\arm-linux-gnueabihf\sysroot\usr\include\arm-linux-gnueabihf;c:\sysgcc\raspberry\arm-linux-gnueabihf\sysroot\usr\include;$(ProjectDir)\Debug;..\rpiBase;..\..\qslog;$(NMakeIncludeSearchPath)</NMakeIncludeSearchPath>
+    <NMakeIncludeSearchPath>c:\sysgcc\raspberry\arm-linux-gnueabihf\sysroot\usr\share\qt4\mkspecs\arm-linux-gnueabihf;c:\sysgcc\raspberry\arm-linux-gnueabihf\sysroot\usr\include\qt4\QtCore;c:\sysgcc\raspberry\arm-linux-gnueabihf\sysroot\usr\include\qt4\QtGui;c:\sysgcc\raspberry\arm-linux-gnueabihf\sysroot\usr\include\qt4;c:\sysgcc\raspberry\arm-linux-gnueabihf\include\c++\4.6;c:\sysgcc\raspberry\arm-linux-gnueabihf\include\c++\4.6\arm-linux-gnueabihf;c:\sysgcc\raspberry\arm-linux-gnueabihf\include\c++\4.6\backward;c:\sysgcc\raspberry\lib\gcc\arm-linux-gnueabihf\4.6\include;c:\sysgcc\raspberry\lib\gcc\arm-linux-gnueabihf\4.6\include-fixed;c:\sysgcc\raspberry\arm-linux-gnueabihf\include;c:\sysgcc\raspberry\arm-linux-gnueabihf\sysroot\usr\include\arm-linux-gnueabihf;c:\sysgcc\raspberry\arm-linux-gnueabihf\sysroot\usr\include;$(ProjectDir)\Debug;$(NMakeIncludeSearchPath)</NMakeIncludeSearchPath>
     <NMakeForcedIncludes>$(ProjectDir)\gcc_Debug.h;$(VISUALGDB_DIR)\gcc_compat.h;$(NMakeForcedIncludes)</NMakeForcedIncludes>
+    <NMakePreprocessorDefinitions>__VisualGDB_CFG_Debug;$(NMakePreprocessorDefinitions)</NMakePreprocessorDefinitions>
     <NMakeBuildCommandLine>"$(VISUALGDB_DIR)\VisualGDB.exe" /build "$(ProjectPath)" "/solution:$(SolutionPath)" "/config:$(Configuration)" "/platform:$(Platform)"</NMakeBuildCommandLine>
     <NMakeCleanCommandLine>"$(VISUALGDB_DIR)\VisualGDB.exe" /clean "$(ProjectPath)" "/solution:$(SolutionPath)" "/config:$(Configuration)" "/platform:$(Platform)"</NMakeCleanCommandLine>
     <NMakeReBuildCommandLine>"$(VISUALGDB_DIR)\VisualGDB.exe" /rebuild "$(ProjectPath)" "/solution:$(SolutionPath)" "/config:$(Configuration)" "/platform:$(Platform)"</NMakeReBuildCommandLine>
-    <NMakeOutput>$(ProjectDir)rpiLogger-Debug.vgdbsettings</NMakeOutput>
-    <IncludePath>..\rpiBase;$(IncludePath)</IncludePath>
+    <NMakeOutput>$(ProjectDir)QsLog-Debug.vgdbsettings</NMakeOutput>
+    <IncludePath />
     <ReferencePath />
     <LibraryPath />
-    <NMakePreprocessorDefinitions>__VisualGDB_CFG_Debug;$(NMakePreprocessorDefinitions)</NMakePreprocessorDefinitions>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <NMakeIncludeSearchPath>c:\sysgcc\raspberry\arm-linux-gnueabihf\sysroot\usr\share\qt4\mkspecs\arm-linux-gnueabihf;c:\sysgcc\raspberry\arm-linux-gnueabihf\sysroot\usr\include\qt4\QtCore;c:\sysgcc\raspberry\arm-linux-gnueabihf\sysroot\usr\include\qt4\QtGui;c:\sysgcc\raspberry\arm-linux-gnueabihf\sysroot\usr\include\qt4;c:\sysgcc\raspberry\arm-linux-gnueabihf\include\c++\4.6;c:\sysgcc\raspberry\arm-linux-gnueabihf\include\c++\4.6\arm-linux-gnueabihf;c:\sysgcc\raspberry\arm-linux-gnueabihf\include\c++\4.6\backward;c:\sysgcc\raspberry\lib\gcc\arm-linux-gnueabihf\4.6\include;c:\sysgcc\raspberry\lib\gcc\arm-linux-gnueabihf\4.6\include-fixed;c:\sysgcc\raspberry\arm-linux-gnueabihf\include;c:\sysgcc\raspberry\arm-linux-gnueabihf\sysroot\usr\include\arm-linux-gnueabihf;c:\sysgcc\raspberry\arm-linux-gnueabihf\sysroot\usr\include;$(ProjectDir)\Release;$(NMakeIncludeSearchPath)</NMakeIncludeSearchPath>
@@ -67,7 +78,7 @@
     <NMakeBuildCommandLine>"$(VISUALGDB_DIR)\VisualGDB.exe" /build "$(ProjectPath)" "/solution:$(SolutionPath)" "/config:$(Configuration)" "/platform:$(Platform)"</NMakeBuildCommandLine>
     <NMakeCleanCommandLine>"$(VISUALGDB_DIR)\VisualGDB.exe" /clean "$(ProjectPath)" "/solution:$(SolutionPath)" "/config:$(Configuration)" "/platform:$(Platform)"</NMakeCleanCommandLine>
     <NMakeReBuildCommandLine>"$(VISUALGDB_DIR)\VisualGDB.exe" /rebuild "$(ProjectPath)" "/solution:$(SolutionPath)" "/config:$(Configuration)" "/platform:$(Platform)"</NMakeReBuildCommandLine>
-    <NMakeOutput>$(ProjectDir)rpiLogger-Release.vgdbsettings</NMakeOutput>
+    <NMakeOutput>$(ProjectDir)QsLog-Release.vgdbsettings</NMakeOutput>
     <IncludePath />
     <ReferencePath />
     <LibraryPath />

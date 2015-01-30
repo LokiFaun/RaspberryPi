@@ -8,8 +8,6 @@
 #include <QSharedPointer>
 
 #include "rpilogger.h"
-#include "iappender.h"
-#include "loggerconfiguration.h"
 
 namespace rpi
 {
@@ -22,17 +20,16 @@ public:
 
     static LogManager & instance();
     RpiLogger * logger(QString const & name);
-    void configure(LoggerConfiguration::LogLevel level);
+    void configure(QString const & fileName, QString const & level, int maxFileSize, int maxFileCount);
 
 private:
     LogManager();
-    virtual ~LogManager() { }
+    virtual ~LogManager();
     LogManager(LogManager const &);
     LogManager & operator = (LogManager const &);
 
 private:
     QMap<QString, RpiLogger *> m_Loggers;
-    QSharedPointer<IAppender> m_pAppender;
 
 };
 

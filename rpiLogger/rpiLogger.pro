@@ -15,9 +15,9 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 TARGET = rpiLogger
 TEMPLATE = lib
 
-SOURCES += debugappender.cpp loggerconfiguration.cpp logmanager.cpp rpilogger.cpp
+SOURCES += logmanager.cpp rpilogger.cpp
 
-HEADERS += debugappender.h iappender.h loggerconfiguration.h logmanager.h rpilogger.h rpilogger_global.h
+HEADERS += logmanager.h rpilogger.h rpilogger_global.h
 
 include($$lower($$join(CONFIGNAME,,,.pro)))
 
@@ -27,6 +27,17 @@ LIBS += -L$$OUT_PWD/../rpiBase/$$DESTDIR -lrpiBase
 
 INCLUDEPATH += $$PWD/../rpiBase
 DEPENDPATH += $$PWD/../rpiBase
+
+DEFINES += QSLOG_IS_SHARED_LIBRARY_IMPORT
+
+LIBS += -L$$PWD/../../qslog/build-QsLogShared
+INCLUDEPATH += $$PWD/../../qslog
+DEPENDPATH += $$PWD/../../qslog
+win32 {
+    LIBS += -lQsLog2
+} else {
+    LIBS += -lQsLog
+}
 
 QMAKE_CFLAGS 	+= $$COMMONFLAGS
 QMAKE_CXXFLAGS 	+= $$COMMONFLAGS

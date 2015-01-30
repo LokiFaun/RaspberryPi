@@ -6,8 +6,19 @@ Homeautomation using Raspberry Pi with a temperature and luminance sensor.
 - QtSolutions - QtService (https://qt.gitorious.org/qt-solutions)
 - QtJsonSettings (https://gitorious.org/qtjsonsettings)
 - Poco v1.4.7 (http://pocoproject.org/)
+- QsLog (https://bitbucket.org/razvanpetru/qslog)
+- WiringPi (http://wiringpi.com/)
 
-## Contains
+##Directory Structure
+- BaseDir
+-- QtSolutions
+-- QtJsonSettings
+-- Poco
+-- QsLog
+-- WiringPi
+-- RaspberryPi
+
+##Contains
 - rpiBase: library with basic classes, functions and definitions
 - rpiConfig: library with configuration classes and funktions
 - rpiLogger: library with logging classes and functions
