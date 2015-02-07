@@ -47,7 +47,12 @@ void ServiceMonitorConfigurationWidget::addNewService()
     connect(pConfigWidget, SIGNAL(timeoutChanged(int, unsigned int)), this, SLOT(changeServiceTimeout(int, unsigned int)));
     connect(pConfigWidget, SIGNAL(configChanged(int, unsigned int)), this, SLOT(changeServiceConfig(int, QString const &)));
 
-    m_pConfiguration->addService(INT_MAX, "newService", UINT_MAX, "config.json");
+    int const count = m_pConfiguration->count();
+    m_pConfiguration->setId(count, INT_MAX);
+    m_pConfiguration->setName(count, "newService");
+    m_pConfiguration->setTimeout(count, UINT_MAX);
+    m_pConfiguration->setConfig(count, "config.json");
+
     RPI_DEBUG("rpiConfigurator", QString("new number of services: %1").arg(m_pConfiguration->count()));
     pConfigWidget->setConfiguration(INT_MAX, "newService", UINT_MAX, "config.json");
     m_pLayout->addWidget(pConfigWidget);
@@ -61,7 +66,7 @@ void ServiceMonitorConfigurationWidget::saveConfiguration()
     if (m_pConfiguration != NULL)
     {
         RPI_DEBUG("rpiConfigurator", "saving service monitor configuration");
-        m_pConfiguration->save();
+        m_pConfiguration->sync();
     }
 }
 
@@ -89,10 +94,9 @@ void ServiceMonitorConfigurationWidget::removeService(QWidget * pWidget, int nr)
 {
     Q_ASSERT_X(m_pConfiguration != NULL, Q_FUNC_INFO, "invalid configuration");
     RPI_DEBUG("rpiConfigurator", "removing service");
-    if (m_pConfiguration != NULL)
-    {
-        m_pConfiguration->removeService(nr);
-    }
+    
+    m_pConfiguration->remove(nr);
+
     m_pLayout->removeWidget(pWidget);
     delete pWidget;
 

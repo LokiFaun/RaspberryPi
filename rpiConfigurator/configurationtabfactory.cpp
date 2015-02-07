@@ -17,8 +17,6 @@ IConfigurationWidget * ConfigurationTabFactory::createConfigurationTab(Configura
         return createServiceMonitorConfigurationTab(pConfiguration);
     case Configuration::Controller:
         return createControllerConfiguration(pConfiguration);
-    case Configuration::Logger:
-        return createLoggerConfiguration(pConfiguration);
     default:
         return NULL;
     }

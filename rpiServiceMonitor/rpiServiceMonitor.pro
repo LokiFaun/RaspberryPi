@@ -51,3 +51,12 @@ LIBS += -L$$OUT_PWD/../rpiConfig/$$DESTDIR -lrpiConfig
 
 INCLUDEPATH += $$PWD/../rpiConfig
 DEPENDPATH += $$PWD/../rpiConfig
+
+LIBS += -L$$PWD/../../qslog/build-QsLogShared
+INCLUDEPATH += $$PWD/../../qslog
+DEPENDPATH += $$PWD/../../qslog
+win32 {
+    LIBS += -lQsLog2
+} else {
+    LIBS += -lQsLog
+}

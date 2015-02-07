@@ -4,32 +4,15 @@
 #pragma once
 
 #include "configuration.h"
-#include <QVector>
-#include <QObject>
-
 
 class RPICONFIGSHARED_EXPORT ServiceMonitorConfiguration : public rpi::Configuration
 {
 public:
 
-    struct ServiceConfiguration
-    {
-        int Id;
-        QString Name;
-        unsigned int Timeout;
-        QString Config;
+    explicit ServiceMonitorConfiguration(QString const & fileName, QObject * pParent = NULL);
+    virtual ~ServiceMonitorConfiguration() { }
 
-        ServiceConfiguration() { }
-        ServiceConfiguration(int id, QString const & name, unsigned int timeout, QString const & config);
-    };
-
-    typedef QVector<ServiceConfiguration> Services;
-
-    ServiceMonitorConfiguration(QString const & fileName, QObject * pParent = NULL);
-    virtual ~ServiceMonitorConfiguration();
-
-    void addService(int id, QString const & name, unsigned int timeout, QString const & config);
-    void removeService(int index);
+    virtual ConfigurationType configurationType();
 
     void setId(int index, int value);
     void setName(int index, QString const & value);
@@ -37,24 +20,28 @@ public:
     void setConfig(int index, QString const & value);
 
     int id(int index) const;
-    const QString & name(int index) const;
+    QString name(int index) const;
     unsigned int timeout(int index) const;
-    const QString & config(int index) const;
+    QString config(int index) const;
 
     int count() const;
-    const Services & serviceConfigurations() const;
+    void remove(int index);
 
-    virtual void save();
-    virtual ConfigurationType configurationType();
+private:
+
+    struct Service
+    {
+        int Id;
+        QString Name;
+        QString Config;
+        unsigned int Timeout;
+    };
 
     static const QString ServiceConfigurationPath;
     static const QString ServiceIdConfigurationPath;
     static const QString ServiceNameConfigurationPath;
     static const QString ServiceTimeoutConfigurationPath;
     static const QString ServiceConfigConfigurationPath;
-
-private:
-    Services m_Services;
 };
 
 #endif // SERVICEMONITORCONFIGURATION_H_

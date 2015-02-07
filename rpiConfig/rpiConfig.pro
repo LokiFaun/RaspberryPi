@@ -14,8 +14,8 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 #By default the following file lists are updated automatically by VisualGDB.
 
-SOURCES   += configuration.cpp servicemonitorconfiguration.cpp
-HEADERS   += configuration.h rpiconfig_global.h servicemonitorconfiguration.h
+SOURCES   += configuration.cpp controllerconfiguration.cpp servicemonitorconfiguration.cpp
+HEADERS   += configuration.h controllerconfiguration.h rpiconfig_global.h servicemonitorconfiguration.h
 FORMS     += 
 RESOURCES += 
 

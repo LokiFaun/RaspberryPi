@@ -5,8 +5,8 @@
 
 #include "rpiconfig_global.h"
 #include <QObject>
-#include <QMap>
-#include <QSharedPointer>
+
+class QtJsonSettings;
 
 namespace rpi
 {
@@ -17,25 +17,44 @@ namespace rpi
 
     public:
 
-        typedef QMap<QString, QSharedPointer<Configuration> > ConfigurationMap;
-
         enum ConfigurationType
         {
             ServiceMonitor,
-            Controller,
-            Logger
+            Controller
         };
 
-        Configuration(QString const & fileName, QObject * pParent = NULL);
-        virtual ~Configuration();
+        explicit Configuration(QString const & fileName, QObject * pParent = NULL);
+        virtual ~Configuration() { }
 
-        virtual void save() = 0;
         virtual ConfigurationType configurationType() = 0;
-
         QString configurationFile() const;
-        void setConfigurationFile(QString const & value);
+
+        QString loggingFilename() const;
+        QString loggingLevel() const;
+        int loggingFileSize() const;
+        int loggingFileCount() const;
+
+        void setLoggingFilename(QString const & fileName);
+        void setLoggingLevel(QString const & level);
+        void setLoggingFileSize(int size);
+        void setLoggingFileCount(int count);
+
+        void sync();
+
+    signals:
+
+        void configurationChanged();
 
     protected:
+
+        static const QString LoggingConfigurationPath;
+        static const QString LoggingFileNameConfigurationPath;
+        static const QString LoggingLevelConfigurationPath;
+        static const QString LoggingFileSizeConfigurationPath;
+        static const QString LoggingFileCountConfigurationPath;
+
+
+        QtJsonSettings * m_pSettings;
         QString m_ConfigurationFile;
     };
 }

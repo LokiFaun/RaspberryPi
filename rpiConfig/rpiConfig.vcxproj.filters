@@ -39,12 +39,18 @@
     <ClInclude Include="rpiconfig_global.h">
       <Filter>Header files</Filter>
     </ClInclude>
+    <ClInclude Include="controllerconfiguration.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="configuration.cpp">
       <Filter>Source files</Filter>
     </ClCompile>
     <ClCompile Include="servicemonitorconfiguration.cpp">
+      <Filter>Source files</Filter>
+    </ClCompile>
+    <ClCompile Include="controllerconfiguration.cpp">
       <Filter>Source files</Filter>
     </ClCompile>
   </ItemGroup>

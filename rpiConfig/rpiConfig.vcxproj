@@ -67,11 +67,13 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="configuration.h" />
+    <ClInclude Include="controllerconfiguration.h" />
     <ClInclude Include="rpiconfig_global.h" />
     <ClInclude Include="servicemonitorconfiguration.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="configuration.cpp" />
+    <ClCompile Include="controllerconfiguration.cpp" />
     <ClCompile Include="servicemonitorconfiguration.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
