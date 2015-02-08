@@ -11,7 +11,7 @@ namespace rpi
     {
     public:
 
-        explicit ControllerConfiguration(QString const& fileName, QObject* pParent);
+        explicit ControllerConfiguration(QString const& fileName, QObject* pParent = NULL);
         virtual ~ControllerConfiguration() { }
         
         ConfigurationType configurationType();

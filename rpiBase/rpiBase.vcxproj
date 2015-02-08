@@ -12,6 +12,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="command_defs.h" />
+    <ClInclude Include="Container.h" />
     <ClInclude Include="exception.h" />
     <ClInclude Include="name_defs.h" />
     <ClInclude Include="rpibase_global.h" />
@@ -22,6 +23,7 @@
     <None Include="rpiBase.pro" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Container.cpp" />
     <ClCompile Include="exception.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

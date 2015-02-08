@@ -75,7 +75,12 @@
     <GeneratedFilesFolder>GeneratedFiles</GeneratedFilesFolder>
   </Build>
   <Debug xsi:type="com.visualgdb.debug.remote">
-    <AdditionalStartupCommands />
+    <AdditionalStartupCommands>
+      <GDBPreStartupCommands>
+        <string>set solib-search-path /tmp</string>
+      </GDBPreStartupCommands>
+      <GDBStartupCommands />
+    </AdditionalStartupCommands>
     <AdditionalGDBSettings>
       <FilterSpuriousStoppedNotifications>false</FilterSpuriousStoppedNotifications>
       <ForceSingleThreadedMode>false</ForceSingleThreadedMode>

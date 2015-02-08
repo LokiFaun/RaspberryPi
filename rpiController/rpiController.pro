@@ -44,3 +44,18 @@ LIBS += -L$$OUT_PWD/../rpiLogger/$$DESTDIR -lrpiLogger
 
 INCLUDEPATH += $$PWD/../rpiLogger
 DEPENDPATH += $$PWD/../rpiLogger
+
+LIBS += -L$$PWD/../../qslog/build-QsLogShared
+INCLUDEPATH += $$PWD/../../qslog
+DEPENDPATH += $$PWD/../../qslog
+win32 {
+    LIBS += -lQsLog2
+} else {
+    LIBS += -lQsLog
+}
+
+LIBS += -L$$OUT_PWD/../rpiConfig/$$DESTDIR -lrpiConfig
+
+INCLUDEPATH += $$PWD/../rpiConfig
+DEPENDPATH += $$PWD/../rpiConfig
+

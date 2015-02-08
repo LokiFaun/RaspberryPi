@@ -4,18 +4,30 @@
 #pragma once
 
 #include <QtService.h>
+#include <QSharedPointer>
 
-class Controller : public QtService<QCoreApplication>
+namespace rpi
 {
-public:
-    explicit Controller(int argc, char **argv);
-    virtual ~Controller();
+    class Container;
 
-// QtServiceBase interface
-protected:
-    virtual void start();
-    virtual void stop();
-    virtual void processCommand(int code);
-};
+    class Controller : public QtService<QCoreApplication>
+    {
+    public:
+        explicit Controller(int argc, char **argv);
+        virtual ~Controller();
+
+        // QtServiceBase interface
+    protected:
+        virtual void start();
+        virtual void stop();
+        virtual void processCommand(int code);
+
+    private:
+
+        void load(int argc, char **argv);
+
+        QSharedPointer<Container> m_pContainer;
+    };
+}
 
 #endif // CONTOLLER_H_

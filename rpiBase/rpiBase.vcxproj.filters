@@ -31,6 +31,9 @@
     <ClInclude Include="rpibase_global.h">
       <Filter>Header files</Filter>
     </ClInclude>
+    <ClInclude Include="Container.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="rpiBase.pro">
@@ -45,6 +48,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="exception.cpp">
+      <Filter>Source files</Filter>
+    </ClCompile>
+    <ClCompile Include="Container.cpp">
       <Filter>Source files</Filter>
     </ClCompile>
   </ItemGroup>
