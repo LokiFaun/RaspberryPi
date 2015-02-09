@@ -22,6 +22,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Project Files", "Project Fi
 	ProjectSection(SolutionItems) = preProject
 		poco.pri = poco.pri
 		RaspberryPi.pro = RaspberryPi.pro
+		version.pri = version.pri
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Resource Files", "Resource Files", "{475F5BDA-73D1-41CB-BF14-20C49E305744}"

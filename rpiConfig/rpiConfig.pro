@@ -2,6 +2,8 @@
 #Feel free to modify any flags you want.
 #Visit http://visualgdb.com/makefiles for more details.
 
+include(../version.pri)
+
 QT += core
 QT -= gui
 

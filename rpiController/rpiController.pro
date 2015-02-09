@@ -2,7 +2,7 @@
 #Feel free to modify any flags you want.
 #Visit http://visualgdb.com/makefiles for more details.
 
-VERSION = 1.0.0
+include(../version.pri)
 
 QT += core 
 QT -= gui

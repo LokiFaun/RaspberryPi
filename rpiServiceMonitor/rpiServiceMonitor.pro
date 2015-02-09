@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-VERSION = 1.0.0
+include(../version.pri)
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
