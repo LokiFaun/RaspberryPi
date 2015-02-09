@@ -23,7 +23,7 @@ include($$lower($$join(CONFIGNAME,,,.pro)))
 
 DEFINES += RPILOGGER_LIBRARY
 
-LIBS += -L$$OUT_PWD/../rpiBase/$$DESTDIR -lrpiBase
+LIBS += -L$$OUT_PWD/$$DESTDIR -lrpiBase
 
 INCLUDEPATH += $$PWD/../rpiBase
 DEPENDPATH += $$PWD/../rpiBase

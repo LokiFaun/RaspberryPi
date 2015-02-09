@@ -31,7 +31,7 @@
     <ClInclude Include="rpibase_global.h">
       <Filter>Header files</Filter>
     </ClInclude>
-    <ClInclude Include="Container.h">
+    <ClInclude Include="container.h">
       <Filter>Header files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -50,7 +50,7 @@
     <ClCompile Include="exception.cpp">
       <Filter>Source files</Filter>
     </ClCompile>
-    <ClCompile Include="Container.cpp">
+    <ClCompile Include="container.cpp">
       <Filter>Source files</Filter>
     </ClCompile>
   </ItemGroup>

@@ -2,7 +2,7 @@
 
 
 
-QWizard * ConfigurationWizardFactory::createConfigurationWizard(bool load /*= false*/)
+QWizard * ConfigurationWizardFactory::createConfigurationWizard(bool /*load = false*/)
 {
     return NULL;
 }

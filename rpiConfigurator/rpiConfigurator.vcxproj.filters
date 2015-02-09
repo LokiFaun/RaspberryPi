@@ -31,13 +31,13 @@
     <ClCompile Include="serviceconfigurationwidget.cpp">
       <Filter>Source files</Filter>
     </ClCompile>
-    <ClCompile Include="main.cpp">
-      <Filter>Source files</Filter>
-    </ClCompile>
     <ClCompile Include="configurationwizardfactory.cpp">
       <Filter>Source files</Filter>
     </ClCompile>
     <ClCompile Include="iconfigurationwidget.cpp">
+      <Filter>Source files</Filter>
+    </ClCompile>
+    <ClCompile Include="rpiConfigurator.cpp">
       <Filter>Source files</Filter>
     </ClCompile>
   </ItemGroup>

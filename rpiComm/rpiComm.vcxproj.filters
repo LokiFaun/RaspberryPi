@@ -2,49 +2,43 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <Filter Include="Source files">
-      <UniqueIdentifier>{0ecec53e-aa46-48f2-ad24-9b2ec9147174}</UniqueIdentifier>
+      <UniqueIdentifier>{9e860949-8ba1-4247-86cc-2f1b3c26fc75}</UniqueIdentifier>
       <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
     <Filter Include="Header files">
-      <UniqueIdentifier>{80442685-7443-48e2-b5b7-9bf30a116663}</UniqueIdentifier>
+      <UniqueIdentifier>{34fb351c-52cd-470c-b3cb-eb09569a2cf7}</UniqueIdentifier>
       <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
     </Filter>
     <Filter Include="Resource files">
-      <UniqueIdentifier>{b086a3c5-ede0-4970-b11d-2fd944d69522}</UniqueIdentifier>
+      <UniqueIdentifier>{21c65e65-06fa-4068-94bf-9fd673c7b32b}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
     </Filter>
     <Filter Include="Project files">
-      <UniqueIdentifier>{983e018f-49a0-4ad0-a852-2c6ce5a96f7d}</UniqueIdentifier>
+      <UniqueIdentifier>{9d25d3c1-2923-4514-8a29-02ad735e9bd2}</UniqueIdentifier>
       <Extensions>pro</Extensions>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <None Include="rpiServiceMonitor.pro">
+    <None Include="debug.pro">
       <Filter>Project files</Filter>
     </None>
     <None Include="release.pro">
       <Filter>Project files</Filter>
     </None>
-    <None Include="debug.pro">
+    <None Include="rpiComm.pro">
       <Filter>Project files</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="service.h">
+    <ClInclude Include="rpicomm_global.h">
       <Filter>Header files</Filter>
     </ClInclude>
-    <ClInclude Include="servicemonitor.h">
+    <ClInclude Include="publisher.h">
       <Filter>Header files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="service.cpp">
-      <Filter>Source files</Filter>
-    </ClCompile>
-    <ClCompile Include="servicemonitor.cpp">
-      <Filter>Source files</Filter>
-    </ClCompile>
-    <ClCompile Include="rpiServiceMonitor.cpp">
+    <ClCompile Include="publisher.cpp">
       <Filter>Source files</Filter>
     </ClCompile>
   </ItemGroup>

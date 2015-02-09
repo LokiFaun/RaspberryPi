@@ -10,8 +10,6 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 TARGET = rpiConfig
 TEMPLATE = lib
 
-greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
-
 #By default the following file lists are updated automatically by VisualGDB.
 
 SOURCES   += configuration.cpp controllerconfiguration.cpp servicemonitorconfiguration.cpp
@@ -20,6 +18,8 @@ FORMS     +=
 RESOURCES += 
 
 include($$lower($$join(CONFIGNAME,,,.pro)))
+
+DEFINES += RPICONFIG_LIBRARY
 
 QMAKE_CFLAGS 	+= $$COMMONFLAGS
 QMAKE_CXXFLAGS 	+= $$COMMONFLAGS
@@ -30,12 +30,12 @@ MOC_DIR     = $$DESTDIR
 RCC_DIR     = $$DESTDIR
 UI_DIR      = $$DESTDIR
 
-LIBS += -L$$OUT_PWD/../rpiBase/$$DESTDIR -lrpiBase
+LIBS += -L$$OUT_PWD/$$DESTDIR -lrpiBase
 
 INCLUDEPATH += $$PWD/../rpiBase
 DEPENDPATH += $$PWD/../rpiBase
 
-LIBS += -L$$OUT_PWD/../rpiLogger/$$DESTDIR -lrpiLogger
+LIBS += -L$$OUT_PWD/$$DESTDIR -lrpiLogger
 
 INCLUDEPATH += $$PWD/../rpiLogger
 DEPENDPATH += $$PWD/../rpiLogger

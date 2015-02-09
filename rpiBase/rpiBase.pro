@@ -15,9 +15,9 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 TARGET = rpiBase
 TEMPLATE = lib
 
-SOURCES += Container.cpp exception.cpp
+SOURCES += container.cpp exception.cpp
 
-HEADERS += command_defs.h Container.h exception.h name_defs.h rpibase_global.h
+HEADERS += command_defs.h container.h exception.h name_defs.h rpibase_global.h
 
 include($$lower($$join(CONFIGNAME,,,.pro)))
 
@@ -26,6 +26,8 @@ DEFINES += QTJSONSETTINGS_EXPORTS
 
 include(../../qtjsonsettings/qtjsonsettings.pri)
 include(../../Qt-Solutions/QtService/src/QtService.pri)
+
+LIBS += -lmosquittopp
 
 QMAKE_CFLAGS 	+= $$COMMONFLAGS
 QMAKE_CXXFLAGS 	+= $$COMMONFLAGS

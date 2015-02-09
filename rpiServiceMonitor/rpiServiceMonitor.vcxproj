@@ -20,7 +20,7 @@
     <ClInclude Include="servicemonitor.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp" />
+    <ClCompile Include="rpiServiceMonitor.cpp" />
     <ClCompile Include="service.cpp" />
     <ClCompile Include="servicemonitor.cpp" />
   </ItemGroup>

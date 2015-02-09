@@ -2,25 +2,24 @@
 #Feel free to modify any flags you want.
 #Visit http://visualgdb.com/makefiles for more details.
 
-VERSION = 1.0.0
-
-QT += core 
+QT += core
 QT -= gui
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-TARGET = rpiController
-CONFIG += console qt
-CONFIG   -= app_bundle
-TEMPLATE = app
+TARGET = rpiComm
+TEMPLATE = lib
 
 #By default the following file lists are updated automatically by VisualGDB.
 
-SOURCES   += rpiController.cpp controller.cpp
-HEADERS   += controller.h
+SOURCES   += publisher.cpp
+HEADERS   += publisher.h rpicomm_global.h
+FORMS     += 
 RESOURCES += 
 
 include($$lower($$join(CONFIGNAME,,,.pro)))
+
+DEFINES += RPICOMM_LIBRARY
 
 QMAKE_CFLAGS 	+= $$COMMONFLAGS
 QMAKE_CXXFLAGS 	+= $$COMMONFLAGS
@@ -31,10 +30,6 @@ MOC_DIR     = $$DESTDIR
 RCC_DIR     = $$DESTDIR
 UI_DIR      = $$DESTDIR
 
-#include project libraries
-
-INCLUDEPATH += $$PWD/../../Qt-Solutions/QtService/src
-
 LIBS += -L$$OUT_PWD/$$DESTDIR -lrpiBase
 
 INCLUDEPATH += $$PWD/../rpiBase
@@ -44,23 +39,3 @@ LIBS += -L$$OUT_PWD/$$DESTDIR -lrpiLogger
 
 INCLUDEPATH += $$PWD/../rpiLogger
 DEPENDPATH += $$PWD/../rpiLogger
-
-LIBS += -L$$PWD/../../qslog/build-QsLogShared
-INCLUDEPATH += $$PWD/../../qslog
-DEPENDPATH += $$PWD/../../qslog
-win32 {
-    LIBS += -lQsLog2
-} else {
-    LIBS += -lQsLog
-}
-
-LIBS += -L$$OUT_PWD/$$DESTDIR -lrpiConfig
-
-INCLUDEPATH += $$PWD/../rpiConfig
-DEPENDPATH += $$PWD/../rpiConfig
-
-LIBS += -L$$OUT_PWD/$$DESTDIR -lrpiComm
-
-INCLUDEPATH += $$PWD/../rpiComm
-DEPENDPATH += $$PWD/../rpiComm
-

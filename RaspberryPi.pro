@@ -6,5 +6,4 @@ SUBDIRS += \
     rpiLogger \
     rpiServiceMonitor \
     rpiController \
-    rpiConfigurator \
-    ..\qslog
+    rpiConfigurator

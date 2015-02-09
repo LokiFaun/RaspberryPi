@@ -17,7 +17,7 @@
     <RemoveRemoteDirectoryOnClean>false</RemoveRemoteDirectoryOnClean>
   </Project>
   <Build xsi:type="com.visualgdb.build.qmake">
-    <MakeFilePathRelativeToSourceDir>rpiConfig.pro</MakeFilePathRelativeToSourceDir>
+    <MakeFilePathRelativeToSourceDir>rpiComm.pro</MakeFilePathRelativeToSourceDir>
     <MakeConfigurationName>Debug</MakeConfigurationName>
     <Toolchain>
       <Name>Raspberry PI</Name>
@@ -60,7 +60,7 @@
     <QMakeCommand>
       <SkipWhenRunningCommandList>false</SkipWhenRunningCommandList>
       <Command>C:\SysGCC\Raspberry\Qt\v4\qmake.exe</Command>
-      <Arguments> rpiConfig.pro CONFIGNAME=$(ConfigurationName)</Arguments>
+      <Arguments> rpiComm.pro CONFIGNAME=$(ConfigurationName)</Arguments>
       <WorkingDirectory>$(BuildDir)</WorkingDirectory>
       <Environment>
         <Records>
@@ -105,7 +105,7 @@
       <DisableSignals>false</DisableSignals>
     </AdditionalGDBSettings>
     <LaunchGDBSettings xsi:type="GDBLaunchParametersNewInstance">
-      <DebuggedProgram>$(TargetPath)</DebuggedProgram>
+      <DebuggedProgram>/tmp/$(TargetFileName)</DebuggedProgram>
       <GDBServerPort>2000</GDBServerPort>
       <ProgramArguments />
     </LaunchGDBSettings>

@@ -11,7 +11,7 @@ TEMPLATE = app
 
 #By default the following file lists are updated automatically by VisualGDB.
 
-SOURCES   += configurationtabfactory.cpp configurationwizardfactory.cpp iconfigurationwidget.cpp serviceconfigurationwidget.cpp servicemonitorconfigurationwidget.cpp MainWindow.cpp main.cpp
+SOURCES   += configurationtabfactory.cpp configurationwizardfactory.cpp iconfigurationwidget.cpp serviceconfigurationwidget.cpp servicemonitorconfigurationwidget.cpp MainWindow.cpp rpiConfigurator.cpp
 HEADERS   += configurationtabfactory.h configurationwizardfactory.h iconfigurationwidget.h serviceconfigurationwidget.h servicemonitorconfigurationwidget.h MainWindow.h
 FORMS     += MainWindow.ui
 RESOURCES += 
@@ -20,17 +20,17 @@ include($$lower($$join(CONFIGNAME,,,.pro)))
 
 INCLUDEPATH += $$PWD/../../Qt-Solutions/QtService/src
 
-LIBS += -L$$OUT_PWD/../rpiBase/$$DESTDIR -lrpiBase
+LIBS += -L$$OUT_PWD/$$DESTDIR -lrpiBase
 
 INCLUDEPATH += $$PWD/../rpiBase
 DEPENDPATH += $$PWD/../rpiBase
 
-LIBS += -L$$OUT_PWD/../rpiLogger/$$DESTDIR -lrpiLogger
+LIBS += -L$$OUT_PWD/$$DESTDIR -lrpiLogger
 
 INCLUDEPATH += $$PWD/../rpiLogger
 DEPENDPATH += $$PWD/../rpiLogger
 
-LIBS += -L$$OUT_PWD/../rpiConfig/$$DESTDIR -lrpiConfig
+LIBS += -L$$OUT_PWD/$$DESTDIR -lrpiConfig
 
 INCLUDEPATH += $$PWD/../rpiConfig
 DEPENDPATH += $$PWD/../rpiConfig

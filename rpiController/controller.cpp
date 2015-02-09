@@ -2,7 +2,8 @@
 #include <name_defs.h>
 #include "../rpiConfig/controllerconfiguration.h"
 #include <logmanager.h>
-#include <Container.h>
+#include <container.h>
+#include <publisher.h>
 
 #include <QStringList>
 

@@ -3,12 +3,14 @@
 
 #pragma once
 
+#include "rpibase_global.h"
+
 #include <QObject>
 #include <QMap>
 
 namespace rpi
 {
-    class Container : public QObject
+    class RPIBASESHARED_EXPORT Container : public QObject
     {
         Q_OBJECT
     public:

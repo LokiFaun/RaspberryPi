@@ -21,7 +21,7 @@ TEMPLATE = app
 
 include($$lower($$join(CONFIGNAME,,,.pro)))
 
-SOURCES += main.cpp service.cpp servicemonitor.cpp
+SOURCES += rpiServiceMonitor.cpp service.cpp servicemonitor.cpp
 HEADERS += service.h servicemonitor.h
 
 QMAKE_CFLAGS 	+= $$COMMONFLAGS
@@ -37,17 +37,17 @@ UI_DIR      = $$DESTDIR
 
 INCLUDEPATH += $$PWD/../../Qt-Solutions/QtService/src
 
-LIBS += -L$$OUT_PWD/../rpiBase/$$DESTDIR -lrpiBase
+LIBS += -L$$OUT_PWD/$$DESTDIR -lrpiBase
 
 INCLUDEPATH += $$PWD/../rpiBase
 DEPENDPATH += $$PWD/../rpiBase
 
-LIBS += -L$$OUT_PWD/../rpiLogger/$$DESTDIR -lrpiLogger
+LIBS += -L$$OUT_PWD/$$DESTDIR -lrpiLogger
 
 INCLUDEPATH += $$PWD/../rpiLogger
 DEPENDPATH += $$PWD/../rpiLogger
 
-LIBS += -L$$OUT_PWD/../rpiConfig/$$DESTDIR -lrpiConfig
+LIBS += -L$$OUT_PWD/$$DESTDIR -lrpiConfig
 
 INCLUDEPATH += $$PWD/../rpiConfig
 DEPENDPATH += $$PWD/../rpiConfig

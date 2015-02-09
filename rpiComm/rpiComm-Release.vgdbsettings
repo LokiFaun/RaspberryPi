@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <VisualGDBProjectSettings2 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <ConfigurationName>Debug</ConfigurationName>
+  <ConfigurationName>Release</ConfigurationName>
   <Project xsi:type="com.visualgdb.project.linux">
     <CustomSourceDirectories>
       <Directories />
@@ -17,8 +17,8 @@
     <RemoveRemoteDirectoryOnClean>false</RemoveRemoteDirectoryOnClean>
   </Project>
   <Build xsi:type="com.visualgdb.build.qmake">
-    <MakeFilePathRelativeToSourceDir>rpiConfig.pro</MakeFilePathRelativeToSourceDir>
-    <MakeConfigurationName>Debug</MakeConfigurationName>
+    <MakeFilePathRelativeToSourceDir>rpiComm.pro</MakeFilePathRelativeToSourceDir>
+    <MakeConfigurationName>Release</MakeConfigurationName>
     <Toolchain>
       <Name>Raspberry PI</Name>
       <Location>C:\SysGCC\Raspberry</Location>
@@ -60,7 +60,7 @@
     <QMakeCommand>
       <SkipWhenRunningCommandList>false</SkipWhenRunningCommandList>
       <Command>C:\SysGCC\Raspberry\Qt\v4\qmake.exe</Command>
-      <Arguments> rpiConfig.pro CONFIGNAME=$(ConfigurationName)</Arguments>
+      <Arguments> rpiComm.pro CONFIGNAME=$(ConfigurationName)</Arguments>
       <WorkingDirectory>$(BuildDir)</WorkingDirectory>
       <Environment>
         <Records>
@@ -105,6 +105,18 @@
       <DisableSignals>false</DisableSignals>
     </AdditionalGDBSettings>
     <LaunchGDBSettings xsi:type="GDBLaunchParametersNewInstance">
+      <GDBEnvironment>
+        <Records>
+          <Record>
+            <VariableName>LANG</VariableName>
+            <Value>en_US.UTF-8</Value>
+          </Record>
+          <Record>
+            <VariableName>PATH</VariableName>
+            <Value>%PATH%;C:\SysGCC\Raspberry\bin</Value>
+          </Record>
+        </Records>
+      </GDBEnvironment>
       <DebuggedProgram>$(TargetPath)</DebuggedProgram>
       <GDBServerPort>2000</GDBServerPort>
       <ProgramArguments />
@@ -114,8 +126,7 @@
     <X11WindowMode>Local</X11WindowMode>
     <KeepConsoleAfterExit>false</KeepConsoleAfterExit>
     <RunGDBUnderSudo>false</RunGDBUnderSudo>
-    <DeploymentMode>Never</DeploymentMode>
-    <LdLibraryPath>/tmp</LdLibraryPath>
+    <DeploymentMode>Auto</DeploymentMode>
     <DeployWhenLaunchedWithoutDebugging>true</DeployWhenLaunchedWithoutDebugging>
   </Debug>
   <CustomBuild>
