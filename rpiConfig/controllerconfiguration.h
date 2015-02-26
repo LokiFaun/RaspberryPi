@@ -9,6 +9,7 @@ namespace rpi
 {
     class  ControllerConfiguration : public Configuration
     {
+        Q_OBJECT
     public:
 
         explicit ControllerConfiguration(QString const& fileName, QObject* pParent = NULL);

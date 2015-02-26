@@ -7,6 +7,7 @@
 
 class RPICONFIGSHARED_EXPORT ServiceMonitorConfiguration : public rpi::Configuration
 {
+    Q_OBJECT
 public:
 
     explicit ServiceMonitorConfiguration(QString const & fileName, QObject * pParent = NULL);

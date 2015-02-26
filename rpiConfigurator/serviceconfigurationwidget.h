@@ -11,7 +11,7 @@ class ServiceConfigurationWidget : public QWidget
 {
     Q_OBJECT
 public:
-    ServiceConfigurationWidget(int nr);
+    explicit ServiceConfigurationWidget(int nr);
     virtual ~ServiceConfigurationWidget();
 
     void setConfiguration(int id, QString const & name, unsigned int timeout, QString const & config);

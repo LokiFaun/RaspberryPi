@@ -15,6 +15,7 @@ namespace rpi
         Q_OBJECT
     public:
         explicit Container(QObject * pParent = NULL);
+        virtual ~Container() { }
 
         void registerObject(QString const & key, QObject * pObject);
         void registerObject(QObject * pObject);

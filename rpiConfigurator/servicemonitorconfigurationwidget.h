@@ -12,7 +12,7 @@ class ServiceMonitorConfigurationWidget : public IConfigurationWidget
 {
     Q_OBJECT
 public:
-    ServiceMonitorConfigurationWidget(ServiceMonitorConfiguration * config);
+    explicit ServiceMonitorConfigurationWidget(ServiceMonitorConfiguration * config);
     virtual ~ServiceMonitorConfigurationWidget();
 
     virtual void saveConfiguration();

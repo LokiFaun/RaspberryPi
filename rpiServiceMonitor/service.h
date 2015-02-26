@@ -16,7 +16,8 @@ class Service : public QThread
 {
     Q_OBJECT
 public:
-    Service(QString const & name, unsigned int id, unsigned int timeout, QString const & config, QObject * pParent = NULL);
+    explicit Service(QString const & name, unsigned int id, unsigned int timeout, QString const & config, QObject * pParent = NULL);
+    virtual ~Service() { }
 
     QString name() const;
     QString getArguments() const;

@@ -3,18 +3,24 @@
 
 #pragma once
 
-#include <QString>
 #include "rpibase_global.h"
+
+#include <QObject>
+#include <QString>
 
 namespace rpi
 {
 
-class RPIBASESHARED_EXPORT Exception
+class RPIBASESHARED_EXPORT Exception : public QObject
 {
+    Q_OBJECT
 public:
-    explicit Exception(QString what);
-    explicit Exception(QString what, QString file, int line);
-    explicit Exception(QString what, QString file, int line, QString func);
+    explicit Exception(QObject * pParent = NULL);
+    explicit Exception(QString what, QObject * pParent = NULL);
+    explicit Exception(QString what, QString file, int line, QObject * pParent = NULL);
+    explicit Exception(QString what, QString file, int line, QString func, QObject * pParent = NULL);
+    Exception(Exception const &ex);
+    virtual ~Exception() { }
 
     QString what() const;
     QString where() const;

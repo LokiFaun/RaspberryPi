@@ -16,6 +16,7 @@ class ServiceMonitor : public QtService<QCoreApplication>
 {
 public:
     explicit ServiceMonitor(int argc, char **argv);
+    virtual ~ServiceMonitor() { }
 
     typedef QMap<unsigned int, QSharedPointer<Service> > ServiceMap;
 
