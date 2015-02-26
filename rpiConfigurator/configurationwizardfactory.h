@@ -12,3 +12,4 @@ public:
 };
 
 #endif // CONFIGURATIONWIZARDFACTORY_H__
+

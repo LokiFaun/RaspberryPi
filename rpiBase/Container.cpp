@@ -2,9 +2,11 @@
 
 using namespace rpi;
 
-Container::Container(QObject* pParent /*= NULL*/) : QObject(pParent) { }
+Container::Container(QObject * pParent /*= NULL*/) : QObject(pParent)
+{
+}
 
-void Container::registerObject(QString const& key, QObject* pObject)
+void Container::registerObject(QString const & key, QObject * pObject)
 {
     if (m_Objects.contains(key))
     {
@@ -15,7 +17,7 @@ void Container::registerObject(QString const& key, QObject* pObject)
     m_Objects[key] = pObject;
 }
 
-void Container::registerObject(QObject* pObject)
+void Container::registerObject(QObject * pObject)
 {
     const QString key = pObject->metaObject()->className();
     if (m_Objects.contains(key))
@@ -27,11 +29,16 @@ void Container::registerObject(QObject* pObject)
     m_Objects[key] = pObject;
 }
 
-QObject* Container::getObject(QString const& key)
+QObject * Container::getObject(QString const & key)
 {
     if (m_Objects.contains(key))
     {
         return m_Objects[key];
     }
     return NULL;
+}
+
+IHasContainer::IHasContainer(Container * pContainer)
+{
+    m_pContainer = pContainer;
 }

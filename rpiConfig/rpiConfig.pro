@@ -7,6 +7,8 @@ include(../version.pri)
 QT += core
 QT -= gui
 
+CONFIG += std=c++0x
+
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TARGET = rpiConfig

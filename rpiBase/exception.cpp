@@ -23,7 +23,7 @@ Exception::Exception(QString what, QString file, int line, QString func, QObject
 {
 }
 
-Exception::Exception(Exception const& ex)
+Exception::Exception(Exception const & ex)
     : QObject(ex.d_ptr->parent)
 {
     m_What = ex.m_What;

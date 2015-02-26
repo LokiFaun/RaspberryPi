@@ -36,7 +36,9 @@ ServiceMonitorConfigurationWidget::ServiceMonitorConfigurationWidget(ServiceMoni
     setCentralWidget(pScrollArea);
 }
 
-ServiceMonitorConfigurationWidget::~ServiceMonitorConfigurationWidget() { }
+ServiceMonitorConfigurationWidget::~ServiceMonitorConfigurationWidget()
+{
+}
 
 void ServiceMonitorConfigurationWidget::addNewService()
 {
@@ -94,7 +96,7 @@ void ServiceMonitorConfigurationWidget::removeService(QWidget * pWidget, int nr)
 {
     Q_ASSERT_X(m_pConfiguration != NULL, Q_FUNC_INFO, "invalid configuration");
     RPI_DEBUG("rpiConfigurator", "removing service");
-    
+
     m_pConfiguration->remove(nr);
 
     m_pLayout->removeWidget(pWidget);
@@ -132,7 +134,7 @@ void ServiceMonitorConfigurationWidget::changeServiceName(int nr, QString const 
     if (m_pConfiguration != NULL)
     {
         m_pConfiguration->setName(nr, name);
-        
+
         emit configurationChanged();
     }
 }

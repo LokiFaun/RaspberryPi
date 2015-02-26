@@ -7,36 +7,40 @@
 #include <QMap>
 #include <QSharedPointer>
 
-#include "service.h"
-
 namespace rpi
 {
+    class Container;
+    class Service;
 
-class ServiceMonitor : public QtService<QCoreApplication>
-{
-public:
-    explicit ServiceMonitor(int argc, char **argv);
-    virtual ~ServiceMonitor() { }
+    class ServiceMonitor : public QtService<QCoreApplication>
+    {
+    public:
+        explicit ServiceMonitor(int argc, char ** argv);
 
-    typedef QMap<unsigned int, QSharedPointer<Service> > ServiceMap;
+        virtual ~ServiceMonitor()
+        {
+        }
 
-    // QtServiceBase interface
-protected:
-    virtual void start();
-    virtual void stop();
-    virtual void processCommand(int code);
+        typedef QMap<unsigned int, QSharedPointer<Service> > ServiceMap;
 
-private:
-    void load(int argc, char ** argv);
-    void reboot();
-    void restart();
-    void keepAlive(int id);
-    void stopServices();
-    void startServices();
+        // QtServiceBase interface
+    protected:
+        virtual void start();
+        virtual void stop();
+        virtual void processCommand(int code);
 
-    ServiceMap m_ServiceMap;
-};
+    private:
+        void load(int argc, char ** argv);
+        void reboot();
+        void restart();
+        void keepAlive(int id);
+        void stopServices();
+        void startServices();
 
+        ServiceMap m_ServiceMap;
+        QSharedPointer<Container> m_pContainer;
+    };
 }
 
 #endif // SERVICEMONITOR_H
+

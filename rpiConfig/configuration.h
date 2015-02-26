@@ -10,10 +10,11 @@ class QtJsonSettings;
 
 namespace rpi
 {
-    class RPICONFIGSHARED_EXPORT Configuration : public QObject
+    class
+        RPICONFIGSHARED_EXPORT Configuration : public QObject
     {
         Q_OBJECT
-            Q_ENUMS(ConfigurationType);
+        Q_ENUMS(ConfigurationType);
 
     public:
 
@@ -24,7 +25,10 @@ namespace rpi
         };
 
         explicit Configuration(QString const & fileName, QObject * pParent = NULL);
-        virtual ~Configuration() { }
+
+        virtual ~Configuration()
+        {
+        }
 
         virtual ConfigurationType configurationType() = 0;
         QString configurationFile() const;
@@ -41,7 +45,7 @@ namespace rpi
 
         void sync();
 
-    signals:
+        signals:
 
         void configurationChanged();
 
@@ -60,3 +64,4 @@ namespace rpi
 }
 
 #endif // CONFIGURATION_H_
+

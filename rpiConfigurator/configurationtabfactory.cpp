@@ -29,7 +29,7 @@ IConfigurationWidget * ConfigurationTabFactory::createServiceMonitorConfiguratio
     {
         return NULL;
     }
-    
+
     ServiceMonitorConfigurationWidget * pWidget = new ServiceMonitorConfigurationWidget(pMonitorConfig);
     pWidget->setServiceConfigPath(pMonitorConfig->configurationFile());
 

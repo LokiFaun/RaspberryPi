@@ -56,7 +56,7 @@ void IConfigurationWidget::stop()
         return;
     }
     QtServiceController service(m_ServicePath);
-     
+
     if (service.isRunning() && !service.stop())
     {
         QMessageBox::critical(this, "Error", QString("Could not stop the service %1!").arg(m_ServicePath));

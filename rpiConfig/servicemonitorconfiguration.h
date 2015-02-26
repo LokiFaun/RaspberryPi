@@ -5,13 +5,17 @@
 
 #include "configuration.h"
 
-class RPICONFIGSHARED_EXPORT ServiceMonitorConfiguration : public rpi::Configuration
+class
+    RPICONFIGSHARED_EXPORT ServiceMonitorConfiguration : public rpi::Configuration
 {
     Q_OBJECT
 public:
 
     explicit ServiceMonitorConfiguration(QString const & fileName, QObject * pParent = NULL);
-    virtual ~ServiceMonitorConfiguration() { }
+
+    virtual ~ServiceMonitorConfiguration()
+    {
+    }
 
     virtual ConfigurationType configurationType();
 
@@ -46,3 +50,4 @@ private:
 };
 
 #endif // SERVICEMONITORCONFIGURATION_H_
+

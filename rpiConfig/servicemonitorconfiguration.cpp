@@ -105,12 +105,12 @@ void ServiceMonitorConfiguration::remove(int index)
         {
             continue;
         }
-        services.push_back({ 
-            m_pSettings->value(ServiceIdConfigurationPath).toInt(), 
-            m_pSettings->value(ServiceNameConfigurationPath).toString(), 
-            m_pSettings->value(ServiceConfigConfigurationPath).toString(),
-            m_pSettings->value(ServiceTimeoutConfigurationPath).toUInt()
-        });
+        services.push_back({
+                               m_pSettings->value(ServiceIdConfigurationPath).toInt(),
+                               m_pSettings->value(ServiceNameConfigurationPath).toString(),
+                               m_pSettings->value(ServiceConfigConfigurationPath).toString(),
+                               m_pSettings->value(ServiceTimeoutConfigurationPath).toUInt()
+                           });
     }
     m_pSettings->endArray();
 

@@ -12,7 +12,8 @@ namespace rpi
 {
     class MosquittoPublisher;
 
-    class RPICOMMSHARED_EXPORT Publisher : public QObject
+    class
+        RPICOMMSHARED_EXPORT Publisher : public QObject
     {
         Q_OBJECT
     public:

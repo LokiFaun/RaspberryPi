@@ -2,7 +2,7 @@
 
 using namespace rpi;
 
-int main(int argc, char *argv[])
+int main(int argc, char * argv[])
 {
     Controller service(argc, argv);
     return service.exec();

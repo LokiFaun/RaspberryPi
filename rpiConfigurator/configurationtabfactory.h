@@ -19,3 +19,4 @@ private:
 };
 
 #endif // CONFIGURATIONTABFACTORY_H__
+

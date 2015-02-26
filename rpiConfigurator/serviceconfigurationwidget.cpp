@@ -16,7 +16,7 @@ ServiceConfigurationWidget::ServiceConfigurationWidget(int nr)
     m_pConfigBlock = new QLineEdit;
     m_pRemoveButton = new QPushButton("Remove");
 
-    QGroupBox *groupBox = new QGroupBox(QString("Service: %1").arg(nr));
+    QGroupBox * groupBox = new QGroupBox(QString("Service: %1").arg(nr));
     groupBox->setMinimumHeight(150);
     groupBox->setMinimumWidth(200);
 
@@ -44,7 +44,9 @@ ServiceConfigurationWidget::ServiceConfigurationWidget(int nr)
 }
 
 
-ServiceConfigurationWidget::~ServiceConfigurationWidget() { }
+ServiceConfigurationWidget::~ServiceConfigurationWidget()
+{
+}
 
 void ServiceConfigurationWidget::removeService()
 {

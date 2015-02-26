@@ -29,7 +29,6 @@ namespace rpi
         QString m_Host;
         int m_Port;
     };
-
 }
 
 MosquittoPublisher::MosquittoPublisher(Publisher * pPublisher, QString const & id, QString const & topic, QString const & host, int port)
@@ -74,14 +73,16 @@ void MosquittoPublisher::on_error()
     }
 }
 
-Publisher::Publisher(QString const& id, QString const& topic, QString const& host, int port)
+Publisher::Publisher(QString const & id, QString const & topic, QString const & host, int port)
 {
     m_pPublisher = QSharedPointer<MosquittoPublisher>(new MosquittoPublisher(this, id, topic, host, port));
 }
 
-Publisher::~Publisher() { }
+Publisher::~Publisher()
+{
+}
 
-bool Publisher::SendMesage(QString const& message)
+bool Publisher::SendMesage(QString const & message)
 {
     if (m_pPublisher != NULL)
     {

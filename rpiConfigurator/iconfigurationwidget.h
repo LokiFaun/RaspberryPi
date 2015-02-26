@@ -29,3 +29,4 @@ private:
 };
 
 #endif // CONFIGURATIONWIDGET_H__
+

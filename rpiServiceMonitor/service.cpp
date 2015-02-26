@@ -5,7 +5,7 @@
 
 using namespace rpi;
 
-Service::Service(const QString &name, unsigned int id, unsigned int timeout, QString const & config, QObject *pParent)
+Service::Service(const QString & name, unsigned int id, unsigned int timeout, QString const & config, QObject * pParent)
     : QThread(pParent), m_Name(name), m_Id(id), m_Timeout(timeout), m_ConfigFile(config)
 {
     m_IsRunning = false;
@@ -32,7 +32,7 @@ bool Service::IsRunning()
     return m_IsRunning;
 }
 
-void Service::setArguments(const QStringList &args)
+void Service::setArguments(const QStringList & args)
 {
     m_Arguments = args;
 }
@@ -89,5 +89,3 @@ void Service::run()
         }
     }
 }
-
-

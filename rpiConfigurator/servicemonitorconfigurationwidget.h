@@ -32,7 +32,6 @@ private:
 
     ServiceMonitorConfiguration * m_pConfiguration;
     QVBoxLayout * m_pLayout;
-    
 };
 #endif // SERVICEMONITORCONFIGURATIONWIDGET_H_
 

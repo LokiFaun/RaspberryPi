@@ -40,3 +40,4 @@ private:
 };
 
 #endif // SERVICECONFIGURATIONWIDGET_H__
+

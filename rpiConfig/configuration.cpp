@@ -48,7 +48,7 @@ int Configuration::loggingFileCount() const
     return value;
 }
 
-void Configuration::setLoggingFilename(QString const& fileName)
+void Configuration::setLoggingFilename(QString const & fileName)
 {
     m_pSettings->beginGroup(LoggingConfigurationPath);
     m_pSettings->setValue(LoggingFileNameConfigurationPath, fileName);
@@ -56,7 +56,7 @@ void Configuration::setLoggingFilename(QString const& fileName)
     emit configurationChanged();
 }
 
-void Configuration::setLoggingLevel(QString const& level)
+void Configuration::setLoggingLevel(QString const & level)
 {
     m_pSettings->beginGroup(LoggingConfigurationPath);
     m_pSettings->setValue(LoggingLevelConfigurationPath, level);

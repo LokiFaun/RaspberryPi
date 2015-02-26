@@ -10,3 +10,4 @@
 #endif
 
 #endif // RPICOMM_GLOBAL_H
+

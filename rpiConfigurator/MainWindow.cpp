@@ -8,7 +8,7 @@
 
 using namespace rpi;
 
-MainWindow::MainWindow(QWidget *parent) :
+MainWindow::MainWindow(QWidget * parent) :
     QMainWindow(parent),
     m_Ui(new Ui::MainWindow)
 {
@@ -18,7 +18,9 @@ MainWindow::MainWindow(QWidget *parent) :
     createTabWidget();
 }
 
-MainWindow::~MainWindow() { }
+MainWindow::~MainWindow()
+{
+}
 
 void MainWindow::aboutQt()
 {
@@ -44,7 +46,7 @@ void MainWindow::saveConfiguration()
 {
     RPI_DEBUG("rpiConfigurator", "saving current configuration");
     const int idx = m_TabWidget->currentIndex();
-    IConfigurationWidget *pWidget = dynamic_cast<IConfigurationWidget *>(m_TabWidget->currentWidget());
+    IConfigurationWidget * pWidget = dynamic_cast<IConfigurationWidget *>(m_TabWidget->currentWidget());
     if (pWidget == NULL)
     {
         RPI_WARN(Q_FUNC_INFO, "invalid tab-widget");
@@ -66,7 +68,7 @@ void MainWindow::saveAllConfigurations()
     const int count = m_TabWidget->count();
     for (int idx = 0; idx < count; idx++)
     {
-        IConfigurationWidget *pWidget = dynamic_cast<IConfigurationWidget *>(m_TabWidget->widget(idx));
+        IConfigurationWidget * pWidget = dynamic_cast<IConfigurationWidget *>(m_TabWidget->widget(idx));
         if (pWidget == NULL)
         {
             RPI_WARN("rpiConfigurator", "invalid tab-widget");
@@ -108,7 +110,7 @@ void MainWindow::createTabWidget()
     m_TabWidget->addTab(pWidget, fileName);
     connect(m_TabWidget, SIGNAL(tabCloseRequested(int)), this, SLOT(closeTab(int)));
 
-    QMainWindow::setCentralWidget(m_TabWidget);    
+    QMainWindow::setCentralWidget(m_TabWidget);
 }
 
 void MainWindow::handleConfigurationChanged()

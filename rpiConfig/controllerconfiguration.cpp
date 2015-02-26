@@ -22,7 +22,7 @@ const QString ControllerConfiguration::ServiceMonitorMonitorConfigurationPath = 
 const QString ControllerConfiguration::ServiceMonitorUpdateIntervallConfigurationPath = "Intervall";
 
 
-ControllerConfiguration::ControllerConfiguration(QString const& fileName, QObject* pParent /* = NULL*/)
+ControllerConfiguration::ControllerConfiguration(QString const & fileName, QObject * pParent /* = NULL*/)
     :Configuration(fileName, pParent)
 {
 }
@@ -183,7 +183,7 @@ void ControllerConfiguration::setIsServiceMonitorEnabled(bool isEnabled)
     m_pSettings->endGroup();
 }
 
-void ControllerConfiguration::setServiceMonitor(QString const& monitor)
+void ControllerConfiguration::setServiceMonitor(QString const & monitor)
 {
     m_pSettings->beginGroup(ServiceMonitorConfigurationPath);
     m_pSettings->setValue(ServiceMonitorMonitorConfigurationPath, monitor);

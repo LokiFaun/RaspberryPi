@@ -7,14 +7,17 @@
 
 namespace rpi
 {
-    class  ControllerConfiguration : public Configuration
+    class ControllerConfiguration : public Configuration
     {
         Q_OBJECT
     public:
 
-        explicit ControllerConfiguration(QString const& fileName, QObject* pParent = NULL);
-        virtual ~ControllerConfiguration() { }
-        
+        explicit ControllerConfiguration(QString const & fileName, QObject * pParent = NULL);
+
+        virtual ~ControllerConfiguration()
+        {
+        }
+
         ConfigurationType configurationType();
 
 
@@ -48,7 +51,7 @@ namespace rpi
         void setServiceMonitor(QString const & monitor);
         void setServiceMonitorUpdateIntervall(unsigned int intervall);
 
-        
+
     private:
 
         static const QString AutodimmingConfigurationPath;
@@ -67,7 +70,6 @@ namespace rpi
         static const QString ServiceMinitorEnabledConfigurationPath;
         static const QString ServiceMonitorMonitorConfigurationPath;
         static const QString ServiceMonitorUpdateIntervallConfigurationPath;
-
     };
 }
 

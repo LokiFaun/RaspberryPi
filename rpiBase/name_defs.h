@@ -5,7 +5,6 @@
 
 namespace rpi
 {
-
     const QString DefaultMonitorConfigFile("/home/user/pi/.rpi/monitorConfig.json");
     const QString DefaultControllerConfigFile("/home/user/pi/.rpi/controllerConfig.json");
 
@@ -27,7 +26,7 @@ namespace rpi
     const bool DefaultServiceMonitorEnabled = false;
     const QString DefaultServiceMonitor = "rpiServiceMonitor";
     const unsigned int DefaultServiceMonitorUpdateIntervall = 5000;
-
 }
 
 #endif // NAME_DEFS_H
+
