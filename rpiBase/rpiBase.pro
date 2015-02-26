@@ -27,8 +27,6 @@ DEFINES += QTJSONSETTINGS_EXPORTS
 include(../../qtjsonsettings/qtjsonsettings.pri)
 include(../../Qt-Solutions/QtService/src/QtService.pri)
 
-LIBS += -lmosquittopp
-
 QMAKE_CFLAGS 	+= $$COMMONFLAGS
 QMAKE_CXXFLAGS 	+= $$COMMONFLAGS
 QMAKE_LFLAGS 	+= $$COMMONFLAGS

@@ -64,3 +64,4 @@ LIBS += -L$$OUT_PWD/$$DESTDIR -lrpiComm
 INCLUDEPATH += $$PWD/../rpiComm
 DEPENDPATH += $$PWD/../rpiComm
 
+LIBS += -lmosquittopp

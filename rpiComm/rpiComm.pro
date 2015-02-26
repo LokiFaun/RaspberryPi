@@ -41,3 +41,5 @@ LIBS += -L$$OUT_PWD/$$DESTDIR -lrpiLogger
 
 INCLUDEPATH += $$PWD/../rpiLogger
 DEPENDPATH += $$PWD/../rpiLogger
+
+LIBS += -lmosquittopp
