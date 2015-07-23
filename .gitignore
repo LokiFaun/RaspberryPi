@@ -41,3 +41,5 @@ VisualGDBCache
 *.sdf
 *.suo
 *vcxproj.user
+rpiMockService/gcc_Release.h
+rpiMockService/gcc_Debug.h

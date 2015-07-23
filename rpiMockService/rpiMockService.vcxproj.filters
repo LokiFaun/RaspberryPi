@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source files">
+      <UniqueIdentifier>{e9fed59d-4746-4722-a228-ac5bf6767d29}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header files">
+      <UniqueIdentifier>{a1f6c55c-df9c-4a81-ad77-3a76bb89130b}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource files">
+      <UniqueIdentifier>{bf4fe8bc-1c4a-4327-b490-e5d516685f36}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
+    </Filter>
+    <Filter Include="Project files">
+      <UniqueIdentifier>{abba94b1-749f-4b1b-8ab4-6dc4dd2859e8}</UniqueIdentifier>
+      <Extensions>pro</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="rpiMockService.cpp">
+      <Filter>Source files</Filter>
+    </ClCompile>
+    <ClCompile Include="mockservice.cpp">
+      <Filter>Source files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="debug.pro">
+      <Filter>Project files</Filter>
+    </None>
+    <None Include="release.pro">
+      <Filter>Project files</Filter>
+    </None>
+    <None Include="rpiMockService.pro">
+      <Filter>Project files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="mockservice.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
