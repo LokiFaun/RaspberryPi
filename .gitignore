@@ -43,3 +43,6 @@ VisualGDBCache
 *vcxproj.user
 rpiMockService/gcc_Release.h
 rpiMockService/gcc_Debug.h
+
+#submodules
+thirdparty

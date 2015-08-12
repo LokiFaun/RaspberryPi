@@ -1,0 +1,20 @@
+[submodule "thirdparty/qt-solutions"]
+	path = thirdparty/qt-solutions
+	url = https://github.com/qtproject/qt-solutions.git
+	ignore = dirty
+[submodule "thirdparty/qslog"]
+	path = thirdparty/qslog
+	url = https://bitbucket.org/razvanpetru/qslog.git
+	ignore = dirty
+[submodule "thirdparty/org.eclipse.paho.mqtt.cpp.git"]
+	path = thirdparty/org.eclipse.paho.mqtt.cpp.git
+	url = http://git.eclipse.org/gitroot/paho/org.eclipse.paho.mqtt.cpp.git
+	ignore = dirty
+[submodule "thirdparty/org.eclipse.paho.mqtt.c.git"]
+	path = thirdparty/org.eclipse.paho.mqtt.c.git
+	url = http://git.eclipse.org/gitroot/paho/org.eclipse.paho.mqtt.c.git
+	ignore = dirty
+[submodule "thirdparty/org.eclipse.mosquitto"]
+	path = thirdparty/org.eclipse.mosquitto
+	url = http://git.eclipse.org/gitroot/mosquitto/org.eclipse.mosquitto.git
+	ignore = dirty
