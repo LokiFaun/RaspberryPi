@@ -19,62 +19,65 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\..\qslog\QsLog.pri">
+    <None Include="..\thirdparty\qslog\README.md">
+      <Filter>Resource files</Filter>
+    </None>
+    <None Include="..\thirdparty\qslog\QsLogSharedLibrary.pro">
       <Filter>Project files</Filter>
     </None>
-    <None Include="..\..\qslog\QsLogSharedLibrary.pro">
+    <None Include="..\thirdparty\qslog\QsLog.pri">
       <Filter>Project files</Filter>
     </None>
-    <None Include="..\..\qslog\README.md">
-      <Filter>Resource files</Filter>
-    </None>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\qslog\QsLog.h">
-      <Filter>Header files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\qslog\QsLogDest.h">
-      <Filter>Header files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\qslog\QsLogDestConsole.h">
-      <Filter>Header files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\qslog\QsLogDestFile.h">
-      <Filter>Header files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\qslog\QsLogDisableForThisFile.h">
-      <Filter>Header files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\qslog\QsLogLevel.h">
-      <Filter>Header files</Filter>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="..\..\qslog\QsLog.cpp">
+    <ClCompile Include="..\thirdparty\qslog\QsLog.cpp">
       <Filter>Source files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\qslog\QsLogDest.cpp">
+    <ClCompile Include="..\thirdparty\qslog\QsLogDest.cpp">
       <Filter>Source files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\qslog\QsLogDestConsole.cpp">
+    <ClCompile Include="..\thirdparty\qslog\QsLogDestConsole.cpp">
       <Filter>Source files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\qslog\QsLogDestFile.cpp">
+    <ClCompile Include="..\thirdparty\qslog\QsLogDestFile.cpp">
       <Filter>Source files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\qslog\QsLogDestFunctor.cpp">
+    <ClCompile Include="..\thirdparty\qslog\QsLogDestFunctor.cpp">
       <Filter>Source files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="..\..\qslog\LICENSE.txt">
+    <Text Include="..\thirdparty\qslog\LICENSE.txt">
       <Filter>Resource files</Filter>
     </Text>
-    <Text Include="..\..\qslog\QsLogChanges.txt">
+    <Text Include="..\thirdparty\qslog\QsLogChanges.txt">
       <Filter>Resource files</Filter>
     </Text>
-    <Text Include="..\..\qslog\QsLogReadme.txt">
+    <Text Include="..\thirdparty\qslog\QsLogReadme.txt">
       <Filter>Resource files</Filter>
     </Text>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\thirdparty\qslog\QsLog.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\thirdparty\qslog\QsLogDest.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\thirdparty\qslog\QsLogDestConsole.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\thirdparty\qslog\QsLogDestFile.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\thirdparty\qslog\QsLogDestFunctor.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\thirdparty\qslog\QsLogDisableForThisFile.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\thirdparty\qslog\QsLogLevel.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

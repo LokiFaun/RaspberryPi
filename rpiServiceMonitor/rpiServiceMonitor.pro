@@ -35,7 +35,7 @@ UI_DIR      = $$DESTDIR
 
 #include project libraries
 
-INCLUDEPATH += $$PWD/../../Qt-Solutions/QtService/src
+INCLUDEPATH += $$PWD/../thirdparty/Qt-Solutions/QtService/src
 
 LIBS += -L$$OUT_PWD/$$DESTDIR -lrpiBase
 
@@ -52,9 +52,9 @@ LIBS += -L$$OUT_PWD/$$DESTDIR -lrpiConfig
 INCLUDEPATH += $$PWD/../rpiConfig
 DEPENDPATH += $$PWD/../rpiConfig
 
-LIBS += -L$$PWD/../../qslog/build-QsLogShared
-INCLUDEPATH += $$PWD/../../qslog
-DEPENDPATH += $$PWD/../../qslog
+LIBS += -L$$PWD/../thirdparty/qslog/build-QsLogShared
+INCLUDEPATH += $$PWD/../thirdparty/qslog
+DEPENDPATH += $$PWD/../thirdparty/qslog
 win32 {
     LIBS += -lQsLog2
 } else {

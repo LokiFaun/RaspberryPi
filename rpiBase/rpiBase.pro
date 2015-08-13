@@ -25,7 +25,7 @@ DEFINES += RPIBASE_LIBRARY
 DEFINES += QTJSONSETTINGS_EXPORTS
 
 include(../../qtjsonsettings/qtjsonsettings.pri)
-include(../../Qt-Solutions/QtService/src/QtService.pri)
+include(../thirdparty/Qt-Solutions/QtService/src/QtService.pri)
 
 QMAKE_CFLAGS 	+= $$COMMONFLAGS
 QMAKE_CXXFLAGS 	+= $$COMMONFLAGS

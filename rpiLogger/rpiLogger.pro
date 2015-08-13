@@ -29,9 +29,9 @@ DEPENDPATH += $$PWD/../rpiBase
 
 DEFINES += QSLOG_IS_SHARED_LIBRARY_IMPORT
 
-LIBS += -L$$PWD/../../qslog/build-QsLogShared
-INCLUDEPATH += $$PWD/../../qslog
-DEPENDPATH += $$PWD/../../qslog
+LIBS += -L$$PWD/../thirdparty/qslog/build-QsLogShared
+INCLUDEPATH += $$PWD/../thirdparty/qslog
+DEPENDPATH += $$PWD/../thirdparty/qslog
 win32 {
     LIBS += -lQsLog2
 } else {

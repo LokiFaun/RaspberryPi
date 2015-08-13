@@ -10,14 +10,19 @@ Homeautomation using Raspberry Pi with a temperature and luminance sensor.
 - WiringPi (http://wiringpi.com/)
 
 ##Directory Structure
-The following directory structure is used by the projects using relative paths:
-- BaseDir
-  - Poco
-  - QtSolutions
-  - QtJsonSettings
-  - QsLog
-  - RaspberryPi
-  - WiringPi
+  The following directory structure is used by the projects using relative paths:
+  
+  - rpiBase
+  - rpiConfig
+  - rpiLogger
+  - rpiServiceMonitor
+  - rpiConfigurator
+
+  - thirdparty/Poco
+  - thirdparty/Qt-Solutions
+  - thirdparty/QtJsonSettings
+  - thirdparty/QsLog
+  - thirdparty/WiringPi
 
 ##Contains
 - rpiBase: library with basic classes, functions and definitions

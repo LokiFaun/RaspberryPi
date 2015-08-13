@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
+VisualStudioVersion = 12.0.40629.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "rpiBase", "rpiBase\rpiBase.vcxproj", "{2F93670A-9E76-4B47-A32E-3EA7BD7FDAC5}"
 EndProject
@@ -60,7 +60,7 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "rpiComm", "rpiComm\rpiComm.
 		{DD73F4CE-9DC0-4880-ABEF-5F41E4CB1DF6} = {DD73F4CE-9DC0-4880-ABEF-5F41E4CB1DF6}
 	EndProjectSection
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "rpiMockService", "rpiMockService\rpiMockService.vcxproj", "{443797F1-6B2C-40C5-BC36-024434B5E7FD}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "QsLog", "QsLog\QsLog.vcxproj", "{863E8C7A-B681-4BEA-B83B-37216BAED158}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -96,10 +96,10 @@ Global
 		{C561D621-39E5-4297-8AC4-DB9FC985124C}.Debug|Win32.Build.0 = Debug|Win32
 		{C561D621-39E5-4297-8AC4-DB9FC985124C}.Release|Win32.ActiveCfg = Release|Win32
 		{C561D621-39E5-4297-8AC4-DB9FC985124C}.Release|Win32.Build.0 = Release|Win32
-		{443797F1-6B2C-40C5-BC36-024434B5E7FD}.Debug|Win32.ActiveCfg = Debug|Win32
-		{443797F1-6B2C-40C5-BC36-024434B5E7FD}.Debug|Win32.Build.0 = Debug|Win32
-		{443797F1-6B2C-40C5-BC36-024434B5E7FD}.Release|Win32.ActiveCfg = Release|Win32
-		{443797F1-6B2C-40C5-BC36-024434B5E7FD}.Release|Win32.Build.0 = Release|Win32
+		{863E8C7A-B681-4BEA-B83B-37216BAED158}.Debug|Win32.ActiveCfg = Debug|Win32
+		{863E8C7A-B681-4BEA-B83B-37216BAED158}.Debug|Win32.Build.0 = Debug|Win32
+		{863E8C7A-B681-4BEA-B83B-37216BAED158}.Release|Win32.ActiveCfg = Release|Win32
+		{863E8C7A-B681-4BEA-B83B-37216BAED158}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

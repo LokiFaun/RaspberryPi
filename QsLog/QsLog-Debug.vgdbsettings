@@ -61,7 +61,7 @@
       <SkipWhenRunningCommandList>false</SkipWhenRunningCommandList>
       <Command>C:\SysGCC\Raspberry\Qt\v4\qmake.exe</Command>
       <Arguments> QsLogSharedLibrary.pro</Arguments>
-      <WorkingDirectory>D:\Dokumente\GitHub\qslog</WorkingDirectory>
+      <WorkingDirectory>D:\Dokumente\GitHub\RaspberryPi\thirdparty\qslog</WorkingDirectory>
       <Environment>
         <Records>
           <Record>

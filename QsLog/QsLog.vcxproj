@@ -11,29 +11,30 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\..\qslog\QsLog.pri" />
-    <None Include="..\..\qslog\QsLogSharedLibrary.pro" />
-    <None Include="..\..\qslog\README.md" />
+    <None Include="..\thirdparty\qslog\QsLog.pri" />
+    <None Include="..\thirdparty\qslog\QsLogSharedLibrary.pro" />
+    <None Include="..\thirdparty\qslog\README.md" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\qslog\QsLog.h" />
-    <ClInclude Include="..\..\qslog\QsLogDest.h" />
-    <ClInclude Include="..\..\qslog\QsLogDestConsole.h" />
-    <ClInclude Include="..\..\qslog\QsLogDestFile.h" />
-    <ClInclude Include="..\..\qslog\QsLogDisableForThisFile.h" />
-    <ClInclude Include="..\..\qslog\QsLogLevel.h" />
+    <ClCompile Include="..\thirdparty\qslog\QsLog.cpp" />
+    <ClCompile Include="..\thirdparty\qslog\QsLogDest.cpp" />
+    <ClCompile Include="..\thirdparty\qslog\QsLogDestConsole.cpp" />
+    <ClCompile Include="..\thirdparty\qslog\QsLogDestFile.cpp" />
+    <ClCompile Include="..\thirdparty\qslog\QsLogDestFunctor.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\qslog\QsLog.cpp" />
-    <ClCompile Include="..\..\qslog\QsLogDest.cpp" />
-    <ClCompile Include="..\..\qslog\QsLogDestConsole.cpp" />
-    <ClCompile Include="..\..\qslog\QsLogDestFile.cpp" />
-    <ClCompile Include="..\..\qslog\QsLogDestFunctor.cpp" />
+    <Text Include="..\thirdparty\qslog\LICENSE.txt" />
+    <Text Include="..\thirdparty\qslog\QsLogChanges.txt" />
+    <Text Include="..\thirdparty\qslog\QsLogReadme.txt" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="..\..\qslog\LICENSE.txt" />
-    <Text Include="..\..\qslog\QsLogChanges.txt" />
-    <Text Include="..\..\qslog\QsLogReadme.txt" />
+    <ClInclude Include="..\thirdparty\qslog\QsLog.h" />
+    <ClInclude Include="..\thirdparty\qslog\QsLogDest.h" />
+    <ClInclude Include="..\thirdparty\qslog\QsLogDestConsole.h" />
+    <ClInclude Include="..\thirdparty\qslog\QsLogDestFile.h" />
+    <ClInclude Include="..\thirdparty\qslog\QsLogDestFunctor.h" />
+    <ClInclude Include="..\thirdparty\qslog\QsLogDisableForThisFile.h" />
+    <ClInclude Include="..\thirdparty\qslog\QsLogLevel.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{863E8C7A-B681-4BEA-B83B-37216BAED158}</ProjectGuid>
